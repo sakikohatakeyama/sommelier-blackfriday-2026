@@ -765,6 +765,11 @@ section{padding:104px 0!important}
   .lot h2{font-size:28px!important}
 }
 </style>
+<style>
+.fv{padding-top:30px!important}
+@media(max-width:599px){.sch-h{font-size:clamp(26px,8.2cqw,44px)!important}}
+@media(min-width:600px){.sch-h{font-size:46px!important}}
+</style>
 </head>
 <body>
 <!-- ============================================================
@@ -816,8 +821,8 @@ section{padding:104px 0!important}
 <main>
 <!-- FV -->
 <div class="fv">
-  <!-- 先行セールの帯（ブラックフライデー開始で自動で消える）TODO: 開始時刻が決まったら追記 -->
-  <div class="pre-band" id="pre-band">
+  <!-- 先行セールは中止（2026-11-10）。帯は hidden で残置 -->
+  <div class="pre-band" id="pre-band" hidden>
     <p class="pb-main">先行セール<span class="ex">！</span></p>
     <p class="pb-sub"><span class="num">11.13</span><span class="wk">金</span>スタート<span class="sep"></span><span class="nobr">ブラックフライデーより<b>ひと足早く</b></span></p>
   </div>
@@ -850,10 +855,10 @@ section{padding:104px 0!important}
 <section class="d05" id="schedule">
   <div class="wrap">
     <p class="sec-no">01 ／ スケジュール</p>
-    <h2 class="sch-h">第1弾と第2弾<br><em>2回おトク！</em></h2>
-    <p class="sch-lead">（リード文が入ります）</p>
+    <h2 class="sch-h"><span class="nobr">ブラックフライデーは</span><br><em class="nobr">19日スタート！</em></h2>
+    <p class="sch-lead"><span class="nobr">11/19（木）20:00から</span><span class="nobr">11/25（水）1:59まで</span><br>（リード文が入ります）</p>
     <div class="phases">
-      <article class="phase">
+      <article class="phase" hidden>
         <div class="ph-head"><p class="ph-no">第<span class="num">1</span>弾</p><p class="ph-name">（企画名）</p></div>
         <p class="ph-term"><span class="g"><span class="num">00.00</span><span class="wk">-</span><span class="tm num">00:00</span><span class="t2">〜</span></span><span class="g"><span class="num">00.00</span><span class="wk">-</span><span class="tm num">00:00</span></span></p>
         <ul class="ph-deals">
@@ -863,13 +868,13 @@ section{padding:104px 0!important}
         <a class="ph-link" href="#coupon">第1弾を見る</a>
       </article>
       <article class="phase">
-        <div class="ph-head"><p class="ph-no">第<span class="num">2</span>弾</p><p class="ph-name">ブラックフライデー</p></div>
+        <div class="ph-head"><p class="ph-no"><span class="num">6</span>日間</p><p class="ph-name">ブラックフライデー</p></div>
         <p class="ph-term"><span class="g"><span class="num">11.19</span><span class="wk">木</span><span class="tm num">20:00</span><span class="t2">〜</span></span><span class="g"><span class="num">11.25</span><span class="wk">水</span><span class="tm num">1:59</span></span></p>
         <ul class="ph-deals">
           <li class="pt"><span class="k">（施策の条件）</span><span class="v">POINT<span class="num tbd-num">0</span>倍</span></li>
           <li class="pt"><span class="k">（施策の条件）</span><span class="v">POINT<span class="num tbd-num">00</span>倍</span></li>
         </ul>
-        <a class="ph-link pk" href="#p5">第2弾を見る</a>
+        <a class="ph-link pk" href="#coupon">くわしく見る</a>
       </article>
     </div>
   </div>
@@ -998,12 +1003,12 @@ section{padding:104px 0!important}
 <section class="sum" id="sum">
   <div class="wrap">
     <p class="sec-no">06 ／ おさらい</p>
-    <h2>第1弾と第2弾<br class="sp-br">ここをチェック</h2>
+    <h2>この6日間<br class="sp-br">ここをチェック</h2>
     <ul class="sum-list">
-      <li><span class="k">第1弾｜（期間）</span><span class="v">（施策内容） <span class="hl">（おトク内容）</span></span><a href="#coupon">クーポンを見る</a></li>
+      <li hidden><span class="k">第1弾｜（期間）</span><span class="v">（施策内容） <span class="hl">（おトク内容）</span></span><a href="#coupon">クーポンを見る</a></li>
       <li><span class="k">プレゼント抽選</span><span class="v">2万円以上のお買い物で <span class="hl">抽選で合計8名様</span></span><a href="#lottery">賞品を見る</a></li>
-      <li><span class="k">第2弾｜11/19（木）20:00〜11/25（水）1:59</span><span class="v">（施策内容） <span class="hp">（おトク内容）</span></span><a class="pk" href="#p5">詳しく見る</a></li>
-      <li><span class="k">第2弾｜目玉商品</span><span class="v">（施策内容） <span class="hp">（おトク内容）</span></span><a class="pk" href="#p20">目玉商品を見る</a></li>
+      <li><span class="k">11/19（木）20:00〜11/25（水）1:59</span><span class="v">（施策内容） <span class="hp">（おトク内容）</span></span><a class="pk" href="#p5">詳しく見る</a></li>
+      <li><span class="k">目玉商品</span><span class="v">（施策内容） <span class="hp">（おトク内容）</span></span><a class="pk" href="#p20">目玉商品を見る</a></li>
     </ul>
     <a class="shop-link" href="https://www.rakuten.co.jp/sommelier/" target="_blank" rel="noopener">ショップトップで商品をさがす</a>
   </div>
@@ -1076,7 +1081,7 @@ section{padding:104px 0!important}
   // 先行セールの帯：光の筋を足し、ブラックフライデー開始（11/19 20:00）以降は消す
   var b=document.getElementById('pre-band');if(!b)return;
   var sh=document.createElement('i');sh.className='shine';b.appendChild(sh);
-  if(Date.now()>=new Date('2026-11-19T20:00:00+09:00').getTime())b.hidden=true;
+  b.hidden=true;
 })();
 </script>
 </body>
