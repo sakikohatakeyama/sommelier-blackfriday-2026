@@ -695,29 +695,24 @@ section h2{font-size:32px!important}
 .side-today li b{font-size:min(21px,7cqw)!important}
 .side-btn{font-size:min(18px,6cqw)!important}
 </style>
+<style>
+/* 左：ロゴ・日付・タイマー／右：店名・メニュー */
+.side{overflow-y:auto}
+.side-l .side-ttl{margin-top:0}
+.side-l .side-date{margin-bottom:20px}
+.side-r .side-nav{margin-top:24px}
+@media(max-height:860px){.side-l .side-today li{padding:6px 0}.side-l .side-today{padding:12px 14px 10px;margin-top:12px}.side-l .side-btn{min-height:48px;margin-top:10px}}
+</style>
 </head>
 <body>
 <!-- ============================================================
   家具のソムリエ ブラックフライデー 2026（枠のみ）
   施策内容が届いたら「TODO」の箇所を差し替える
 ============================================================ -->
-<aside class="side side-l" aria-label="メニュー">
+<aside class="side side-l" aria-label="ブラックフライデーとカウントダウン">
   <div class="side-in">
-    <a class="brand" href="https://www.rakuten.co.jp/sommelier/" target="_blank" rel="noopener" aria-label="家具のソムリエ 楽天市場 トップページへ"><b>家具のソムリエ</b><small>いえの中をそろえるお店</small></a>
     <p class="side-ttl"><span class="en l1">BLACK</span><span class="en l2">FRIDAY</span></p>
     <p class="side-date"><span class="num">11.19</span>（木）20:00 〜<br><span class="num">11.25</span>（水）1:59</p>
-    <nav class="side-nav">
-      <a href="#schedule"><span class="n">01</span>スケジュール</a>
-      <a href="#coupon"><span class="n">02</span>クーポン</a>
-      <a href="#p5"><span class="n">03</span>ポイントアップ</a>
-      <a href="#p20"><span class="n">04</span>目玉商品</a>
-      <a href="#sum"><span class="n">05</span>おさらい</a>
-    </nav>
-    <a class="side-shop" href="https://www.rakuten.co.jp/sommelier/" target="_blank" rel="noopener">ショップトップへ</a>
-  </div>
-</aside>
-<aside class="side side-r" aria-label="カウントダウンと今日のお得">
-  <div class="side-in">
     <div class="side-cd cd-box">
       <p class="lbl" data-cd-lbl>ブラックフライデーまで</p>
       <p class="t" data-cd-t><span class="num" data-cd="d">0</span><small>日</small><span class="num" data-cd="h">00</span><small>時間</small><span class="num" data-cd="m">00</span><small>分</small><span class="num" data-cd="s">00</span><small>秒</small></p>
@@ -732,6 +727,19 @@ section h2{font-size:32px!important}
     </div>
     <a class="side-btn gold" href="#coupon">クーポンを見る</a>
     <a class="side-btn pink" href="#p20">目玉商品を見る</a>
+  </div>
+</aside>
+<aside class="side side-r" aria-label="メニュー">
+  <div class="side-in">
+    <a class="brand" href="https://www.rakuten.co.jp/sommelier/" target="_blank" rel="noopener" aria-label="家具のソムリエ 楽天市場 トップページへ"><b>家具のソムリエ</b><small>いえの中をそろえるお店</small></a>
+    <nav class="side-nav">
+      <a href="#schedule"><span class="n">01</span>スケジュール</a>
+      <a href="#coupon"><span class="n">02</span>クーポン</a>
+      <a href="#p5"><span class="n">03</span>ポイントアップ</a>
+      <a href="#p20"><span class="n">04</span>目玉商品</a>
+      <a href="#sum"><span class="n">05</span>おさらい</a>
+    </nav>
+    <a class="side-shop" href="https://www.rakuten.co.jp/sommelier/" target="_blank" rel="noopener">ショップトップへ</a>
   </div>
 </aside>
 <div class="col">
