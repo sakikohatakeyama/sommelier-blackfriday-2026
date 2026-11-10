@@ -644,6 +644,20 @@ section h2{font-size:32px!important}
 .side-today li{font-size:16px}.side-today li b{font-size:21px}
 .side-btn{font-size:18px;min-height:58px}
 </style>
+<style>
+/* メインコンテンツ幅 650px */
+.col{max-width:650px}
+@media(min-width:1000px){.side{display:none}.col .cd{display:block}}
+@media(min-width:1240px){.side{display:flex;width:calc(50% - 325px)}.col .cd{display:none}}
+@media(min-width:600px){.wrap{padding:0 36px}.sign{margin:0 24px}}
+.fv-simple .fv-title .en{font-size:clamp(60px,20cqw,128px)!important}
+@media(min-width:600px){.fv-date .dt>.num{font-size:60px}.fv-date .tm{font-size:34px}.fv-date .wk{width:36px;height:36px;font-size:17px}}
+</style>
+<style>
+/* BLACK と FRIDAY の左右をそろえる（幅はJSで合わせる） */
+.fv-title .en,.side-ttl .en{width:max-content;letter-spacing:0!important}
+.fv-title .en{margin-left:auto;margin-right:auto}
+</style>
 </head>
 <body>
 <!-- ============================================================
@@ -883,6 +897,22 @@ section h2{font-size:32px!important}
   if(!('IntersectionObserver' in window)){els.forEach(function(e){e.classList.add('in')});return}
   var io=new IntersectionObserver(function(en){en.forEach(function(x){if(x.isIntersecting){x.target.classList.add('in');var h=x.target.querySelector('.ph-head');if(h)h.classList.add('in');io.unobserve(x.target)}})},{rootMargin:'0px 0px -12% 0px'});
   els.forEach(function(e){io.observe(e)});
+})();
+</script>
+<script>
+(function(){
+  // BLACK の文字サイズを FRIDAY と同じ幅になるよう調整
+  function fit(){
+    [].forEach.call(document.querySelectorAll('.fv-title,.side-ttl'),function(t){
+      var a=t.querySelector('.l1'),b=t.querySelector('.l2');if(!a||!b)return;
+      a.style.fontSize='';
+      var fs=parseFloat(getComputedStyle(b).fontSize),wa=a.getBoundingClientRect().width,wb=b.getBoundingClientRect().width;
+      if(wa&&wb)a.style.fontSize=(parseFloat(getComputedStyle(a).fontSize)*wb/wa)+'px';
+    });
+  }
+  (document.fonts&&document.fonts.ready?document.fonts.ready:Promise.resolve()).then(fit);
+  window.addEventListener('load',fit);
+  window.addEventListener('resize',fit);
 })();
 </script>
 </body>
