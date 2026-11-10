@@ -703,6 +703,11 @@ section h2{font-size:32px!important}
 .side-r .side-nav{margin-top:24px}
 @media(max-height:860px){.side-l .side-today li{padding:6px 0}.side-l .side-today{padding:12px 14px 10px;margin-top:12px}.side-l .side-btn{min-height:48px;margin-top:10px}}
 </style>
+<style>
+/* 帯のギザギザをなくす／！の右の空きを詰めて見た目の中央に */
+.pre-band::before,.pre-band::after{display:none!important}
+.pb-main .ex{margin-right:-.42em}
+</style>
 </head>
 <body>
 <!-- ============================================================
@@ -755,7 +760,7 @@ section h2{font-size:32px!important}
 <div class="fv">
   <!-- 先行セールの帯（ブラックフライデー開始で自動で消える）TODO: 開始時刻が決まったら追記 -->
   <div class="pre-band" id="pre-band">
-    <p class="pb-main">先行セール！</p>
+    <p class="pb-main">先行セール<span class="ex">！</span></p>
     <p class="pb-sub"><span class="num">11.13</span><span class="wk">金</span>スタート<span class="sep"></span><span class="nobr">ブラックフライデーより<b>ひと足早く</b></span></p>
   </div>
   <div class="sign">
