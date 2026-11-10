@@ -553,6 +553,18 @@ footer p{margin-top:12px;font-size:11px;color:#7d756a}
 .ph-img{display:flex;align-items:center;justify-content:center;aspect-ratio:1;background:repeating-linear-gradient(135deg,#ece7dd 0 14px,#e3ddd1 14px 28px);color:#8a8278;font-weight:700;font-size:15px;border-bottom:4px solid var(--gold)}
 .tbd-num{color:#ffffff59!important;-webkit-text-fill-color:#ffffff59}
 </style>
+<style>
+/* 見出しは中央揃え、説明文は位置だけ中央で文字は左詰め */
+.sec-no{justify-content:center}
+.sec-no::after{content:"";width:40px;height:2px;background:currentColor}
+section h2,.sch-h{text-align:center}
+.cp-term,.p5-term{text-align:center}
+.big5{text-align:center}
+.p20-head{align-items:center!important}
+.badge20{text-align:center!important}
+.badge20 .calc{justify-content:center!important}
+.sch-lead,.cp-lead,.p5-txt>p:not(.p5-note),.p20-head>div:first-child>p{width:fit-content;max-width:100%;margin-left:auto;margin-right:auto;text-align:left}
+</style>
 </head>
 <body>
 <!-- ============================================================
