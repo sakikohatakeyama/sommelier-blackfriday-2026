@@ -577,6 +577,30 @@ section h2,.sch-h{text-align:center}
 /* タイトルは句読点なし、数字も含めてヒラギノ角ゴ系 */
 section h2,.sch-h,section h2 *{font-family:"Hiragino Sans","Hiragino Kaku Gothic ProN","Noto Sans JP",sans-serif;font-weight:800}
 </style>
+<style>
+/* ---------- スクロールで出てくる動き ---------- */
+.js .rv{opacity:0;transform:translateY(32px);transition:opacity .7s ease,transform .8s cubic-bezier(.2,.8,.2,1)}
+.js .rv.from-r{transform:translateX(48px)}
+.js .rv.pop{transform:scale(.55)}
+.js .rv.in{opacity:1;transform:none}
+.js .rv.pop.in{transition:opacity .5s ease,transform .7s cubic-bezier(.3,1.6,.5,1)}
+.js .sec-no.rv::before,.js .sec-no.rv::after{transform:scaleX(0);transition:transform .7s .2s ease}
+.js .sec-no.rv.in::before,.js .sec-no.rv.in::after{transform:scaleX(1)}
+.js .ph-head.rv-flash.in{animation:flash .9s .35s ease}
+@keyframes flash{0%{filter:brightness(1)}35%{filter:brightness(1.35)}100%{filter:brightness(1)}}
+@media(prefers-reduced-motion:reduce){.js .rv{opacity:1!important;transform:none!important;transition:none!important}}
+</style>
+<script>document.documentElement.classList.add('js')</script>
+<style>
+/* 開いたときのFVの動き */
+.js .fv-title .l1{animation:inL .9s .15s cubic-bezier(.2,.8,.2,1) both}
+.js .fv-title .l2{animation:inR .9s .35s cubic-bezier(.2,.8,.2,1) both}
+.js .fv-date{animation:inUp .8s .75s ease both}
+@keyframes inL{from{opacity:0;transform:translateX(-60px)}to{opacity:1;transform:none}}
+@keyframes inR{from{opacity:0;transform:translateX(60px)}to{opacity:1;transform:none}}
+@keyframes inUp{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:none}}
+@media(prefers-reduced-motion:reduce){.js .fv-title .en,.js .fv-date{animation:none}}
+</style>
 </head>
 <body>
 <!-- ============================================================
@@ -797,6 +821,25 @@ section h2,.sch-h,section h2 *{font-family:"Hiragino Sans","Hiragino Kaku Gothic
     setTimeout(tick,1000);
   }
   tick();
+})();
+</script>
+<script>
+(function(){
+  // スクロールで要素がふわっと出てくる
+  var groups=[
+    ['.sec-no, section h2, .sch-lead, .cp-term, .cp-lead, .p5-term, .p5-txt>p, .p5-txt>.entry-btn, .p20-head>div>p, .sum-list li, .shop-link, .p20-note, .cp-note',''],
+    ['.phase, .item',''],
+    ['.ticket','from-r'],
+    ['.big5, .badge20','pop']
+  ];
+  var els=[];
+  groups.forEach(function(g){[].forEach.call(document.querySelectorAll(g[0]),function(e){e.classList.add('rv');if(g[1])e.classList.add(g[1]);els.push(e)})});
+  [].forEach.call(document.querySelectorAll('.ph-head'),function(e){e.classList.add('rv-flash')});
+  // 同じ親の中では少しずつずらして出す
+  els.forEach(function(e){var sib=[].filter.call(e.parentNode.children,function(c){return c.classList.contains('rv')});var k=sib.indexOf(e);e.style.transitionDelay=(Math.min(k,5)*0.12)+'s'});
+  if(!('IntersectionObserver' in window)){els.forEach(function(e){e.classList.add('in')});return}
+  var io=new IntersectionObserver(function(en){en.forEach(function(x){if(x.isIntersecting){x.target.classList.add('in');var h=x.target.querySelector('.ph-head');if(h)h.classList.add('in');io.unobserve(x.target)}})},{rootMargin:'0px 0px -12% 0px'});
+  els.forEach(function(e){io.observe(e)});
 })();
 </script>
 </body>
