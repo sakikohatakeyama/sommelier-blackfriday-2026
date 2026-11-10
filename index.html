@@ -770,6 +770,74 @@ section{padding:104px 0!important}
 @media(max-width:599px){.sch-h{font-size:clamp(26px,8.2cqw,44px)!important}}
 @media(min-width:600px){.sch-h{font-size:46px!important}}
 </style>
+<style>
+/* ---------- 目玉セット ---------- */
+.p20 h2 em,.pops-h em{font-style:normal;color:var(--pink)}
+.fsets{display:grid;grid-template-columns:1fr 1fr;gap:32px 24px;margin-top:48px}
+.fset{background:var(--white);color:#1b1715;display:flex;flex-direction:column}
+.fset:nth-child(-n+2){grid-column:1/-1}
+.fs-img{position:relative;background:#fff;border-bottom:4px solid var(--gold)}
+.fs-img img{width:100%;aspect-ratio:4/3;object-fit:contain}
+.fs-no{position:absolute;left:0;top:0;background:var(--black);color:var(--gold-l);font-family:Jost,Futura,sans-serif;font-weight:700;font-size:14px;letter-spacing:.1em;padding:8px 14px;line-height:1}
+.fs-no b{font-size:28px;margin-left:6px;color:var(--white)}
+.fs-off{position:absolute;right:14px;top:14px;width:96px;height:96px;border-radius:50%;background:#e60012;color:#fff;display:flex;flex-direction:column;align-items:center;justify-content:center;font-family:Jost,Futura,sans-serif;font-weight:700;font-size:18px;line-height:.95;text-align:center}
+.fs-off b{font-size:42px;line-height:1}
+.fset:nth-child(n+3) .fs-off{width:78px;height:78px;font-size:15px}.fset:nth-child(n+3) .fs-off b{font-size:34px}
+.fs-body{padding:24px 26px 28px;display:flex;flex-direction:column;flex:1}
+.fset h3{font-family:"Hiragino Sans","Hiragino Kaku Gothic ProN","Noto Sans JP",sans-serif;font-weight:800;font-size:23px;line-height:1.4}
+.fs-in{margin-top:8px;font-size:15px;line-height:1.7;color:#4a443d}
+.fs-note{margin-top:6px;font-size:13.5px;color:var(--gold-d);font-weight:700}
+.fs-reg{margin-top:14px;font-size:15px;color:#6c655c;font-weight:700}
+.fs-reg s{text-decoration-thickness:2px}
+.fs-price{display:flex;align-items:baseline;flex-wrap:wrap;color:#e60012;line-height:1;margin:4px 0 20px}
+.fs-price .num{font-family:"Hiragino Sans","Hiragino Kaku Gothic ProN","Noto Sans JP",sans-serif;font-weight:900;font-size:64px;letter-spacing:-.01em}
+.fset:nth-child(n+3) .fs-price .num{font-size:46px}
+.fs-price .yen{font-size:24px;font-weight:900;margin-left:4px}
+.fs-price small{font-size:13px;color:#6c655c;font-weight:700;margin-left:2px}
+.fset .buy{margin-top:auto}
+/* ---------- 人気の商品 ---------- */
+.pops-head{margin-top:96px;text-align:center}
+.sec-no.sub{font-family:Jost,Futura,sans-serif;letter-spacing:.3em}
+.pops-h{margin-top:16px}
+.pops{display:grid;grid-template-columns:repeat(3,1fr);gap:28px 18px;margin-top:40px}
+.pop{display:flex;flex-direction:column;text-decoration:none;color:var(--white)}
+.pop-img{position:relative;display:block;background:#fff;border:2px solid transparent;transition:border-color .2s}
+.pop:hover .pop-img{border-color:var(--pink)}
+.pop-img img{width:100%;aspect-ratio:1;object-fit:contain}
+.pop-rank{position:absolute;left:0;top:0;width:34px;height:34px;display:flex;align-items:center;justify-content:center;background:var(--gold);color:var(--black);font-family:Jost,Futura,sans-serif;font-weight:700;font-size:18px}
+.pop-br{margin-top:12px;font-size:12.5px;font-weight:700;color:var(--gold-l)}
+.pop-nm{margin-top:2px;font-size:15px;font-weight:700;line-height:1.5}
+.pop-sub{margin-top:2px;font-size:12.5px;color:var(--sub)}
+.pop-pr{margin-top:auto;padding-top:8px;color:#ff3b3b;font-weight:900;font-size:16px;line-height:1}
+.pop-pr .num{font-family:"Hiragino Sans","Hiragino Kaku Gothic ProN","Noto Sans JP",sans-serif;font-weight:900;font-size:32px;margin-right:2px}
+.pop-pr small{font-size:11px;color:var(--sub);font-weight:700}
+@media(max-width:599px){
+  .fsets{grid-template-columns:1fr}
+  .fs-price .num,.fset:nth-child(n+3) .fs-price .num{font-size:52px}
+  .fset:nth-child(n+3) .fs-off{width:88px;height:88px}
+  .pops{grid-template-columns:1fr 1fr;gap:24px 14px}
+  .pop-pr .num{font-size:26px}
+}
+</style>
+<style>
+.fset .buy{display:flex;align-items:center;justify-content:center;gap:12px;min-height:58px;text-decoration:none;font-weight:900;font-size:18px;color:var(--black);background:var(--pink);transition:filter .2s}
+.fset .buy:hover{filter:brightness(1.06)}
+.fset .buy::after{content:"";width:8px;height:8px;border-top:2.5px solid currentColor;border-right:2.5px solid currentColor;transform:rotate(45deg)}
+.fset:nth-child(n+3) .fs-body{padding:20px 18px 22px}
+.fset:nth-child(n+3) .fs-price{flex-wrap:nowrap}
+.fset:nth-child(n+3) .fs-price .num{font-size:clamp(34px,7cqw,46px)}
+.fset:nth-child(n+3) .fs-price .yen{font-size:18px;white-space:nowrap}
+.fset:nth-child(n+3) .fs-price small{display:block;margin:2px 0 0}
+.fset:nth-child(n+3) .buy{font-size:15px;min-height:52px}
+.pop-pr{display:flex;align-items:baseline;flex-wrap:wrap}
+.pop-pr small{flex-basis:100%;margin-top:4px}
+@media(max-width:599px){.fset:nth-child(n+3) .fs-price .num{font-size:52px}.fset:nth-child(n+3) .fs-price .yen{font-size:24px}.fset:nth-child(n+3) .fs-price small{display:inline}.fset:nth-child(n+3) .buy{font-size:18px}}
+</style>
+<style>
+.fs-price{flex-wrap:nowrap!important}
+.fs-price .yen{white-space:nowrap}
+@media(max-width:599px){.fs-price .num,.fset:nth-child(n+3) .fs-price .num{font-size:clamp(36px,12.5cqw,52px)!important}.fs-price .yen{font-size:20px!important}.fs-price small{display:block!important;margin:2px 0 0!important}}
+</style>
 </head>
 <body>
 <!-- ============================================================
@@ -807,7 +875,7 @@ section{padding:104px 0!important}
       </ul>
     </div>
     <a class="side-btn gold" href="#coupon">クーポンを見る</a>
-    <a class="side-btn pink" href="#p20">目玉商品を見る</a>
+    <a class="side-btn pink" href="#p20">目玉セットを見る</a>
   </div>
 </aside>
 <div class="col">
@@ -960,46 +1028,113 @@ section{padding:104px 0!important}
   </div>
 </section>
 
-<!-- 04 目玉商品（TODO：商品が届いたら差し替え） -->
+<!-- 05 目玉商品 -->
 <section class="p20" id="p20">
   <div class="wrap">
     <p class="sec-no">05 ／ 目玉商品</p>
-    <div class="p20-head">
-      <div>
-        <h2>（目玉商品の<br><em>見出しが入ります</em>）</h2>
-        <p>（説明文が入ります）</p>
-      </div>
-      <div class="badge20" aria-hidden="true"><p class="x">POINT</p><p><span class="num">00</span><b>倍</b></p></div>
-    </div>
-    <div class="items">
-      <article class="item">
-        <span class="ribbon">（ラベル）</span>
-        <div class="ph-img">商品画像</div>
-        <div class="body">
-          <span class="cat">（カテゴリ）</span>
-          <h3>（商品名が入ります）</h3>
-          <p class="spec">（商品説明が入ります）</p>
-          <p class="price"><span class="num">00,000</span>円<small>（税込）</small></p>
-          <a class="buy" href="https://www.rakuten.co.jp/sommelier/" target="_blank" rel="noopener" data-todo="item-1">商品ページへ</a>
+    <h2>ブラックフライデー限定<br><em>目玉セット</em></h2>
+    <p class="sch-lead">ティファールの人気家電を<span class="nobr">おトクなセットに</span><br><span class="nobr">単品で買うより</span><span class="nobr">最大30%OFF</span></p>
+    <div class="fsets">
+      <article class="fset">
+        <div class="fs-img"><img src="img/feat-1.jpg" width="1000" height="750" alt="炊飯器＆片手圧力鍋セット" loading="lazy"><span class="fs-no">SET<b>1</b></span><span class="fs-off"><b>30</b>%<br>OFF</span></div>
+        <div class="fs-body">
+          <h3>炊飯器＆片手圧力鍋セット</h3>
+          <p class="fs-in">ティファール ザ・ライス 遠赤外線IH炊飯器エッセンシャル 5.5合<br>＋ セキュア トレンディ 6.2L</p>
+          <p class="fs-note">炊飯器はブラック・ホワイト・アイボリーから選べます</p>
+          <p class="fs-reg">単品合計 <s>30,880円</s></p>
+          <p class="fs-price"><span class="num">21,610</span><span class="yen">円<small>（税込）</small></span></p>
+          <a class="buy" href="#p20" data-todo="set-1">セットの商品ページへ</a>
         </div>
       </article>
-      <article class="item">
-        <span class="ribbon">（ラベル）</span>
-        <div class="ph-img">商品画像</div>
-        <div class="body">
-          <span class="cat">（カテゴリ）</span>
-          <h3>（商品名が入ります）</h3>
-          <p class="spec">（商品説明が入ります）</p>
-          <p class="price"><span class="num">00,000</span>円<small>（税込）</small></p>
-          <a class="buy" href="https://www.rakuten.co.jp/sommelier/" target="_blank" rel="noopener" data-todo="item-2">商品ページへ</a>
+      <article class="fset">
+        <div class="fs-img"><img src="img/feat-2.jpg" width="1000" height="750" alt="炊飯器＆ステンレスセット9" loading="lazy"><span class="fs-no">SET<b>2</b></span><span class="fs-off"><b>10</b>%<br>OFF</span></div>
+        <div class="fs-body">
+          <h3>炊飯器＆ステンレスセット9</h3>
+          <p class="fs-in">ティファール ザ・ライス 遠赤外線IH炊飯器エッセンシャル 5.5合<br>＋ インジニオ・ネオ IHステンレス・アンリミテッド セット9</p>
+          <p class="fs-note">炊飯器はブラック・ホワイト・アイボリーから選べます</p>
+          <p class="fs-reg">単品合計 <s>35,700円</s></p>
+          <p class="fs-price"><span class="num">32,130</span><span class="yen">円<small>（税込）</small></span></p>
+          <a class="buy" href="#p20" data-todo="set-2">セットの商品ページへ</a>
+        </div>
+      </article>
+      <article class="fset">
+        <div class="fs-img"><img src="img/feat-3.jpg" width="1000" height="750" alt="朝食セット ワインレッド" loading="lazy"><span class="fs-no">SET<b>3</b></span><span class="fs-off"><b>25</b>%<br>OFF</span></div>
+        <div class="fs-body">
+          <h3>朝食セット ワインレッド</h3>
+          <p class="fs-in">ティファール メゾン コーヒーメーカー<br>＋ ポップアップトースター</p>
+          
+          <p class="fs-reg">単品合計 <s>11,613円</s></p>
+          <p class="fs-price"><span class="num">8,700</span><span class="yen">円<small>（税込）</small></span></p>
+          <a class="buy" href="#p20" data-todo="set-3">セットの商品ページへ</a>
+        </div>
+      </article>
+      <article class="fset">
+        <div class="fs-img"><img src="img/feat-4.jpg" width="1000" height="750" alt="朝食セット スノーホワイト" loading="lazy"><span class="fs-no">SET<b>4</b></span><span class="fs-off"><b>25</b>%<br>OFF</span></div>
+        <div class="fs-body">
+          <h3>朝食セット スノーホワイト</h3>
+          <p class="fs-in">ティファール メゾン コーヒーメーカー<br>＋ ポップアップトースター</p>
+          
+          <p class="fs-reg">単品合計 <s>11,613円</s></p>
+          <p class="fs-price"><span class="num">8,700</span><span class="yen">円<small>（税込）</small></span></p>
+          <a class="buy" href="#p20" data-todo="set-4">セットの商品ページへ</a>
         </div>
       </article>
     </div>
-    <p class="p20-note">※価格・在庫・ポイント倍率は変わることがあります。最新の情報は各商品ページでご確認ください。</p>
+    <p class="p20-note">※単品合計は、各商品の通常販売価格（税込）の合計です。<br>※価格・在庫は変わることがあります。最新の情報は各商品ページでご確認ください。</p>
+
+    <div class="pops-head">
+      <p class="sec-no sub">POPULAR</p>
+      <h2 class="pops-h">人気の商品も<br><em>この機会に</em></h2>
+    </div>
+    <div class="pops">
+      <a class="pop" href="https://item.rakuten.co.jp/sommelier/t-fal-293/" target="_blank" rel="noopener">
+        <span class="pop-img"><img src="img/pop-t-fal-293.jpg" width="600" height="600" alt="ティファール ジャスティンロックコントロール 1.2L" loading="lazy"><span class="pop-rank">1</span></span>
+        <span class="pop-br">ティファール</span>
+        <span class="pop-nm">ジャスティンロックコントロール 1.2L</span>
+        <span class="pop-sub">電気ケトル・温度設定つき</span>
+        <span class="pop-pr"><span class="num">8,055</span>円<small>（税込）</small></span>
+      </a>
+      <a class="pop" href="https://item.rakuten.co.jp/sommelier/goods-01829/" target="_blank" rel="noopener">
+        <span class="pop-img"><img src="img/pop-goods-01829.jpg" width="600" height="600" alt="ラッセルホブス エアフライオーブン 3L" loading="lazy"><span class="pop-rank">2</span></span>
+        <span class="pop-br">ラッセルホブス</span>
+        <span class="pop-nm">エアフライオーブン 3L</span>
+        <span class="pop-sub">エアフライヤー・レシピブック付き</span>
+        <span class="pop-pr"><span class="num">16,500</span>円<small>（税込）</small></span>
+      </a>
+      <a class="pop" href="https://item.rakuten.co.jp/sommelier/goods-01649/" target="_blank" rel="noopener">
+        <span class="pop-img"><img src="img/pop-goods-01649.jpg" width="600" height="600" alt="ラッセルホブス 電動ミル ソルト＆ペッパー ミニ" loading="lazy"><span class="pop-rank">3</span></span>
+        <span class="pop-br">ラッセルホブス</span>
+        <span class="pop-nm">電動ミル ソルト＆ペッパー ミニ</span>
+        <span class="pop-sub">充電式・2本セット</span>
+        <span class="pop-pr"><span class="num">8,800</span>円<small>（税込）</small></span>
+      </a>
+      <a class="pop" href="https://item.rakuten.co.jp/sommelier/t-fal-345/" target="_blank" rel="noopener">
+        <span class="pop-img"><img src="img/pop-t-fal-345.jpg" width="600" height="600" alt="ティファール インジニオ・ネオ IHチャコールグレー セット8" loading="lazy"><span class="pop-rank">4</span></span>
+        <span class="pop-br">ティファール</span>
+        <span class="pop-nm">インジニオ・ネオ IHチャコールグレー セット8</span>
+        <span class="pop-sub">取っ手が取れるフライパンセット</span>
+        <span class="pop-pr"><span class="num">15,990</span>円<small>（税込）</small></span>
+      </a>
+      <a class="pop" href="https://item.rakuten.co.jp/sommelier/t-fal-335/" target="_blank" rel="noopener">
+        <span class="pop-img"><img src="img/pop-t-fal-335.jpg" width="600" height="600" alt="ティファール ピュアポップ" loading="lazy"><span class="pop-rank">5</span></span>
+        <span class="pop-br">ティファール</span>
+        <span class="pop-nm">ピュアポップ</span>
+        <span class="pop-sub">衣類スチーマー</span>
+        <span class="pop-pr"><span class="num">6,199</span>円<small>（税込）</small></span>
+      </a>
+      <a class="pop" href="https://item.rakuten.co.jp/sommelier/ymj-00845/" target="_blank" rel="noopener">
+        <span class="pop-img"><img src="img/pop-ymj-00845.jpg" width="600" height="600" alt="山崎実業 tower 替えブラシ収納付き流せるトイレブラシスタンド" loading="lazy"><span class="pop-rank">6</span></span>
+        <span class="pop-br">山崎実業 tower</span>
+        <span class="pop-nm">替えブラシ収納付き流せるトイレブラシスタンド</span>
+        <span class="pop-sub">タワーシリーズ</span>
+        <span class="pop-pr"><span class="num">1,760</span>円<small>（税込）</small></span>
+      </a>
+    </div>
+    <p class="p20-note">※ショップの売れ筋ランキング（11/10時点）から。価格は11/10時点のものです。</p>
   </div>
 </section>
 
-<!-- 05 おさらい -->
+<!-- 06 おさらい -->
 <section class="sum" id="sum">
   <div class="wrap">
     <p class="sec-no">06 ／ おさらい</p>
@@ -1008,7 +1143,7 @@ section{padding:104px 0!important}
       <li hidden><span class="k">第1弾｜（期間）</span><span class="v">（施策内容） <span class="hl">（おトク内容）</span></span><a href="#coupon">クーポンを見る</a></li>
       <li><span class="k">プレゼント抽選</span><span class="v">2万円以上のお買い物で <span class="hl">抽選で合計8名様</span></span><a href="#lottery">賞品を見る</a></li>
       <li><span class="k">11/19（木）20:00〜11/25（水）1:59</span><span class="v">（施策内容） <span class="hp">（おトク内容）</span></span><a class="pk" href="#p5">詳しく見る</a></li>
-      <li><span class="k">目玉商品</span><span class="v">（施策内容） <span class="hp">（おトク内容）</span></span><a class="pk" href="#p20">目玉商品を見る</a></li>
+      <li><span class="k">目玉商品</span><span class="v">ティファール目玉セット <span class="hp">最大30%OFF</span></span><a class="pk" href="#p20">目玉商品を見る</a></li>
     </ul>
     <a class="shop-link" href="https://www.rakuten.co.jp/sommelier/" target="_blank" rel="noopener">ショップトップで商品をさがす</a>
   </div>
