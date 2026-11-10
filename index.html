@@ -658,6 +658,30 @@ section h2{font-size:32px!important}
 .fv-title .en,.side-ttl .en{width:max-content;letter-spacing:0!important}
 .fv-title .en{margin-left:auto;margin-right:auto}
 </style>
+<style>
+/* 日付を1ウェイト細く */
+.fv-date .num,.side-date .num,.ph-term .num,.cp-term .num,.p5-term .num{font-weight:600}
+
+/* 先行セールの帯：FVの上にドーンと出る */
+.fv{padding-top:0}
+.pre-band{position:relative;z-index:3;margin:0 0 -6px;padding:18px 16px 20px;text-align:center;background:var(--pink);color:var(--black);overflow:hidden;box-shadow:0 10px 30px #0009}
+.pre-band::before,.pre-band::after{content:"";position:absolute;left:0;right:0;height:6px;background:repeating-linear-gradient(90deg,var(--black) 0 14px,transparent 14px 28px)}
+.pre-band::before{top:0}.pre-band::after{bottom:0}
+.pb-main{font-family:"Hiragino Sans","Hiragino Kaku Gothic ProN","Noto Sans JP",sans-serif;font-weight:900;font-size:clamp(46px,13cqw,84px);line-height:1.05;letter-spacing:.04em}
+.pb-sub{margin-top:8px;font-weight:700;font-size:clamp(14px,3.4cqw,20px);display:flex;align-items:center;justify-content:center;flex-wrap:wrap;gap:4px 8px}
+.pb-sub .num{font-family:Jost,Futura,sans-serif;font-weight:600;font-size:1.6em;line-height:1}
+.pb-sub .wk{display:inline-flex;align-items:center;justify-content:center;width:1.5em;height:1.5em;border-radius:50%;background:var(--black);color:var(--pink);font-size:.8em;font-weight:900}
+.pb-sub .sep{width:1px;height:1.2em;background:#0006;margin:0 6px}
+.pb-sub b{background:var(--black);color:var(--pink);padding:0 6px;margin-left:4px}
+.pre-band .shine{position:absolute;top:0;bottom:0;width:40%;left:-50%;background:linear-gradient(100deg,transparent,#fff9,transparent);animation:bandShine 5s 2.2s ease-in-out infinite;pointer-events:none}
+@keyframes bandShine{0%{left:-50%}25%,100%{left:120%}}
+.js .pre-band{animation:doon .75s .9s cubic-bezier(.3,1.7,.5,1) both}
+.js .pre-band .pb-main{animation:shake .5s 1.55s ease both}
+@keyframes doon{0%{opacity:0;transform:scale(2.4)}60%{opacity:1}100%{opacity:1;transform:scale(1)}}
+@keyframes shake{0%,100%{transform:none}20%{transform:translateX(-6px)}40%{transform:translateX(6px)}60%{transform:translateX(-4px)}80%{transform:translateX(3px)}}
+@media(prefers-reduced-motion:reduce){.js .pre-band,.js .pre-band .pb-main,.pre-band .shine{animation:none}}
+.fv .sign{margin-top:0}
+</style>
 </head>
 <body>
 <!-- ============================================================
@@ -708,6 +732,11 @@ section h2{font-size:32px!important}
 <main>
 <!-- FV -->
 <div class="fv">
+  <!-- 先行セールの帯（ブラックフライデー開始で自動で消える）TODO: 開始時刻が決まったら追記 -->
+  <div class="pre-band" id="pre-band">
+    <p class="pb-main">先行セール！</p>
+    <p class="pb-sub"><span class="num">11.13</span><span class="wk">金</span>スタート<span class="sep"></span><span class="nobr">ブラックフライデーより<b>ひと足早く</b></span></p>
+  </div>
   <div class="sign">
     <div class="sign-in fv-simple">
       <h1 class="fv-title">
@@ -913,6 +942,14 @@ section h2{font-size:32px!important}
   (document.fonts&&document.fonts.ready?document.fonts.ready:Promise.resolve()).then(fit);
   window.addEventListener('load',fit);
   window.addEventListener('resize',fit);
+})();
+</script>
+<script>
+(function(){
+  // 先行セールの帯：光の筋を足し、ブラックフライデー開始（11/19 20:00）以降は消す
+  var b=document.getElementById('pre-band');if(!b)return;
+  var sh=document.createElement('i');sh.className='shine';b.appendChild(sh);
+  if(Date.now()>=new Date('2026-11-19T20:00:00+09:00').getTime())b.hidden=true;
 })();
 </script>
 </body>
