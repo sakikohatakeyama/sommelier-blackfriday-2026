@@ -601,6 +601,49 @@ section h2,.sch-h,section h2 *{font-family:"Hiragino Sans","Hiragino Kaku Gothic
 @keyframes inUp{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:none}}
 @media(prefers-reduced-motion:reduce){.js .fv-title .en,.js .fv-date{animation:none}}
 </style>
+<style>
+/* 流れる文字：ときどきキラッと光る */
+.deco span{background:linear-gradient(100deg,#d8b25a8c 0 42%,#fffbe0 48%,#ffffff 50%,#fffbe0 52%,#d8b25a8c 58% 100%);background-size:320% 100%;background-position:120% 0;-webkit-background-clip:text;background-clip:text;color:transparent!important;animation:shine 7s ease-in-out infinite}
+.deco span:nth-child(3n+2){background-image:linear-gradient(100deg,#dcff2bb3 0 42%,#fbffe0 48%,#ffffff 50%,#fbffe0 52%,#dcff2bb3 58% 100%)}
+.deco span:nth-child(2n){animation-delay:2.3s}
+.deco span:nth-child(3n){animation-delay:4.6s}
+@keyframes shine{0%,70%{background-position:120% 0;filter:none}78%{filter:drop-shadow(0 0 10px #fff8) drop-shadow(0 0 22px #dcff2b88)}86%{background-position:-20% 0;filter:none}100%{background-position:-20% 0}}
+@media(prefers-reduced-motion:reduce){.deco span{animation:none}}
+
+/* 全体の文字を大きく */
+.sec-no{font-size:15px!important}
+section h2{font-size:32px!important}
+.sch-h{font-size:44px!important}
+.sch-lead,.cp-lead,.p5-txt>p:not(.p5-note),.p20-head>div:first-child>p{font-size:17px!important;line-height:1.85}
+.p5-note,.cp-note,.p20-note{font-size:14px!important}
+.cp-term,.p5-term{font-size:18px!important}
+.cp-term .num,.p5-term .num{font-size:30px!important}
+.ph-name{font-size:23px!important}
+.ph-term .num{font-size:30px!important}.ph-term .tm{font-size:22px!important}
+.ph-deals .k{font-size:15px!important}
+.ph-deals .v{font-size:26px!important}
+.ph-link{font-size:18px!important;min-height:58px!important}
+.tk-cond{font-size:16px!important}.tk-cond .num{font-size:26px!important}
+.tk-limit{font-size:20px!important}
+.tk-btn{font-size:18px!important}
+.entry-btn{font-size:20px!important}
+.item .ribbon{font-size:16px!important}
+.item .cat{font-size:14.5px!important}
+.item h3{font-size:22px!important}
+.item .spec{font-size:16px!important}
+.item .buy{font-size:19px!important}
+.sum-list .k{font-size:14.5px!important}
+.sum-list .v{font-size:21px!important}
+.sum-list a{font-size:16px!important}
+.shop-link{font-size:18px!important;white-space:nowrap;padding-left:16px!important;padding-right:16px!important}
+.cd .lbl{font-size:17px!important}
+.brand small{font-size:11px!important}
+.side-nav a{font-size:18px}
+.side-date{font-size:16px}
+.st-h{font-size:24px}.st-day{font-size:15px}
+.side-today li{font-size:16px}.side-today li b{font-size:21px}
+.side-btn{font-size:18px;min-height:58px}
+</style>
 </head>
 <body>
 <!-- ============================================================
