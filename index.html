@@ -604,7 +604,7 @@ section h2,.sch-h,section h2 *{font-family:"Hiragino Sans","Hiragino Kaku Gothic
 <style>
 /* 流れる文字：ときどきキラッと光る */
 .deco span{background:linear-gradient(100deg,#d8b25a8c 0 42%,#fffbe0 48%,#ffffff 50%,#fffbe0 52%,#d8b25a8c 58% 100%);background-size:320% 100%;background-position:120% 0;-webkit-background-clip:text;background-clip:text;color:transparent!important;animation:shine 7s ease-in-out infinite}
-.deco span:nth-child(3n+2){background-image:linear-gradient(100deg,#dcff2bb3 0 42%,#fbffe0 48%,#ffffff 50%,#fbffe0 52%,#dcff2bb3 58% 100%)}
+.deco span:nth-child(3n+2){background-image:linear-gradient(100deg,#dcff2b 0 42%,#fbffe0 48%,#ffffff 50%,#fbffe0 52%,#dcff2b 58% 100%)}
 .deco span:nth-child(2n){animation-delay:2.3s}
 .deco span:nth-child(3n){animation-delay:4.6s}
 @keyframes shine{0%,70%{background-position:120% 0;filter:none}78%{filter:drop-shadow(0 0 10px #fff8) drop-shadow(0 0 22px #dcff2b88)}86%{background-position:-20% 0;filter:none}100%{background-position:-20% 0}}
@@ -1201,9 +1201,9 @@ section{padding:104px 0!important}
   function fit(){
     [].forEach.call(document.querySelectorAll('.fv-title,.side-ttl'),function(t){
       var a=t.querySelector('.l1'),b=t.querySelector('.l2');if(!a||!b)return;
-      a.style.fontSize='';
+      a.style.removeProperty('font-size');
       var fs=parseFloat(getComputedStyle(b).fontSize),wa=a.getBoundingClientRect().width,wb=b.getBoundingClientRect().width;
-      if(wa&&wb)a.style.fontSize=(parseFloat(getComputedStyle(a).fontSize)*wb/wa)+'px';
+      if(wa&&wb)a.style.setProperty('font-size',(parseFloat(getComputedStyle(a).fontSize)*wb/wa)+'px','important');
     });
   }
   (document.fonts&&document.fonts.ready?document.fonts.ready:Promise.resolve()).then(fit);
