@@ -847,6 +847,25 @@ section{padding:104px 0!important}
 .side-nav a{padding:10px 4px!important;line-height:1.4}
 .side-shop{margin-top:16px!important}
 </style>
+<style>
+/* 賞品1：画像は切らずにそのまま、PCは横並び */
+.prize.big .pz-img img{aspect-ratio:auto!important;height:auto;object-fit:initial!important}
+@media(min-width:600px){
+  .prize.big{flex-direction:row}
+  .prize.big .pz-img{width:50%;flex:none;border-bottom:0;border-right:4px solid var(--gold)}
+  .prize.big .pz-cnt{width:34%}
+  .prize.big .pz-body{justify-content:center}
+}
+@media(max-width:599px){.prize.big .pz-cnt{width:30%}}
+</style>
+<style>
+/* 賞品ラベルは画像の上の帯に出して、画像に重ねない */
+.pz-img{padding-top:52px}
+.pz-img::before{content:"";position:absolute;left:0;right:0;top:0;height:52px;background:var(--black)}
+.pz-no{height:52px;display:flex;align-items:center;padding:0 14px!important;background:none!important;z-index:1}
+.pz-cnt,.prize.big .pz-cnt{width:auto!important;aspect-ratio:auto!important;height:52px;flex-direction:row!important;gap:2px;padding:0 16px;font-size:16px!important;z-index:1}
+.pz-cnt b{font-size:30px!important;margin:0 2px 0 0!important}
+</style>
 </head>
 <body>
 <!-- ============================================================
