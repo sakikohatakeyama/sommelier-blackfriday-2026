@@ -700,6 +700,71 @@ section h2{font-size:32px!important}
 .pre-band::before,.pre-band::after{display:none!important}
 .pb-main .ex{margin-right:-.42em}
 </style>
+<style>
+/* ---------- プレゼント抽選 ---------- */
+.lot{background:linear-gradient(180deg,#0e0d0c,#15130f);border-top:1px solid #d8b25a33}
+.lot .sec-no{color:var(--gold)}
+.lot h2 em{font-style:normal;color:var(--pink)}
+.lot-cond{margin:36px auto 0;max-width:520px;text-align:center;border:2px solid var(--gold);padding:24px 20px 26px;background:#d8b25a10}
+.lc-k{font-size:17px;font-weight:700;line-height:1.7}
+.lc-k b{color:var(--pink);font-size:1.25em}
+.lc-v{margin:6px 0 8px;font-weight:900;font-size:26px;line-height:1;color:var(--gold-l)}
+.lc-v .num{font-size:64px;color:var(--white);margin-right:4px}
+.lc-v small{font-size:15px;color:var(--sub);font-weight:700}
+.prizes{display:grid;grid-template-columns:1fr 1fr;gap:28px 24px;margin-top:48px}
+.prize{background:var(--white);color:#1b1715;display:flex;flex-direction:column}
+.prize.big{grid-column:1/-1}
+.pz-img{position:relative;display:block;background:#fff;border-bottom:4px solid var(--gold);overflow:hidden}
+.pz-img img{width:100%;aspect-ratio:1;object-fit:cover}
+.prize.big .pz-img img{aspect-ratio:4/3;object-fit:cover;object-position:50% 40%}
+.pz-no{position:absolute;left:0;top:0;background:var(--black);color:var(--gold-l);font-weight:900;font-size:15px;padding:8px 14px;line-height:1}
+.pz-no b{font-family:"Hiragino Sans","Hiragino Kaku Gothic ProN","Noto Sans JP",sans-serif;font-size:30px;margin-left:4px;color:var(--white)}
+.pz-cnt{position:absolute;right:0;top:0;width:32%;aspect-ratio:1;display:flex;align-items:center;justify-content:center;flex-direction:column;background:var(--pink);color:var(--black);font-weight:900;font-size:clamp(13px,3cqw,18px);line-height:1}
+.pz-cnt b{font-family:"Hiragino Sans","Hiragino Kaku Gothic ProN","Noto Sans JP",sans-serif;font-size:2.6em;line-height:1;margin-bottom:2px}
+.prize.big .pz-cnt{width:22%}
+.pz-body{padding:20px 22px 24px;display:flex;flex-direction:column;flex:1}
+.pz-brand{font-size:13.5px;font-weight:700;color:var(--gold-d);letter-spacing:.06em}
+.prize h3{margin-top:6px;font-size:21px;line-height:1.45;font-family:"Hiragino Sans","Hiragino Kaku Gothic ProN","Noto Sans JP",sans-serif;font-weight:800}
+.pz-color{margin-top:6px;font-size:15px;color:#5b544c;font-weight:700}
+.pz-link{margin-top:auto;padding-top:14px;align-self:flex-start;font-size:15px;font-weight:700;color:#1b1715;text-decoration:none;border-bottom:2px solid var(--pink)}
+.lot-note{color:var(--sub)!important;margin-top:28px}
+@media(max-width:599px){.prizes{grid-template-columns:1fr}.pz-cnt{width:30%}.prize.big .pz-cnt{width:26%}}
+
+/* ---------- 余白を広げる ---------- */
+section{padding:104px 0!important}
+.wrap{padding:0 24px!important}
+@media(min-width:600px){.wrap{padding:0 56px!important}}
+.side{padding:48px 40px!important}
+.side-in{max-width:280px!important}
+.phases{gap:56px!important;margin-top:52px!important}
+.ph-deals{padding:10px 26px 18px!important}
+.ph-term{padding:22px 22px 0!important}
+.ph-link{margin:0 26px 26px!important}
+.tickets{gap:24px!important;margin-top:44px!important}
+.tk-main{padding:26px 26px 22px!important}
+.items{gap:36px!important;margin-top:48px!important}
+.item .body{padding:24px 26px 28px!important}
+.sum-list{margin-top:36px!important}
+.sum-list li{padding:24px 4px!important}
+.sch-lead,.cp-lead{margin-top:22px!important}
+
+/* ---------- 先行セールの帯：下のライト飾りと左右をそろえて小さく ---------- */
+.pre-band{margin:26px 12px 14px!important;padding:14px 12px 16px!important}
+@media(min-width:600px){.pre-band{margin:30px 24px 16px!important}}
+.pb-main{font-size:clamp(34px,8.6cqw,56px)!important}
+.pb-sub{font-size:clamp(12.5px,2.7cqw,16px)!important;margin-top:6px!important}
+</style>
+<style>
+.prize.big .pz-img img{aspect-ratio:4/3!important;object-fit:contain!important;background:#fff}
+@media(max-width:599px){
+  .tk-off .num{font-size:80px!important}
+  .ticket:not(.big) .tk-off .num{font-size:66px!important}
+  .lc-v .num{font-size:48px}
+  .lc-v{font-size:22px}
+  .pb-sub .sep{display:none}
+  .lot h2{font-size:28px!important}
+}
+</style>
 </head>
 <body>
 <!-- ============================================================
@@ -714,9 +779,10 @@ section h2{font-size:32px!important}
     <nav class="side-nav">
       <a href="#schedule"><span class="n">01</span>スケジュール</a>
       <a href="#coupon"><span class="n">02</span>クーポン</a>
-      <a href="#p5"><span class="n">03</span>ポイントアップ</a>
-      <a href="#p20"><span class="n">04</span>目玉商品</a>
-      <a href="#sum"><span class="n">05</span>おさらい</a>
+      <a href="#lottery"><span class="n">03</span>プレゼント抽選</a>
+      <a href="#p5"><span class="n">04</span>ポイントアップ</a>
+      <a href="#p20"><span class="n">05</span>目玉商品</a>
+      <a href="#sum"><span class="n">06</span>おさらい</a>
     </nav>
     <a class="side-shop" href="https://www.rakuten.co.jp/sommelier/" target="_blank" rel="noopener">ショップトップへ</a>
   </div>
@@ -830,10 +896,52 @@ section h2{font-size:32px!important}
   </div>
 </section>
 
-<!-- 03 ポイントアップ（TODO） -->
+<!-- 03 プレゼント抽選 -->
+<section class="lot" id="lottery">
+  <div class="wrap">
+    <p class="sec-no">03 ／ プレゼント抽選</p>
+    <h2><span class="nobr">2万円以上のお買い物で</span><br><em>抽選でプレゼント</em></h2>
+    <div class="lot-cond">
+      <p class="lc-k">家具のソムリエで</p>
+      <p class="lc-v"><span class="num">20,000</span>円<small>（税込）</small>以上</p>
+      <p class="lc-k">お買い物された方の中から、<span class="nobr">抽選で<b>合計8名様</b>に当たる</span></p>
+    </div>
+    <div class="prizes">
+      <article class="prize big">
+        <a class="pz-img" href="https://item.rakuten.co.jp/sommelier/goods-01659/" target="_blank" rel="noopener"><img src="img/prize-vitantonio.jpg" width="654" height="760" alt="ビタントニオ エッグワッフル＆ホットサンドベーカー" loading="lazy"><span class="pz-no">賞品<b>1</b></span><span class="pz-cnt"><b>3</b>名様</span></a>
+        <div class="pz-body">
+          <p class="pz-brand">Vitantonio ビタントニオ</p>
+          <h3>エッグワッフル＆<br>ホットサンドベーカー</h3>
+          <a class="pz-link" href="https://item.rakuten.co.jp/sommelier/goods-01659/" target="_blank" rel="noopener">商品ページを見る</a>
+        </div>
+      </article>
+      <article class="prize">
+        <a class="pz-img" href="https://item.rakuten.co.jp/sommelier/goods-682/" target="_blank" rel="noopener"><img src="img/prize-keisoudo-green.jpg" width="760" height="760" alt="レムノス 珪藻土の時計 グリーン" loading="lazy"><span class="pz-no">賞品<b>2</b></span><span class="pz-cnt"><b>1</b>名様</span></a>
+        <div class="pz-body">
+          <p class="pz-brand">Lemnos タカタレムノス</p>
+          <h3>珪藻土の時計</h3>
+          <p class="pz-color">カラー：グリーン</p>
+          <a class="pz-link" href="https://item.rakuten.co.jp/sommelier/goods-682/" target="_blank" rel="noopener">商品ページを見る</a>
+        </div>
+      </article>
+      <article class="prize">
+        <a class="pz-img" href="https://item.rakuten.co.jp/sommelier/goods-688/" target="_blank" rel="noopener"><img src="img/prize-divide-white.jpg" width="760" height="760" alt="レムノス divide ホワイト" loading="lazy"><span class="pz-no">賞品<b>3</b></span><span class="pz-cnt"><b>4</b>名様</span></a>
+        <div class="pz-body">
+          <p class="pz-brand">Lemnos タカタレムノス</p>
+          <h3>divide ディバイド</h3>
+          <p class="pz-color">カラー：ホワイト</p>
+          <a class="pz-link" href="https://item.rakuten.co.jp/sommelier/goods-688/" target="_blank" rel="noopener">商品ページを見る</a>
+        </div>
+      </article>
+    </div>
+    <p class="cp-note lot-note">※対象期間・応募方法・当選発表の方法は、決まりしだい掲載します。<!-- TODO --><br>※賞品の色・仕様は変更になる場合があります。</p>
+  </div>
+</section>
+
+<!-- 04 ポイントアップ（TODO） -->
 <section class="p5" id="p5">
   <div class="wrap">
-    <p class="sec-no">03 ／ ポイントアップ</p>
+    <p class="sec-no">04 ／ ポイントアップ</p>
     <p class="p5-term"><span class="num">11.19</span>（木）<span class="num">20:00</span> 〜 <span class="nobr"><span class="num">11.25</span>（水）<span class="num">1:59</span></span></p>
     <div class="p5-grid">
       <p class="big5" aria-hidden="true"><span class="num">0</span><b>倍</b></p>
@@ -850,7 +958,7 @@ section h2{font-size:32px!important}
 <!-- 04 目玉商品（TODO：商品が届いたら差し替え） -->
 <section class="p20" id="p20">
   <div class="wrap">
-    <p class="sec-no">04 ／ 目玉商品</p>
+    <p class="sec-no">05 ／ 目玉商品</p>
     <div class="p20-head">
       <div>
         <h2>（目玉商品の<br><em>見出しが入ります</em>）</h2>
@@ -889,10 +997,11 @@ section h2{font-size:32px!important}
 <!-- 05 おさらい -->
 <section class="sum" id="sum">
   <div class="wrap">
-    <p class="sec-no">05 ／ おさらい</p>
+    <p class="sec-no">06 ／ おさらい</p>
     <h2>第1弾と第2弾<br class="sp-br">ここをチェック</h2>
     <ul class="sum-list">
       <li><span class="k">第1弾｜（期間）</span><span class="v">（施策内容） <span class="hl">（おトク内容）</span></span><a href="#coupon">クーポンを見る</a></li>
+      <li><span class="k">プレゼント抽選</span><span class="v">2万円以上のお買い物で <span class="hl">抽選で合計8名様</span></span><a href="#lottery">賞品を見る</a></li>
       <li><span class="k">第2弾｜11/19（木）20:00〜11/25（水）1:59</span><span class="v">（施策内容） <span class="hp">（おトク内容）</span></span><a class="pk" href="#p5">詳しく見る</a></li>
       <li><span class="k">第2弾｜目玉商品</span><span class="v">（施策内容） <span class="hp">（おトク内容）</span></span><a class="pk" href="#p20">目玉商品を見る</a></li>
     </ul>
