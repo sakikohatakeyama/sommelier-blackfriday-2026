@@ -1179,6 +1179,37 @@ section h2{font-size:clamp(26px,7.8cqw,46px)!important}
 .fs-price .yen{font-size:40px!important}
 .fset:nth-child(n+3) .fs-price .yen{font-size:28px!important}
 @media(max-width:599px){.fs-price .yen,.fset:nth-child(n+3) .fs-price .yen{font-size:30px!important}.fs-price .num,.fs-price .yen{-webkit-text-stroke-width:6px}}
+
+/* OFFアイコン：もっと大きく、枠からはみ出す＋⚡マーク 2026-11-11 */
+.fset,.fs-img{overflow:visible!important}
+.fs-off.stk{right:-22px!important;top:-30px!important;z-index:5;transform:rotate(0)}
+.fs-off.stk b.t{font-size:100px!important}
+.fs-off.stk .pc{font-size:44px!important}.fs-off.stk .of{font-size:32px!important}
+.fs-off.stk .t{-webkit-text-stroke:14px #d4ff1f!important}
+.fs-off.stk .t::before{-webkit-text-stroke:26px #fff!important}
+.fset:nth-child(n+3) .fs-off.stk{right:-16px!important;top:-26px!important}
+.fset:nth-child(n+3) .fs-off.stk b.t{font-size:66px!important}
+.fset:nth-child(n+3) .fs-off.stk .pc{font-size:30px!important}.fset:nth-child(n+3) .fs-off.stk .of{font-size:22px!important}
+.fset:nth-child(n+3) .fs-off.stk .t{-webkit-text-stroke:10px #d4ff1f!important}.fset:nth-child(n+3) .fs-off.stk .t::before{-webkit-text-stroke:18px #fff!important}
+.fs-off.stk::before,.fs-off.stk::after{content:"";position:absolute;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 64'%3E%3Cpath d='M24 2 4 36h13L12 62l24-38H22z' fill='%23d4ff1f' stroke='%23fff' stroke-width='4' stroke-linejoin='round'/%3E%3Cpath d='M24 2 4 36h13L12 62l24-38H22z' fill='none' stroke='%23111' stroke-width='1.5' stroke-linejoin='round'/%3E%3C/svg%3E") center/contain no-repeat;pointer-events:none}
+.fs-off.stk::before{width:.34em;height:.54em;left:-.3em;top:-.12em;transform:rotate(-18deg);font-size:100px}
+.fs-off.stk::after{width:.24em;height:.38em;right:-.06em;bottom:-.3em;transform:rotate(14deg);font-size:100px}
+.fset:nth-child(n+3) .fs-off.stk::before,.fset:nth-child(n+3) .fs-off.stk::after{font-size:66px}
+.fs-off.stk{animation:offPop 2.4s ease-in-out infinite}
+@keyframes offPop{0%,100%{transform:scale(1)}8%{transform:scale(1.08)}16%{transform:scale(1)}}
+@media(max-width:599px){
+  .fs-off.stk,.fset:nth-child(n+3) .fs-off.stk{right:-10px!important;top:-26px!important}
+  .fs-off.stk b.t,.fset:nth-child(n+3) .fs-off.stk b.t{font-size:78px!important}
+  .fs-off.stk .pc,.fset:nth-child(n+3) .fs-off.stk .pc{font-size:35px!important}.fs-off.stk .of,.fset:nth-child(n+3) .fs-off.stk .of{font-size:26px!important}
+  .fs-off.stk .t,.fset:nth-child(n+3) .fs-off.stk .t{-webkit-text-stroke:12px #d4ff1f!important}.fs-off.stk .t::before,.fset:nth-child(n+3) .fs-off.stk .t::before{-webkit-text-stroke:22px #fff!important}
+  .fs-off.stk::before,.fs-off.stk::after,.fset:nth-child(n+3) .fs-off.stk::before,.fset:nth-child(n+3) .fs-off.stk::after{font-size:78px}
+}
+@media(prefers-reduced-motion:reduce){.fs-off.stk{animation:none}}
+
+@media(min-width:600px){.fset:nth-child(n+3) .fs-off.stk{right:4px!important;top:-28px!important}}
+
+.fs-off.stk::before{width:.5em!important;height:.8em!important;left:-.42em!important;top:-.22em!important}
+.fs-off.stk::after{width:.36em!important;height:.58em!important;right:-.14em!important;bottom:-.42em!important}
 </style>
 </head>
 <body>
