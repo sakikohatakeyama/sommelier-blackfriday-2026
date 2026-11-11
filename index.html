@@ -1508,7 +1508,7 @@ section h2{font-size:clamp(26px,7.8cqw,46px)!important}
 }
 
 /* 価格のカウントダウンが止まった瞬間にポン 2026-11-11 */
-.fs-price .num.pop{animation:pricePop .45s cubic-bezier(.3,1.8,.5,1)}
+.fs-price .num.slot-hit{animation:pricePop .34s cubic-bezier(.3,1.8,.5,1)}
 @keyframes pricePop{0%{transform:scale(1)}40%{transform:scale(1.12)}100%{transform:scale(1)}}
 .fs-price .num{display:inline-block;transform-origin:left bottom;font-variant-numeric:tabular-nums}
 /* 左サイドの BLACK FRIDAY は影なし */
@@ -1883,27 +1883,22 @@ section h2{font-size:clamp(26px,7.8cqw,46px)!important}
 </script>
 <script>
 (function(){
-  // 価格：単品合計の金額から割引価格まで、てけてけと数字が減っていく
-  function fmt(n){return String(n).replace(/\B(?=(\d{3})+(?!\d))/g,'<span class="cm">,</span>');}
-  var items=[].map.call(document.querySelectorAll('.fset'),function(f){
-    var num=f.querySelector('.fs-price .num'),reg=f.querySelector('.fs-reg s');if(!num||!reg)return null;
-    var to=parseInt(num.textContent.replace(/[^0-9]/g,''),10),from=parseInt(reg.textContent.replace(/[^0-9]/g,''),10);
-    if(!(from>to))return null;num.innerHTML=fmt(from);return {el:num,from:from,to:to,done:false};
-  }).filter(Boolean);
-  if(!items.length)return;
-  if(window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches){items.forEach(function(it){it.el.innerHTML=fmt(it.to)});return;}
-  function run(it){
+  // 価格：数字がスロットのように回って、左の桁から順にそろう（参考：澤井珈琲BF）
+  var MS=260,RED=window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches;
+  function html(txt){return txt.replace(/,/g,'<span class="cm">,</span>');}
+  var items=[].map.call(document.querySelectorAll('.fs-price .num'),function(el){return {el:el,target:el.textContent.trim(),done:false};});
+  if(!items.length||RED)return;
+  function spin(it){
     if(it.done)return;it.done=true;
-    var dur=1600,steps=26,i=0;
-    var t=setInterval(function(){
-      i++;var p=i/steps,e=1-Math.pow(1-p,3);
-      var v=Math.round(it.from-(it.from-it.to)*e);
-      if(i<steps)v=Math.round(v/10)*10+((i*7)%10); // 下の桁がカタカタ動く
-      if(i>=steps){v=it.to;clearInterval(t);it.el.classList.add('pop');}
-      it.el.innerHTML=fmt(v);
-    },dur/steps);
+    var d=it.target.split(''),st=performance.now();
+    (function step(t){
+      var settled=Math.floor((t-st)/MS);
+      it.el.innerHTML=html(d.map(function(ch,i){return(!/\d/.test(ch)||i<settled)?ch:String(Math.floor(Math.random()*10));}).join(''));
+      if(settled<=d.length){requestAnimationFrame(step);return;}
+      it.el.innerHTML=html(it.target);it.el.classList.add('slot-hit');
+    })(st);
   }
-  function check(){var vh=window.innerHeight;items.forEach(function(it){if(it.done)return;var r=it.el.getBoundingClientRect();if(r.top<vh*0.8&&r.bottom>0)setTimeout(function(){run(it)},200);});}
+  function check(){var vh=window.innerHeight;items.forEach(function(it){if(it.done)return;var r=it.el.getBoundingClientRect();if(r.top<vh*0.85&&r.bottom>0)spin(it);});}
   window.addEventListener('scroll',check,{passive:true});window.addEventListener('resize',check);window.addEventListener('load',check);setTimeout(check,600);
 })();
 </script>
