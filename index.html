@@ -1337,6 +1337,21 @@ section h2{font-size:clamp(26px,7.8cqw,46px)!important}
 .fsets>.fset.fset .fs-price .num{font-size:clamp(62px,21.5cqw,82px)!important}
 }
 .side .brand .logo{max-width:none!important;height:auto!important}
+
+/* 左サイドの BLACK FRIDAY も FV と同じ金文字＋キラリーン（SALEなし） 2026-11-11 */
+.side-ttl .l1,.side-ttl .l2{text-shadow:none!important;color:transparent!important;
+  background:linear-gradient(110deg,transparent 0 38%,#fffdf2 47%,#ffffff 50%,#fffdf2 53%,transparent 62%) var(--sx) 0/70% 100% no-repeat,
+    linear-gradient(180deg,#fff3c8 0%,#e9c46a 32%,#b7862f 50%,#f3d382 66%,#9a6d22 100%) 0 0/100% 100%!important;
+  -webkit-background-clip:text!important;background-clip:text!important;
+  filter:drop-shadow(0 1px 0 #fff3c8) drop-shadow(0 2px 0 #5c3f10) drop-shadow(0 6px 12px #000)!important;
+  animation:kirarin 4s 2.2s ease-in-out infinite}
+.side-ttl .l2{animation-delay:2.35s}
+/* 目玉セットの商品画像：気持ち小さく、バランスよく */
+.fs-combo,.fs-combo.small,.fsets>.fset.fset:nth-child(n+3) .fs-combo.small{gap:5%!important;padding-left:9%!important;padding-right:9%!important}
+.fs-combo img{max-height:84%!important;align-self:center}
+.fs-combo.wide-b img:last-child{flex-grow:1.15!important}
+.fs-combo.small img:last-child{max-height:68%!important;align-self:center!important}
+@media(max-width:599px){.fs-combo,.fs-combo.small{padding-left:7%!important;padding-right:7%!important}}
 </style>
 </head>
 <body>
@@ -1449,7 +1464,7 @@ section h2{font-size:clamp(26px,7.8cqw,46px)!important}
         </div>
       </article>
       <article class="fset">
-        <div class="fs-img"><div class="fs-combo wide-b"><img src="img/fv/rice-ivory.png" alt="炊飯器" loading="lazy"><span class="pl" aria-hidden="true">+</span><img src="img/fv/ingenio-set.png" alt="インジニオ・ネオ ステンレスセット9" loading="lazy"></div><span class="fs-off stk" aria-label="10%OFF"><span class="lay bk" aria-hidden="true"><b class="t" data-t="10">10</b><span class="po"><span class="t pc" data-t="%">%</span><span class="t of" data-t="OFF">OFF</span></span></span><span class="lay fr" aria-hidden="true"><b class="t" data-t="10">10</b><span class="po"><span class="t pc" data-t="%">%</span><span class="t of" data-t="OFF">OFF</span></span></span></span><span class="fs-band" aria-hidden="true">BLACK FRIDAY SALE</span><span class="fs-no">SET<b>2</b></span></div>
+        <div class="fs-img"><div class="fs-combo wide-b"><img src="img/fv/rice-black.png" alt="炊飯器" loading="lazy"><span class="pl" aria-hidden="true">+</span><img src="img/fv/ingenio-set.png" alt="インジニオ・ネオ ステンレスセット9" loading="lazy"></div><span class="fs-off stk" aria-label="10%OFF"><span class="lay bk" aria-hidden="true"><b class="t" data-t="10">10</b><span class="po"><span class="t pc" data-t="%">%</span><span class="t of" data-t="OFF">OFF</span></span></span><span class="lay fr" aria-hidden="true"><b class="t" data-t="10">10</b><span class="po"><span class="t pc" data-t="%">%</span><span class="t of" data-t="OFF">OFF</span></span></span></span><span class="fs-band" aria-hidden="true">BLACK FRIDAY SALE</span><span class="fs-no">SET<b>2</b></span></div>
         <div class="fs-body">
           <div class="fs-txt">
           <h3>炊飯器＆ステンレスセット9</h3>
