@@ -1546,6 +1546,10 @@ section h2{font-size:clamp(26px,7.8cqw,46px)!important}
 .fs-off.stk.zap-on{animation:zap 2.6s linear 1 both!important;animation-delay:-1.5s!important}
 .fs-off.stk.zap-on::before,.fs-off.stk.zap-on::after{animation:boltFlicker 2.6s steps(1) 1 both!important;animation-delay:-1.5s!important}
 .fs-off.stk .bk,.fs-off.stk.zap-on .bk{animation:none!important;filter:drop-shadow(0 0 10px #d4ff1f) drop-shadow(0 0 22px #d4ff1faa)!important}
+
+/* OFFアイコン（下の⚡）が商品にかからないよう、画像の上の余白を少し戻す 2026-11-11 */
+.fs-setimg{padding-top:70px!important}
+@media(max-width:599px){.fs-setimg{padding-top:62px!important}}
 </style>
 </head>
 <body>
