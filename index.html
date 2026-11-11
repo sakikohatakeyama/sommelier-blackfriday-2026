@@ -911,6 +911,20 @@ footer .brand .logo{height:40px}
 .fv-pod::before,.fv-pod::after{content:"";position:absolute;left:0;right:0;border-radius:50%}
 .fv-pod::before{top:0;height:62%;background:radial-gradient(ellipse at 50% 40%,#fff6dc,#ecc867 45%,#b38b38 100%);box-shadow:0 0 30px #ecc86788,inset 0 -4px 10px #94712b}
 .fv-pod::after{top:34%;height:66%;z-index:-1;background:linear-gradient(180deg,#b38b38,#6d5120);box-shadow:0 18px 40px #000c}
+
+/* FV 商品の切り抜き配置 2026-11-11 */
+.fv-items{border:0!important;aspect-ratio:10/7!important;display:block!important}
+.fv-items .it{position:absolute;height:auto;object-fit:contain;filter:drop-shadow(0 10px 14px #000a)}
+.fv-items .ingenio{width:40%;left:30%;bottom:36%}
+.fv-items .cof-w{width:21%;left:3%;bottom:27%}
+.fv-items .cof-r{width:21%;right:3%;bottom:27%}
+.fv-items .rice-b{width:30%;left:14%;bottom:12%}
+.fv-items .rice-i{width:30%;right:14%;bottom:12%}
+.fv-items .toast-r{width:27%;left:-3%;bottom:1%}
+.fv-items .toast-s{width:27%;right:-3%;bottom:1%}
+.fv-items .press{width:40%;left:30%;bottom:-2%}
+.fv-stage{margin-top:14px!important;max-width:600px!important}
+.fv-pod{margin-top:-34px!important}
 </style>
 </head>
 <body>
@@ -978,9 +992,17 @@ footer .brand .logo{height:40px}
         <span class="to" aria-label="から"></span>
         <span class="dt"><span class="num">11.25</span><span class="wk">水</span><span class="tm num">1:59</span></span>
       </p>
-      <!-- TODO: 商品画像（背景透過のPNG）が届いたら img/fv-items.png を入れて差し替え -->
       <div class="fv-stage">
-        <div class="fv-items" data-todo="fv-items">（商品画像が入ります）</div>
+        <div class="fv-items">
+          <img class="it ingenio" src="img/fv/ingenio-set.png" width="681" height="610" alt="ティファール インジニオ・ネオ ステンレス セット">
+          <img class="it cof-w" src="img/fv/coffee-white.png" width="338" height="556" alt="ティファール コーヒーメーカー ホワイト">
+          <img class="it cof-r" src="img/fv/coffee-red.png" width="338" height="556" alt="ティファール コーヒーメーカー レッド">
+          <img class="it rice-b" src="img/fv/rice-black.png" width="476" height="475" alt="ティファール 炊飯器 ブラック">
+          <img class="it rice-i" src="img/fv/rice-ivory.png" width="469" height="482" alt="ティファール 炊飯器 アイボリー">
+          <img class="it toast-r" src="img/fv/toaster-red.png" width="567" height="534" alt="ティファール トースター レッド">
+          <img class="it toast-s" src="img/fv/toaster-silver.png" width="571" height="537" alt="ティファール トースター シルバー">
+          <img class="it press" src="img/fv/pressure.png" width="699" height="465" alt="ティファール 圧力鍋">
+        </div>
         <div class="fv-pod" aria-hidden="true"></div>
       </div>
     </div>
