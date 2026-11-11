@@ -1210,6 +1210,16 @@ section h2{font-size:clamp(26px,7.8cqw,46px)!important}
 
 .fs-off.stk::before{width:.5em!important;height:.8em!important;left:-.42em!important;top:-.22em!important}
 .fs-off.stk::after{width:.36em!important;height:.58em!important;right:-.14em!important;bottom:-.42em!important}
+
+/* OFFアイコン：右側が切れないよう、はみ出しは控えめに・2つ目の⚡は左下へ 2026-11-11 */
+.fs-off.stk{right:-12px!important}
+@media(max-width:599px){.fs-off.stk,.fset:nth-child(n+3) .fs-off.stk{right:-6px!important}}
+@media(min-width:600px){.fset:nth-child(n+3) .fs-off.stk{right:4px!important}}
+.fs-off.stk::after{right:auto!important;left:-.12em!important;bottom:-.46em!important;transform:rotate(-8deg)!important}
+
+/* OFFアイコン：さらに内側（右端はカードの内側、上だけ枠にかぶせる） */
+.fs-off.stk,.fset:nth-child(n+3) .fs-off.stk{right:14px!important}
+@media(max-width:599px){.fs-off.stk,.fset:nth-child(n+3) .fs-off.stk{right:12px!important}}
 </style>
 </head>
 <body>
