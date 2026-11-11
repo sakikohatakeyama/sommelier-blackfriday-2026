@@ -1336,6 +1336,7 @@ section h2{font-size:clamp(26px,7.8cqw,46px)!important}
 .fsets>.fset.fset .fs-price .yen{font-size:30px!important}
 .fsets>.fset.fset .fs-price .num{font-size:clamp(62px,21.5cqw,82px)!important}
 }
+.side .brand .logo{max-width:none!important;height:auto!important}
 </style>
 </head>
 <body>
@@ -1704,6 +1705,9 @@ section h2{font-size:clamp(26px,7.8cqw,46px)!important}
         var wc=c.getBoundingClientRect().width;if(wc)c.style.setProperty('font-size',(parseFloat(getComputedStyle(c).fontSize)*wb/wc)+'px','important');}
     });
   }
+  // 左サイドのロゴの横幅を BLACK FRIDAY の文字幅にそろえる
+  var fit0=fit;fit=function(){fit0();var lg=document.querySelector('.side .brand .logo'),fr=document.querySelector('.side-ttl .l2');
+    if(lg&&fr){var w=fr.getBoundingClientRect().width;if(w)lg.style.setProperty('width',w+'px','important');}};
   (document.fonts&&document.fonts.ready?document.fonts.ready:Promise.resolve()).then(fit);
   window.addEventListener('load',fit);
   window.addEventListener('resize',fit);
