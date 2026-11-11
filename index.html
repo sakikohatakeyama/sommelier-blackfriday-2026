@@ -1408,6 +1408,42 @@ section h2{font-size:clamp(26px,7.8cqw,46px)!important}
 /* 画像エリア：商品を大きく、余白を均等に 2026-11-11 */
 @media(min-width:600px){.fs-combo,.fs-combo.small,.fsets>.fset.fset:nth-child(n+3) .fs-combo.small{height:370px!important;padding:74px 6% 28px!important;gap:3%!important}}
 @media(max-width:599px){.fs-combo,.fs-combo.small,.fsets>.fset.fset:nth-child(n+3) .fs-combo.small{height:272px!important;padding:64px 4% 20px!important}}
+
+/* OFFアイコン：電気がビリビリ走る動き 2026-11-11 */
+.fs-off.stk{animation:zap 2.6s linear infinite!important}
+@keyframes zap{
+  0%,62%,100%{transform:translate(0,0) rotate(0)}
+  64%{transform:translate(-2px,1px) rotate(-1.5deg)}
+  66%{transform:translate(2px,-1px) rotate(1.5deg)}
+  68%{transform:translate(-1px,-2px) rotate(-1deg)}
+  70%{transform:translate(2px,2px) rotate(1deg)}
+  72%{transform:translate(-2px,0) rotate(-1.5deg)}
+  74%{transform:translate(1px,-1px) rotate(.5deg)}
+  76%{transform:translate(0,0) rotate(0)}
+  80%{transform:translate(-1px,1px) rotate(-.8deg)}
+  82%{transform:translate(1px,0) rotate(.8deg)}
+  84%{transform:translate(0,0)}}
+/* ⚡はチカチカ点滅＋ふるえる */
+.fs-off.stk::before,.fs-off.stk::after{animation:boltFlicker 2.6s steps(1) infinite}
+.fs-off.stk::after{animation-delay:.08s}
+@keyframes boltFlicker{
+  0%,60%,100%{opacity:1;filter:none}
+  63%{opacity:.2}
+  65%{opacity:1;filter:drop-shadow(0 0 6px #d4ff1f) drop-shadow(0 0 14px #d4ff1f)}
+  68%{opacity:.3}
+  70%{opacity:1;filter:drop-shadow(0 0 8px #fff) drop-shadow(0 0 16px #d4ff1f)}
+  74%{opacity:.4}
+  77%{opacity:1;filter:none}
+  81%{opacity:.5}
+  83%{opacity:1}}
+/* 光った瞬間にきみどりがパッと明るくなる */
+.fs-off.stk .bk{animation:zapGlow 2.6s steps(1) infinite}
+@keyframes zapGlow{0%,62%,100%{filter:none}65%,70%{filter:drop-shadow(0 0 10px #d4ff1f) drop-shadow(0 0 22px #d4ff1faa)}72%,78%{filter:drop-shadow(0 0 6px #d4ff1f)}}
+@media(prefers-reduced-motion:reduce){.fs-off.stk,.fs-off.stk::before,.fs-off.stk::after,.fs-off.stk .bk{animation:none!important}}
+
+/* OFFアイコンの数字も価格と同じ Jost 800 Italic 2026-11-11 */
+.fs-off.stk,.fs-off.stk .t,.fs-off.stk .t::before{font-family:"Jost",sans-serif!important;font-weight:800!important;font-style:italic!important}
+.fs-off.stk .t{letter-spacing:-.02em!important}
 </style>
 </head>
 <body>
