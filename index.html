@@ -1241,6 +1241,49 @@ section h2{font-size:clamp(26px,7.8cqw,46px)!important}
 .fs-off.stk::before{top:-.1em!important}
 .fs-combo{padding-top:72px!important}
 @media(max-width:599px){.fsets{margin-top:58px!important;row-gap:58px!important}.fs-off.stk,.fset:nth-child(n+3) .fs-off.stk{top:-40px!important}.fs-combo,.fs-combo.small{padding-top:60px!important}}
+
+/* 2026-11-11：OFFアイコンは価格の横、番号見出し（01／目玉商品など）はなし、SET番号は枠の外 */
+.sec-no:not(.sub){display:none!important}
+.fs-price{position:relative;flex-wrap:wrap!important;align-items:center!important;column-gap:14px}
+.fs-price .fs-off.stk{position:relative!important;right:auto!important;top:auto!important;left:auto!important;margin:6px 4px 6px 10px;align-self:center;order:-1}
+.fs-price .fs-off.stk b.t{font-size:62px!important}
+.fs-price .fs-off.stk .pc{font-size:28px!important}.fs-price .fs-off.stk .of{font-size:20px!important}
+.fs-price .fs-off.stk .t{-webkit-text-stroke:10px #d4ff1f!important}.fs-price .fs-off.stk .t::before{-webkit-text-stroke:18px #fff!important}
+.fs-price .fs-off.stk::before,.fs-price .fs-off.stk::after{font-size:62px!important}
+.fs-price > .num{margin-left:0}
+.fset:nth-child(n+3) .fs-price .fs-off.stk b.t{font-size:52px!important}
+.fset:nth-child(n+3) .fs-price .fs-off.stk .pc{font-size:24px!important}.fset:nth-child(n+3) .fs-price .fs-off.stk .of{font-size:17px!important}
+.fset:nth-child(n+3) .fs-price .fs-off.stk::before,.fset:nth-child(n+3) .fs-price .fs-off.stk::after{font-size:52px!important}
+@media(max-width:599px){.fs-price .fs-off.stk,.fset:nth-child(n+3) .fs-price .fs-off.stk{flex-basis:auto;margin:10px 0 8px 12px}
+  .fs-price .fs-off.stk b.t,.fset:nth-child(n+3) .fs-price .fs-off.stk b.t{font-size:56px!important}}
+/* 画像エリアはアイコンがなくなった分、上の余白を詰める */
+.fs-combo,.fs-combo.small{padding-top:26px!important}
+@media(max-width:599px){.fs-combo,.fs-combo.small{padding-top:22px!important}}
+/* SET番号は枠の外（カードの上にタブのように） */
+.fs-no{top:auto!important;bottom:100%!important;left:0!important;background:var(--gold)!important;color:var(--black)!important;padding:8px 16px 6px!important}
+.fs-no b{color:var(--black)!important}
+.fsets{margin-top:56px!important;row-gap:56px!important}
+
+.fs-price .pr-grp{display:inline-flex;align-items:flex-end;white-space:nowrap}
+@media(min-width:600px){.fset:nth-child(-n+2) .fs-price{flex-wrap:nowrap!important}}
+@media(max-width:599px){.fset .fs-price{flex-wrap:wrap!important}}
+
+.fset:nth-child(n+3) .fs-price .fs-off.stk{margin:22px 0 10px 14px!important}
+@media(max-width:599px){.fset .fs-price .fs-off.stk{margin:22px 0 10px 14px!important}}
+.fset:nth-child(-n+2) .fs-price .fs-off.stk{margin-top:14px!important}
+
+.fset:nth-child(n+3) .fs-price .fs-off.stk{margin-top:32px!important}
+@media(max-width:599px){.fset .fs-price .fs-off.stk{margin:30px 0 8px 16px!important}.fset:nth-child(-n+2) .fs-price .fs-off.stk{margin-top:30px!important}}
+.fsets>.fset{min-width:0}
+
+@media(min-width:600px){.fset:nth-child(n+3) .fs-price .fs-off.stk::before{left:auto!important;right:-.3em!important;top:.1em!important}.fset:nth-child(n+3) .fs-price .fs-off.stk::after{display:none}}
+
+/* 価格横のOFFアイコン：以前の top/right 指定を打ち消す */
+.fset .fs-price .fs-off.stk,.fset:nth-child(n+3) .fs-price .fs-off.stk,.fset:nth-child(-n+2) .fs-price .fs-off.stk{top:0!important;right:auto!important;left:auto!important}
+.fset:nth-child(n+3) .fs-price .fs-off.stk{margin-top:18px!important}
+@media(max-width:599px){.fset .fs-price .fs-off.stk,.fset:nth-child(-n+2) .fs-price .fs-off.stk,.fset:nth-child(n+3) .fs-price .fs-off.stk{margin-top:18px!important}}
+@media(min-width:600px){.fset:nth-child(-n+2) .fs-price .fs-off.stk{margin-top:10px!important}}
+@media(max-width:599px){.fset .fs-price .fs-off.stk,.fset:nth-child(-n+2) .fs-price .fs-off.stk,.fset:nth-child(n+3) .fs-price .fs-off.stk{margin-top:28px!important}}
 </style>
 </head>
 <body>
@@ -1340,53 +1383,53 @@ section h2{font-size:clamp(26px,7.8cqw,46px)!important}
     <p class="sch-lead">ティファールの人気家電を<span class="nobr">おトクなセットに</span><br><span class="nobr">単品で買うより</span><span class="nobr">最大30%OFF</span></p>
     <div class="fsets">
       <article class="fset">
-        <div class="fs-img"><div class="fs-combo"><img src="img/fv/rice-black.png" alt="炊飯器" loading="lazy"><span class="pl" aria-hidden="true">+</span><img src="img/fv/pressure.png" alt="片手圧力鍋" loading="lazy"></div><span class="fs-band" aria-hidden="true">BLACK FRIDAY SALE</span><span class="fs-no">SET<b>1</b></span><span class="fs-off stk" aria-label="30%OFF"><span class="lay bk" aria-hidden="true"><b class="t" data-t="30">30</b><span class="po"><span class="t pc" data-t="%">%</span><span class="t of" data-t="OFF">OFF</span></span></span><span class="lay fr" aria-hidden="true"><b class="t" data-t="30">30</b><span class="po"><span class="t pc" data-t="%">%</span><span class="t of" data-t="OFF">OFF</span></span></span></span></div>
+        <div class="fs-img"><div class="fs-combo"><img src="img/fv/rice-black.png" alt="炊飯器" loading="lazy"><span class="pl" aria-hidden="true">+</span><img src="img/fv/pressure.png" alt="片手圧力鍋" loading="lazy"></div><span class="fs-band" aria-hidden="true">BLACK FRIDAY SALE</span><span class="fs-no">SET<b>1</b></span></div>
         <div class="fs-body">
           <div class="fs-txt">
           <h3>炊飯器＆片手圧力鍋セット</h3>
           <p class="fs-in">ティファール ザ・ライス 遠赤外線IH炊飯器エッセンシャル 5.5合<br>＋ セキュア トレンディ 6.2L</p>
           <p class="fs-note">炊飯器はブラック・ホワイト・アイボリーから選べます</p>
           <p class="fs-reg">単品合計 <s>30,880円</s><span class="fs-save">単品より<b><span class="num">9,270</span>円</b>おトク</span></p>
-          <p class="fs-price"><span class="num">21,610</span><span class="yen">円<small>（税込）</small></span></p>
+          <p class="fs-price"><span class="fs-off stk" aria-label="30%OFF"><span class="lay bk" aria-hidden="true"><b class="t" data-t="30">30</b><span class="po"><span class="t pc" data-t="%">%</span><span class="t of" data-t="OFF">OFF</span></span></span><span class="lay fr" aria-hidden="true"><b class="t" data-t="30">30</b><span class="po"><span class="t pc" data-t="%">%</span><span class="t of" data-t="OFF">OFF</span></span></span></span><span class="pr-grp"><span class="num">21,610</span><span class="yen">円<small>（税込）</small></span></span></p>
           </div>
           <a class="buy" href="#p20" data-todo="set-1">セットの商品ページへ</a>
         </div>
       </article>
       <article class="fset">
-        <div class="fs-img"><div class="fs-combo wide-b"><img src="img/fv/rice-ivory.png" alt="炊飯器" loading="lazy"><span class="pl" aria-hidden="true">+</span><img src="img/fv/ingenio-set.png" alt="インジニオ・ネオ ステンレスセット9" loading="lazy"></div><span class="fs-band" aria-hidden="true">BLACK FRIDAY SALE</span><span class="fs-no">SET<b>2</b></span><span class="fs-off stk" aria-label="10%OFF"><span class="lay bk" aria-hidden="true"><b class="t" data-t="10">10</b><span class="po"><span class="t pc" data-t="%">%</span><span class="t of" data-t="OFF">OFF</span></span></span><span class="lay fr" aria-hidden="true"><b class="t" data-t="10">10</b><span class="po"><span class="t pc" data-t="%">%</span><span class="t of" data-t="OFF">OFF</span></span></span></span></div>
+        <div class="fs-img"><div class="fs-combo wide-b"><img src="img/fv/rice-ivory.png" alt="炊飯器" loading="lazy"><span class="pl" aria-hidden="true">+</span><img src="img/fv/ingenio-set.png" alt="インジニオ・ネオ ステンレスセット9" loading="lazy"></div><span class="fs-band" aria-hidden="true">BLACK FRIDAY SALE</span><span class="fs-no">SET<b>2</b></span></div>
         <div class="fs-body">
           <div class="fs-txt">
           <h3>炊飯器＆ステンレスセット9</h3>
           <p class="fs-in">ティファール ザ・ライス 遠赤外線IH炊飯器エッセンシャル 5.5合<br>＋ インジニオ・ネオ IHステンレス・アンリミテッド セット9</p>
           <p class="fs-note">炊飯器はブラック・ホワイト・アイボリーから選べます</p>
           <p class="fs-reg">単品合計 <s>35,700円</s><span class="fs-save">単品より<b><span class="num">3,570</span>円</b>おトク</span></p>
-          <p class="fs-price"><span class="num">32,130</span><span class="yen">円<small>（税込）</small></span></p>
+          <p class="fs-price"><span class="fs-off stk" aria-label="10%OFF"><span class="lay bk" aria-hidden="true"><b class="t" data-t="10">10</b><span class="po"><span class="t pc" data-t="%">%</span><span class="t of" data-t="OFF">OFF</span></span></span><span class="lay fr" aria-hidden="true"><b class="t" data-t="10">10</b><span class="po"><span class="t pc" data-t="%">%</span><span class="t of" data-t="OFF">OFF</span></span></span></span><span class="pr-grp"><span class="num">32,130</span><span class="yen">円<small>（税込）</small></span></span></p>
           </div>
           <a class="buy" href="#p20" data-todo="set-2">セットの商品ページへ</a>
         </div>
       </article>
       <article class="fset">
-        <div class="fs-img"><div class="fs-combo small"><img src="img/fv/coffee-red.png" alt="コーヒーメーカー ワインレッド" loading="lazy"><span class="pl" aria-hidden="true">+</span><img src="img/fv/toaster-red.png" alt="トースター ワインレッド" loading="lazy"></div><span class="fs-band" aria-hidden="true">BLACK FRIDAY SALE</span><span class="fs-no">SET<b>3</b></span><span class="fs-off stk" aria-label="25%OFF"><span class="lay bk" aria-hidden="true"><b class="t" data-t="25">25</b><span class="po"><span class="t pc" data-t="%">%</span><span class="t of" data-t="OFF">OFF</span></span></span><span class="lay fr" aria-hidden="true"><b class="t" data-t="25">25</b><span class="po"><span class="t pc" data-t="%">%</span><span class="t of" data-t="OFF">OFF</span></span></span></span></div>
+        <div class="fs-img"><div class="fs-combo small"><img src="img/fv/coffee-red.png" alt="コーヒーメーカー ワインレッド" loading="lazy"><span class="pl" aria-hidden="true">+</span><img src="img/fv/toaster-red.png" alt="トースター ワインレッド" loading="lazy"></div><span class="fs-band" aria-hidden="true">BLACK FRIDAY SALE</span><span class="fs-no">SET<b>3</b></span></div>
         <div class="fs-body">
           <div class="fs-txt">
           <h3>朝食セット ワインレッド</h3>
           <p class="fs-in">ティファール メゾン コーヒーメーカー<br>＋ ポップアップトースター</p>
           
           <p class="fs-reg">単品合計 <s>11,613円</s><span class="fs-save">単品より<b><span class="num">2,913</span>円</b>おトク</span></p>
-          <p class="fs-price"><span class="num">8,700</span><span class="yen">円<small>（税込）</small></span></p>
+          <p class="fs-price"><span class="fs-off stk" aria-label="25%OFF"><span class="lay bk" aria-hidden="true"><b class="t" data-t="25">25</b><span class="po"><span class="t pc" data-t="%">%</span><span class="t of" data-t="OFF">OFF</span></span></span><span class="lay fr" aria-hidden="true"><b class="t" data-t="25">25</b><span class="po"><span class="t pc" data-t="%">%</span><span class="t of" data-t="OFF">OFF</span></span></span></span><span class="pr-grp"><span class="num">8,700</span><span class="yen">円<small>（税込）</small></span></span></p>
           </div>
           <a class="buy" href="#p20" data-todo="set-3">セットの商品ページへ</a>
         </div>
       </article>
       <article class="fset">
-        <div class="fs-img"><div class="fs-combo small"><img src="img/fv/coffee-white.png" alt="コーヒーメーカー スノーホワイト" loading="lazy"><span class="pl" aria-hidden="true">+</span><img src="img/fv/toaster-silver.png" alt="トースター スノーホワイト" loading="lazy"></div><span class="fs-band" aria-hidden="true">BLACK FRIDAY SALE</span><span class="fs-no">SET<b>4</b></span><span class="fs-off stk" aria-label="25%OFF"><span class="lay bk" aria-hidden="true"><b class="t" data-t="25">25</b><span class="po"><span class="t pc" data-t="%">%</span><span class="t of" data-t="OFF">OFF</span></span></span><span class="lay fr" aria-hidden="true"><b class="t" data-t="25">25</b><span class="po"><span class="t pc" data-t="%">%</span><span class="t of" data-t="OFF">OFF</span></span></span></span></div>
+        <div class="fs-img"><div class="fs-combo small"><img src="img/fv/coffee-white.png" alt="コーヒーメーカー スノーホワイト" loading="lazy"><span class="pl" aria-hidden="true">+</span><img src="img/fv/toaster-silver.png" alt="トースター スノーホワイト" loading="lazy"></div><span class="fs-band" aria-hidden="true">BLACK FRIDAY SALE</span><span class="fs-no">SET<b>4</b></span></div>
         <div class="fs-body">
           <div class="fs-txt">
           <h3>朝食セット スノーホワイト</h3>
           <p class="fs-in">ティファール メゾン コーヒーメーカー<br>＋ ポップアップトースター</p>
           
           <p class="fs-reg">単品合計 <s>11,613円</s><span class="fs-save">単品より<b><span class="num">2,913</span>円</b>おトク</span></p>
-          <p class="fs-price"><span class="num">8,700</span><span class="yen">円<small>（税込）</small></span></p>
+          <p class="fs-price"><span class="fs-off stk" aria-label="25%OFF"><span class="lay bk" aria-hidden="true"><b class="t" data-t="25">25</b><span class="po"><span class="t pc" data-t="%">%</span><span class="t of" data-t="OFF">OFF</span></span></span><span class="lay fr" aria-hidden="true"><b class="t" data-t="25">25</b><span class="po"><span class="t pc" data-t="%">%</span><span class="t of" data-t="OFF">OFF</span></span></span></span><span class="pr-grp"><span class="num">8,700</span><span class="yen">円<small>（税込）</small></span></span></p>
           </div>
           <a class="buy" href="#p20" data-todo="set-4">セットの商品ページへ</a>
         </div>
