@@ -1531,6 +1531,12 @@ section h2{font-size:clamp(26px,7.8cqw,46px)!important}
 /* OFFアイコン：「%」と「OFF」が上下で重ならないよう間をあける 2026-11-11 */
 .fs-off.stk .po{gap:7px!important}
 @media(max-width:599px){.fs-off.stk .po{gap:5px!important}}
+
+/* ビリビリは常時ではなく、画面に入ったときに2回だけ 2026-11-11 */
+.fs-off.stk,.fs-off.stk::before,.fs-off.stk::after,.fs-off.stk .bk{animation:none!important}
+.fs-off.stk.zap-on{animation:zap 2.6s linear 2 both!important;animation-delay:-1.5s!important}
+.fs-off.stk.zap-on::before,.fs-off.stk.zap-on::after{animation:boltFlicker 2.6s steps(1) 2 both!important;animation-delay:-1.5s!important}
+.fs-off.stk.zap-on .bk{animation:zapGlow 2.6s steps(1) 2 both!important;animation-delay:-1.5s!important}
 </style>
 </head>
 <body>
@@ -1912,6 +1918,14 @@ section h2{font-size:clamp(26px,7.8cqw,46px)!important}
   }
   function check(){var vh=window.innerHeight;items.forEach(function(it){if(it.done)return;var r=it.el.getBoundingClientRect();if(r.top<vh*0.85&&r.bottom>0)spin(it);});}
   window.addEventListener('scroll',check,{passive:true});window.addEventListener('resize',check);window.addEventListener('load',check);setTimeout(check,600);
+})();
+</script>
+<script>
+(function(){
+  // OFFアイコンのビリビリ：画面に入ったときに2回だけ
+  var bs=[].slice.call(document.querySelectorAll('.fs-off.stk'));if(!bs.length)return;
+  function check(){var vh=innerHeight;bs.forEach(function(b){if(b.classList.contains('zap-on'))return;var r=b.getBoundingClientRect();if(r.top<vh*0.85&&r.bottom>0)b.classList.add('zap-on');});}
+  addEventListener('scroll',check,{passive:true});addEventListener('resize',check);addEventListener('load',check);setTimeout(check,600);
 })();
 </script>
 </body>
