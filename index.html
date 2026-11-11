@@ -1325,6 +1325,17 @@ section h2{font-size:clamp(26px,7.8cqw,46px)!important}
 /* リード文と最初のセット、各セットどうしの間を広げる 2026-11-11 */
 .fsets{margin-top:110px!important;row-gap:110px!important}
 @media(max-width:599px){.fsets{margin-top:88px!important;row-gap:88px!important}}
+
+/* 円(税込)：Noto Sans JP、少し大きく・間を空け・少し上に 2026-11-11 */
+.fs-price .yen,.fs-price .yen small{font-family:"Noto Sans JP",sans-serif!important;font-weight:900!important}
+.fs-price .yen,.fsets>.fset.fset:nth-child(n+3) .fs-price .yen{font-size:44px!important;margin-bottom:.32em!important;margin-left:4px!important}
+.fs-price .yen small{margin-left:8px!important;font-size:.5em!important}
+@media(max-width:599px){.fs-price .yen,.fset:nth-child(n+3) .fs-price .yen{font-size:32px!important;margin-bottom:.3em!important}.fs-price .yen small{margin-left:5px!important}}
+
+@media(max-width:599px){
+.fsets>.fset.fset .fs-price .yen{font-size:30px!important}
+.fsets>.fset.fset .fs-price .num{font-size:clamp(62px,21.5cqw,82px)!important}
+}
 </style>
 </head>
 <body>
@@ -1421,7 +1432,7 @@ section h2{font-size:clamp(26px,7.8cqw,46px)!important}
   <div class="wrap">
     <p class="sec-no">01 ／ 目玉商品</p>
     <h2>ブラックフライデー限定<br><em>目玉セット</em></h2>
-    <p class="sch-lead">ティファールの人気家電を<span class="nobr">おトクなセットに</span><br><span class="nobr">単品で買うより</span><span class="nobr">最大30%OFF</span></p>
+    <p class="sch-lead">ティファールの人気家電を<span class="nobr">おトクなセットに</span></p>
     <div class="fsets">
       <article class="fset">
         <div class="fs-img"><div class="fs-combo"><img src="img/fv/rice-black.png" alt="炊飯器" loading="lazy"><span class="pl" aria-hidden="true">+</span><img src="img/fv/pressure.png" alt="片手圧力鍋" loading="lazy"></div><span class="fs-off stk" aria-label="30%OFF"><span class="lay bk" aria-hidden="true"><b class="t" data-t="30">30</b><span class="po"><span class="t pc" data-t="%">%</span><span class="t of" data-t="OFF">OFF</span></span></span><span class="lay fr" aria-hidden="true"><b class="t" data-t="30">30</b><span class="po"><span class="t pc" data-t="%">%</span><span class="t of" data-t="OFF">OFF</span></span></span></span><span class="fs-band" aria-hidden="true">BLACK FRIDAY SALE</span><span class="fs-no">SET<b>1</b></span></div>
