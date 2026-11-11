@@ -1574,7 +1574,7 @@ section h2{font-size:clamp(26px,7.8cqw,46px)!important}
       if(wa&&wb)a.style.setProperty('font-size',(parseFloat(getComputedStyle(a).fontSize)*wb/wa)+'px','important');
       var c=t.querySelector('.l3');
       // SALE も字間は詰めたまま、文字を大きくして FRIDAY と左右をそろえる
-      if(c&&wb){c.style.removeProperty('font-size');c.style.setProperty('letter-spacing','0','important');c.style.setProperty('padding-left','0','important');
+      if(c&&wb){c.style.removeProperty('font-size');c.style.setProperty('letter-spacing','-0.06em','important');c.style.setProperty('padding-left','0','important');
         var wc=c.getBoundingClientRect().width;if(wc)c.style.setProperty('font-size',(parseFloat(getComputedStyle(c).fontSize)*wb/wc)+'px','important');}
     });
   }
