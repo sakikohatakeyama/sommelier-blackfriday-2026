@@ -1573,9 +1573,9 @@ section h2{font-size:clamp(26px,7.8cqw,46px)!important}
       var fs=parseFloat(getComputedStyle(b).fontSize),wa=a.getBoundingClientRect().width,wb=b.getBoundingClientRect().width;
       if(wa&&wb)a.style.setProperty('font-size',(parseFloat(getComputedStyle(a).fontSize)*wb/wa)+'px','important');
       var c=t.querySelector('.l3');
-      if(c&&wb){c.style.removeProperty('letter-spacing');c.style.removeProperty('padding-left');
-        var n=c.textContent.trim().length,wc=c.getBoundingClientRect().width,ls=Math.max(0,(wb-wc)/n);
-        c.style.setProperty('letter-spacing',ls+'px','important');c.style.setProperty('padding-left',ls+'px','important');}
+      // SALE も字間は詰めたまま、文字を大きくして FRIDAY と左右をそろえる
+      if(c&&wb){c.style.removeProperty('font-size');c.style.setProperty('letter-spacing','0','important');c.style.setProperty('padding-left','0','important');
+        var wc=c.getBoundingClientRect().width;if(wc)c.style.setProperty('font-size',(parseFloat(getComputedStyle(c).fontSize)*wb/wc)+'px','important');}
     });
   }
   (document.fonts&&document.fonts.ready?document.fonts.ready:Promise.resolve()).then(fit);
