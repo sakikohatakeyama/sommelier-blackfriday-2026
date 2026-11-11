@@ -1390,6 +1390,24 @@ section h2{font-size:clamp(26px,7.8cqw,46px)!important}
 .fs-combo .pl{flex:none;display:flex;align-items:center;justify-content:center;width:46px;height:46px;border-radius:50%;background:#111;color:#fff!important;font-size:34px!important;font-weight:700;line-height:1;padding-bottom:3px;box-sizing:border-box}
 .fs-off.stk{filter:none!important}
 @media(max-width:599px){.fs-combo,.fs-combo.small,.fsets>.fset.fset:nth-child(n+3) .fs-combo.small{height:clamp(200px,60cqw,240px)!important;padding:48px 4% 20px!important}.fs-combo .pl{width:32px;height:32px;font-size:24px!important}}
+
+/* 目玉セット画像のバランス：商品の下端をそろえて床に置いたように、上下の余白をそろえる 2026-11-11 */
+.fs-combo,.fs-combo.small,.fsets>.fset.fset:nth-child(n+3) .fs-combo.small{align-items:flex-end!important}
+.fs-combo img,.fs-combo.small img:last-child{align-self:flex-end!important;max-height:100%!important}
+.fs-combo .pl{align-self:center!important}
+@media(max-width:599px){
+  .fs-combo,.fs-combo.small,.fsets>.fset.fset:nth-child(n+3) .fs-combo.small{height:260px!important;padding:66px 5% 24px!important;gap:3%!important}
+  .fs-combo img{flex:1 1 0!important}
+  .fs-combo.small img:last-child{max-height:84%!important}
+}
+
+/* ＋を大きく 2026-11-11 */
+.fs-combo .pl{width:62px!important;height:62px!important;font-size:48px!important;padding-bottom:5px!important}
+@media(max-width:599px){.fs-combo .pl{width:44px!important;height:44px!important;font-size:34px!important;padding-bottom:4px!important}}
+
+/* 画像エリア：商品を大きく、余白を均等に 2026-11-11 */
+@media(min-width:600px){.fs-combo,.fs-combo.small,.fsets>.fset.fset:nth-child(n+3) .fs-combo.small{height:370px!important;padding:74px 6% 28px!important;gap:3%!important}}
+@media(max-width:599px){.fs-combo,.fs-combo.small,.fsets>.fset.fset:nth-child(n+3) .fs-combo.small{height:272px!important;padding:64px 4% 20px!important}}
 </style>
 </head>
 <body>
