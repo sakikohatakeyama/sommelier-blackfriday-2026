@@ -1496,6 +1496,16 @@ section h2{font-size:clamp(26px,7.8cqw,46px)!important}
 .prize.big .pz-link{margin-top:14px!important;padding-top:0!important}
 @media(max-width:599px){.prize.big .pz-body{padding:18px 16px 20px!important}}
 .prize.big .pz-body h3{font-size:clamp(20px,3.9cqw,25px)!important}
+
+/* 両サイドの背景を赤系に（抽選ブロックと同じトーン） 2026-11-11 */
+@media(min-width:1000px){
+  html body{background:
+    radial-gradient(ellipse 45% 55% at 12% 18%,#e0262f55,transparent 70%),
+    radial-gradient(ellipse 45% 55% at 88% 82%,#e0262f40,transparent 70%),
+    linear-gradient(180deg,#9e0c16 0%,#7a0911 55%,#5c070d 100%)!important;background-attachment:fixed!important}
+  .side-nav,.side-nav a{border-color:#ffffff40!important}
+  .side-date{color:#ffe1e1!important}
+}
 </style>
 </head>
 <body>
