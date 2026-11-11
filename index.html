@@ -1233,6 +1233,14 @@ section h2{font-size:clamp(26px,7.8cqw,46px)!important}
 /* 価格は斜めにしない（Barlow 900 の正体） 2026-11-11 */
 .fs-price .num,.fs-save .num{font-style:normal!important}
 .fs-price .yen{font-style:normal!important;transform:none!important}
+
+/* OFFアイコンが上下の商品にかぶらないように 2026-11-11 */
+.fsets{margin-top:64px!important;row-gap:64px!important}
+.fs-off.stk,.fset:nth-child(n+3) .fs-off.stk{top:-46px!important}
+.fs-off.stk::after{left:auto!important;right:-.1em!important;bottom:auto!important;top:-.42em!important;transform:rotate(16deg)!important}
+.fs-off.stk::before{top:-.1em!important}
+.fs-combo{padding-top:72px!important}
+@media(max-width:599px){.fsets{margin-top:58px!important;row-gap:58px!important}.fs-off.stk,.fset:nth-child(n+3) .fs-off.stk{top:-40px!important}.fs-combo,.fs-combo.small{padding-top:60px!important}}
 </style>
 </head>
 <body>
