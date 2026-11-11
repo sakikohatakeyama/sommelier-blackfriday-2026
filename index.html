@@ -9,7 +9,7 @@
 <title>ブラックフライデー 2026｜家具のソムリエ</title>
 <meta name="description" content="家具のソムリエのブラックフライデー。11/19（木）20:00〜11/25（水）1:59。">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,800;0,900;1,900&family=Inter:wght@700;800;900&family=Jost:wght@500;600;700&family=Noto+Sans+JP:wght@400;700;900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,800;0,900;1,900&family=Inter:wght@700;800;900&family=Jost:ital,wght@0,500;0,600;0,700;0,800;1,700;1,800&family=Noto+Sans+JP:wght@400;700;900&display=swap" rel="stylesheet">
 <style>
 :root{
   --black:#0b0a0a;--black2:#151312;--char:#211e1c;
@@ -1360,6 +1360,22 @@ section h2{font-size:clamp(26px,7.8cqw,46px)!important}
 
 /* SET番号はなし 2026-11-11 */
 .fs-no{display:none!important}
+
+/* 2026-11-11：プレゼント抽選は目玉セットと人気商品の間、赤いブロックに */
+.pops-sec .pops-head{margin-top:0!important}
+.lot{background:linear-gradient(180deg,#c3101c 0%,#a00c16 60%,#860a12 100%)!important;border-top:0!important;color:#fff}
+.lot h2{color:#fff!important}
+.lot h2 em{color:#ffe14d!important}
+.lot-cond{border:2px solid #fff!important;background:#ffffff14!important;color:#fff}
+.lot-cond .lc-k{color:#fff!important}.lot-cond .lc-k b{color:#ffe14d!important}
+.lot-cond .lc-v,.lot-cond .lc-v .num{color:#fff!important;background:none!important;-webkit-text-fill-color:#fff!important}
+.lot-note{color:#ffd6d6!important}
+.lot .pz-img{border-bottom-color:#ffe14d!important}
+/* 価格はすべて Futura 風の Google フォント Jost */
+.fs-price .num,.fs-reg s,.fs-save .num,.pop-pr .num,.lc-v .num{font-family:"Jost",sans-serif!important;font-weight:800!important;letter-spacing:0!important}
+.fs-price .num{font-style:italic!important;letter-spacing:-.01em!important}
+.fs-price .num .cm{font-size:.7em}
+@media(max-width:599px){.fsets>.fset.fset .fs-price .num{font-size:clamp(54px,18.5cqw,72px)!important}.fsets>.fset.fset .fs-price .yen{font-size:28px!important}}
 </style>
 </head>
 <body>
@@ -1513,6 +1529,54 @@ section h2{font-size:clamp(26px,7.8cqw,46px)!important}
     </div>
     <p class="p20-note">※単品合計は、各商品の通常販売価格（税込）の合計です。<br>※価格・在庫は変わることがあります。最新の情報は各商品ページでご確認ください。</p>
 
+  </div>
+</section>
+
+<!-- 02 プレゼント抽選 -->
+<section class="lot" id="lottery">
+  <div class="wrap">
+    <p class="sec-no">02 ／ プレゼント抽選</p>
+    <h2><span class="nobr">2万円以上のお買い物で</span><br><em>抽選でプレゼント</em></h2>
+    <div class="lot-cond">
+      <p class="lc-k">家具のソムリエで</p>
+      <p class="lc-v"><span class="num">20,000</span>円<small>（税込）</small>以上</p>
+      <p class="lc-k">お買い物された方の中から、<span class="nobr">抽選で<b>合計8名様</b>に当たる</span></p>
+    </div>
+    <div class="prizes">
+      <article class="prize big">
+        <a class="pz-img" href="https://item.rakuten.co.jp/sommelier/goods-01659/" target="_blank" rel="noopener"><img src="img/prize-vitantonio.jpg" width="654" height="760" alt="ビタントニオ エッグワッフル＆ホットサンドベーカー" loading="lazy"><span class="pz-no">賞品<b>1</b></span><span class="pz-cnt"><b>3</b>名様</span></a>
+        <div class="pz-body">
+          <p class="pz-brand">Vitantonio ビタントニオ</p>
+          <h3>エッグワッフル＆<br>ホットサンドベーカー</h3>
+          <a class="pz-link" href="https://item.rakuten.co.jp/sommelier/goods-01659/" target="_blank" rel="noopener">商品ページを見る</a>
+        </div>
+      </article>
+      <article class="prize">
+        <a class="pz-img" href="https://item.rakuten.co.jp/sommelier/goods-682/" target="_blank" rel="noopener"><img src="img/prize-keisoudo-green.jpg" width="760" height="760" alt="レムノス 珪藻土の時計 グリーン" loading="lazy"><span class="pz-no">賞品<b>2</b></span><span class="pz-cnt"><b>1</b>名様</span></a>
+        <div class="pz-body">
+          <p class="pz-brand">Lemnos タカタレムノス</p>
+          <h3>珪藻土の時計</h3>
+          <p class="pz-color">カラー：グリーン</p>
+          <a class="pz-link" href="https://item.rakuten.co.jp/sommelier/goods-682/" target="_blank" rel="noopener">商品ページを見る</a>
+        </div>
+      </article>
+      <article class="prize">
+        <a class="pz-img" href="https://item.rakuten.co.jp/sommelier/goods-688/" target="_blank" rel="noopener"><img src="img/prize-divide-white.jpg" width="760" height="760" alt="レムノス divide ホワイト" loading="lazy"><span class="pz-no">賞品<b>3</b></span><span class="pz-cnt"><b>4</b>名様</span></a>
+        <div class="pz-body">
+          <p class="pz-brand">Lemnos タカタレムノス</p>
+          <h3>divide ディバイド</h3>
+          <p class="pz-color">カラー：ホワイト</p>
+          <a class="pz-link" href="https://item.rakuten.co.jp/sommelier/goods-688/" target="_blank" rel="noopener">商品ページを見る</a>
+        </div>
+      </article>
+    </div>
+    <p class="cp-note lot-note">※対象期間・応募方法・当選発表の方法は、決まりしだい掲載します。<!-- TODO --><br>※賞品の色・仕様は変更になる場合があります。</p>
+  </div>
+</section>
+
+<!-- 人気の商品 -->
+<section class="p20 pops-sec" id="popular">
+  <div class="wrap">
     <div class="pops-head">
       <p class="sec-no sub">POPULAR</p>
       <h2 class="pops-h">人気の商品も<br><em>この機会に</em></h2>
@@ -1565,47 +1629,7 @@ section h2{font-size:clamp(26px,7.8cqw,46px)!important}
   </div>
 </section>
 
-<!-- 02 プレゼント抽選 -->
-<section class="lot" id="lottery">
-  <div class="wrap">
-    <p class="sec-no">02 ／ プレゼント抽選</p>
-    <h2><span class="nobr">2万円以上のお買い物で</span><br><em>抽選でプレゼント</em></h2>
-    <div class="lot-cond">
-      <p class="lc-k">家具のソムリエで</p>
-      <p class="lc-v"><span class="num">20,000</span>円<small>（税込）</small>以上</p>
-      <p class="lc-k">お買い物された方の中から、<span class="nobr">抽選で<b>合計8名様</b>に当たる</span></p>
-    </div>
-    <div class="prizes">
-      <article class="prize big">
-        <a class="pz-img" href="https://item.rakuten.co.jp/sommelier/goods-01659/" target="_blank" rel="noopener"><img src="img/prize-vitantonio.jpg" width="654" height="760" alt="ビタントニオ エッグワッフル＆ホットサンドベーカー" loading="lazy"><span class="pz-no">賞品<b>1</b></span><span class="pz-cnt"><b>3</b>名様</span></a>
-        <div class="pz-body">
-          <p class="pz-brand">Vitantonio ビタントニオ</p>
-          <h3>エッグワッフル＆<br>ホットサンドベーカー</h3>
-          <a class="pz-link" href="https://item.rakuten.co.jp/sommelier/goods-01659/" target="_blank" rel="noopener">商品ページを見る</a>
-        </div>
-      </article>
-      <article class="prize">
-        <a class="pz-img" href="https://item.rakuten.co.jp/sommelier/goods-682/" target="_blank" rel="noopener"><img src="img/prize-keisoudo-green.jpg" width="760" height="760" alt="レムノス 珪藻土の時計 グリーン" loading="lazy"><span class="pz-no">賞品<b>2</b></span><span class="pz-cnt"><b>1</b>名様</span></a>
-        <div class="pz-body">
-          <p class="pz-brand">Lemnos タカタレムノス</p>
-          <h3>珪藻土の時計</h3>
-          <p class="pz-color">カラー：グリーン</p>
-          <a class="pz-link" href="https://item.rakuten.co.jp/sommelier/goods-682/" target="_blank" rel="noopener">商品ページを見る</a>
-        </div>
-      </article>
-      <article class="prize">
-        <a class="pz-img" href="https://item.rakuten.co.jp/sommelier/goods-688/" target="_blank" rel="noopener"><img src="img/prize-divide-white.jpg" width="760" height="760" alt="レムノス divide ホワイト" loading="lazy"><span class="pz-no">賞品<b>3</b></span><span class="pz-cnt"><b>4</b>名様</span></a>
-        <div class="pz-body">
-          <p class="pz-brand">Lemnos タカタレムノス</p>
-          <h3>divide ディバイド</h3>
-          <p class="pz-color">カラー：ホワイト</p>
-          <a class="pz-link" href="https://item.rakuten.co.jp/sommelier/goods-688/" target="_blank" rel="noopener">商品ページを見る</a>
-        </div>
-      </article>
-    </div>
-    <p class="cp-note lot-note">※対象期間・応募方法・当選発表の方法は、決まりしだい掲載します。<!-- TODO --><br>※賞品の色・仕様は変更になる場合があります。</p>
-  </div>
-</section>
+
 
 <!-- 03 スケジュール（TODO） -->
 <section class="d05" id="schedule">
