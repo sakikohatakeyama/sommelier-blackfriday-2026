@@ -1015,6 +1015,25 @@ footer .brand .logo{height:40px}
 .fv-items{display:flex!important;flex-wrap:wrap;justify-content:center;gap:16px 4%!important}
 .fv-items .it{width:30%!important}
 .fv-items .ingenio{order:1}.fv-items .rice-i{order:2}.fv-items .press{order:3}.fv-items .cof-r{order:4}.fv-items .toast-s{order:5}
+
+/* 光の帯をやめ、文字の中だけをやわらかい光がゆっくり通る 2026-11-11 */
+.fv-title::after{display:none!important}
+.fv-title .l1,.fv-title .l2,.js .fv-title .l1,.js .fv-title .l2{
+  background:linear-gradient(100deg,transparent 0 35%,#fffbe6cc 50%,transparent 65%) -120% 0/45% 100% no-repeat,
+    linear-gradient(180deg,#fff3c8 0%,#e9c46a 32%,#b7862f 50%,#f3d382 66%,#9a6d22 100%)!important;
+  -webkit-background-clip:text!important;background-clip:text!important}
+.js .fv-title .l1{animation:inL .9s .15s cubic-bezier(.2,.8,.2,1) both,innerShine 6s 2s ease-in-out infinite!important}
+.js .fv-title .l2{animation:inR .9s .35s cubic-bezier(.2,.8,.2,1) both,innerShine 6s 2.25s ease-in-out infinite!important}
+@keyframes innerShine{0%,55%{background-position:-120% 0,0 0}100%{background-position:220% 0,0 0}}
+
+/* 目玉セット：切り抜き画像を「＋」で並べる 2026-11-11 */
+.fs-img{background:radial-gradient(ellipse 70% 60% at 50% 45%,#ffffff,#f4ede0 75%,#e9dfcc)!important}
+.fs-combo{aspect-ratio:4/3;display:flex;align-items:center;justify-content:center;gap:2%;padding:16% 6% 9%}
+.fs-combo img{flex:1 1 0;min-width:0;width:auto;max-height:100%;aspect-ratio:auto!important;object-fit:contain;filter:drop-shadow(0 12px 14px #0000002e)}
+.fs-combo.wide-b img:last-child{flex-grow:1.3}
+.fs-combo .pl{flex:none;font-family:Inter,"Helvetica Neue",Arial,sans-serif;font-weight:800;font-size:clamp(26px,6cqw,44px);color:var(--gold-d);line-height:1}
+.fs-combo.small{padding:26% 5% 10%}
+.fs-combo.small img:first-child{flex-grow:1}.fs-combo.small img:last-child{flex-grow:1.05;max-height:78%;align-self:flex-end}
 </style>
 </head>
 <body>
@@ -1113,7 +1132,7 @@ footer .brand .logo{height:40px}
     <p class="sch-lead">ティファールの人気家電を<span class="nobr">おトクなセットに</span><br><span class="nobr">単品で買うより</span><span class="nobr">最大30%OFF</span></p>
     <div class="fsets">
       <article class="fset">
-        <div class="fs-img"><img src="img/feat-1.jpg" width="1000" height="750" alt="炊飯器＆片手圧力鍋セット" loading="lazy"><span class="fs-no">SET<b>1</b></span><span class="fs-off"><b>30</b>%<br>OFF</span></div>
+        <div class="fs-img"><div class="fs-combo"><img src="img/fv/rice-black.png" alt="炊飯器" loading="lazy"><span class="pl" aria-hidden="true">+</span><img src="img/fv/pressure.png" alt="片手圧力鍋" loading="lazy"></div><span class="fs-no">SET<b>1</b></span><span class="fs-off"><b>30</b>%<br>OFF</span></div>
         <div class="fs-body">
           <h3>炊飯器＆片手圧力鍋セット</h3>
           <p class="fs-in">ティファール ザ・ライス 遠赤外線IH炊飯器エッセンシャル 5.5合<br>＋ セキュア トレンディ 6.2L</p>
@@ -1124,7 +1143,7 @@ footer .brand .logo{height:40px}
         </div>
       </article>
       <article class="fset">
-        <div class="fs-img"><img src="img/feat-2.jpg" width="1000" height="750" alt="炊飯器＆ステンレスセット9" loading="lazy"><span class="fs-no">SET<b>2</b></span><span class="fs-off"><b>10</b>%<br>OFF</span></div>
+        <div class="fs-img"><div class="fs-combo wide-b"><img src="img/fv/rice-ivory.png" alt="炊飯器" loading="lazy"><span class="pl" aria-hidden="true">+</span><img src="img/fv/ingenio-set.png" alt="インジニオ・ネオ ステンレスセット9" loading="lazy"></div><span class="fs-no">SET<b>2</b></span><span class="fs-off"><b>10</b>%<br>OFF</span></div>
         <div class="fs-body">
           <h3>炊飯器＆ステンレスセット9</h3>
           <p class="fs-in">ティファール ザ・ライス 遠赤外線IH炊飯器エッセンシャル 5.5合<br>＋ インジニオ・ネオ IHステンレス・アンリミテッド セット9</p>
@@ -1135,7 +1154,7 @@ footer .brand .logo{height:40px}
         </div>
       </article>
       <article class="fset">
-        <div class="fs-img"><img src="img/feat-3.jpg" width="1000" height="750" alt="朝食セット ワインレッド" loading="lazy"><span class="fs-no">SET<b>3</b></span><span class="fs-off"><b>25</b>%<br>OFF</span></div>
+        <div class="fs-img"><div class="fs-combo small"><img src="img/fv/coffee-red.png" alt="コーヒーメーカー ワインレッド" loading="lazy"><span class="pl" aria-hidden="true">+</span><img src="img/fv/toaster-red.png" alt="トースター ワインレッド" loading="lazy"></div><span class="fs-no">SET<b>3</b></span><span class="fs-off"><b>25</b>%<br>OFF</span></div>
         <div class="fs-body">
           <h3>朝食セット ワインレッド</h3>
           <p class="fs-in">ティファール メゾン コーヒーメーカー<br>＋ ポップアップトースター</p>
@@ -1146,7 +1165,7 @@ footer .brand .logo{height:40px}
         </div>
       </article>
       <article class="fset">
-        <div class="fs-img"><img src="img/feat-4.jpg" width="1000" height="750" alt="朝食セット スノーホワイト" loading="lazy"><span class="fs-no">SET<b>4</b></span><span class="fs-off"><b>25</b>%<br>OFF</span></div>
+        <div class="fs-img"><div class="fs-combo small"><img src="img/fv/coffee-white.png" alt="コーヒーメーカー スノーホワイト" loading="lazy"><span class="pl" aria-hidden="true">+</span><img src="img/fv/toaster-silver.png" alt="トースター スノーホワイト" loading="lazy"></div><span class="fs-no">SET<b>4</b></span><span class="fs-off"><b>25</b>%<br>OFF</span></div>
         <div class="fs-body">
           <h3>朝食セット スノーホワイト</h3>
           <p class="fs-in">ティファール メゾン コーヒーメーカー<br>＋ ポップアップトースター</p>
