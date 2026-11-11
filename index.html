@@ -1475,6 +1475,27 @@ section h2{font-size:clamp(26px,7.8cqw,46px)!important}
 
 /* セット名のカラー名は小さめ 2026-11-11 */
 .fs-name .clr{font-size:.66em;font-weight:700;margin-left:.2em;vertical-align:.08em}
+
+/* プレゼント抽選：見出しを大きく＋BF期間、賞品番号なしで「○名様」を大きく、賞品1の余白をなくす 2026-11-11 */
+.lot .lot-h{font-size:clamp(32px,9.6cqw,54px)!important;line-height:1.25!important}
+.lot .lot-h em{font-size:1.25em;display:inline-block;margin-top:.05em}
+.lot-date{display:flex;align-items:center;justify-content:center;flex-wrap:wrap;gap:6px 8px;margin-top:20px;color:#fff;font-weight:700}
+.lot-date .num{font-family:"Jost",sans-serif;font-weight:600;font-size:clamp(26px,6.4cqw,36px);line-height:1}
+.lot-date .tm{font-size:clamp(20px,4.8cqw,28px)}
+.lot-date .wk{display:inline-flex;align-items:center;justify-content:center;width:26px;height:26px;border-radius:50%;background:#ffe14d;color:#a00c16;font-size:14px;font-weight:900}
+.lot-date .to{font-size:22px;margin:0 4px;color:#ffe14d}
+/* 賞品番号は消して、名様のバーを大きく */
+.pz-no{display:none!important}
+.pz-img{padding-top:66px!important}
+.pz-img::before{height:66px!important;background:#ffe14d!important}
+.pz-cnt,.prize.big .pz-cnt{left:0!important;right:0!important;width:auto!important;height:66px!important;background:none!important;color:#a00c16!important;justify-content:center!important;align-items:baseline!important;padding:8px 0 0!important;font-size:22px!important}
+.pz-cnt b{font-family:"Jost",sans-serif!important;font-weight:800!important;font-size:50px!important;line-height:1!important;margin-right:4px!important}
+/* 賞品1：右側の文字を上下中央に寄せて大きく */
+.prize.big .pz-body{justify-content:center!important;gap:10px}
+.prize.big .pz-body h3{font-size:clamp(22px,4.6cqw,30px)!important}
+.prize.big .pz-link{margin-top:14px!important;padding-top:0!important}
+@media(max-width:599px){.prize.big .pz-body{padding:18px 16px 20px!important}}
+.prize.big .pz-body h3{font-size:clamp(20px,3.9cqw,25px)!important}
 </style>
 </head>
 <body>
@@ -1634,7 +1655,8 @@ section h2{font-size:clamp(26px,7.8cqw,46px)!important}
 <section class="lot" id="lottery">
   <div class="wrap">
     <p class="sec-no">02 ／ プレゼント抽選</p>
-    <h2><span class="nobr">2万円以上のお買い物で</span><br><em>抽選でプレゼント</em></h2>
+    <h2 class="lot-h"><span class="nobr">2万円以上のお買い物で</span><br><em>抽選でプレゼント</em></h2>
+    <p class="lot-date"><span class="num">11.19</span><span class="wk">木</span><span class="tm num">20:00</span><span class="to" aria-label="から">→</span><span class="num">11.25</span><span class="wk">水</span><span class="tm num">1:59</span></p>
     <div class="lot-cond">
       <p class="lc-k">家具のソムリエで</p>
       <p class="lc-v"><span class="num">20,000</span>円<small>（税込）</small>以上</p>
