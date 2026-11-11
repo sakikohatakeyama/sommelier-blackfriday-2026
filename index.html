@@ -875,15 +875,24 @@ section{padding:104px 0!important}
 footer .brand .logo{height:40px}
 @media(max-width:599px){header .brand .logo{height:26px}}
 
-/* FV キラキラ 2026-11-11 */
-.fv-spark{position:absolute;inset:0;pointer-events:none;z-index:2}
-.fv-spark i{position:absolute;width:var(--s,14px);height:var(--s,14px);margin:calc(var(--s,14px)/-2);
-  background:radial-gradient(circle,#fff 0 18%,#fff6dc 30%,#ecc867 70%);
-  clip-path:polygon(50% 0,57% 43%,100% 50%,57% 57%,50% 100%,43% 57%,0 50%,43% 43%);
-  opacity:0;transform:scale(0) rotate(0);animation:twinkle var(--d,2.6s) var(--dl,0s) ease-in-out infinite}
-.fv-spark{filter:drop-shadow(0 0 3px #fff6dc) drop-shadow(0 0 8px #ecc867)}
-.fv-spark i.dot{clip-path:circle(50%);width:var(--s,4px);height:var(--s,4px);background:#fff1c4}
-@keyframes twinkle{0%,100%{opacity:0;transform:scale(0) rotate(0)}45%{opacity:1;transform:scale(1) rotate(45deg)}60%{opacity:1;transform:scale(1.1) rotate(60deg)}}
+/* FV 近未来の光（光の筋・グリッド・浮かぶ粒） 2026-11-11 */
+.fv-spark{position:absolute;inset:22px;pointer-events:none;z-index:2;overflow:hidden}
+.fv-spark .ln{position:absolute;left:0;height:1px;width:46%;background:linear-gradient(90deg,transparent,#fff6dc 70%,#fff);box-shadow:0 0 6px #ecc867,0 0 14px #ecc86788;opacity:0;animation:streak var(--d,3s) var(--dl,0s) cubic-bezier(.6,0,.4,1) infinite}
+.fv-spark .ln.v{top:0;left:var(--x);width:1px;height:40%;background:linear-gradient(180deg,transparent,#fff6dc 70%,#fff);animation-name:streakV}
+.fv-spark .pt{position:absolute;width:2px;height:2px;background:#fff6dc;box-shadow:0 0 6px #ecc867;opacity:0;animation:drift var(--d,6s) var(--dl,0s) linear infinite}
+@keyframes streak{0%{transform:translateX(-110%);opacity:0}8%{opacity:1}40%{transform:translateX(230%);opacity:0}100%{transform:translateX(230%);opacity:0}}
+@keyframes streakV{0%{transform:translateY(-110%);opacity:0}8%{opacity:1}40%{transform:translateY(260%);opacity:0}100%{transform:translateY(260%);opacity:0}}
+@keyframes drift{0%{transform:translateY(0);opacity:0}15%{opacity:.9}85%{opacity:.6}100%{transform:translateY(-120px);opacity:0}}
+/* 台座の下の光るグリッド床 */
+.fv-stage::before{content:"";position:absolute;left:-12%;right:-12%;bottom:-6%;height:46%;z-index:0;
+  background:
+    repeating-linear-gradient(90deg,#ecc86755 0 1px,transparent 1px 34px),
+    repeating-linear-gradient(0deg,#ecc86755 0 1px,transparent 1px 22px);
+  transform:perspective(320px) rotateX(58deg);transform-origin:50% 100%;
+  -webkit-mask:radial-gradient(ellipse 60% 90% at 50% 100%,#000 30%,transparent 75%);mask:radial-gradient(ellipse 60% 90% at 50% 100%,#000 30%,transparent 75%);
+  animation:gridmove 2.4s linear infinite}
+@keyframes gridmove{to{background-position:0 0,0 22px}}
+.fv-pod::before{background:radial-gradient(ellipse at 50% 40%,#fffaf0,#ecc867 40%,#7a5a1e 100%)!important;box-shadow:0 0 0 1px #fff6dc88,0 0 24px #ecc867,0 0 60px #ecc86766,inset 0 -4px 10px #94712b!important}
 /* 文字の上を光が走る */
 .fv-title .en{position:relative}
 .fv-title .l1{background:linear-gradient(100deg,#fffaf3 0 40%,#ffffff 46%,#fff6dc 50%,#ffffff 54%,#fffaf3 60% 100%) 120% 0/250% 100% no-repeat,#fffaf3;-webkit-background-clip:text;background-clip:text;color:transparent;animation:glint 4.2s 1.4s ease-in-out infinite}
@@ -925,6 +934,44 @@ footer .brand .logo{height:40px}
 .fv-items .press{width:40%;left:30%;bottom:-2%}
 .fv-stage{margin-top:14px!important;max-width:600px!important}
 .fv-pod{margin-top:-34px!important}
+
+/* FV 近未来フレーム：電球をやめて細いネオン線＋周りを走る光＋四隅のブラケット 2026-11-11 */
+@property --fa{syntax:"<angle>";inherits:false;initial-value:0deg}
+.fv .sign::before{animation:none!important;padding:2px!important;border-radius:4px!important;inset:0!important;
+  background:conic-gradient(from var(--fa),transparent 0 62%,#ecc86733 70%,#fff6dc 86%,#ffffff 88%,#ecc867 90%,transparent 96%) ,linear-gradient(#ecc86744,#ecc86744)!important;
+  -webkit-mask:linear-gradient(#000 0 0) content-box exclude,linear-gradient(#000 0 0)!important;mask:linear-gradient(#000 0 0) content-box exclude,linear-gradient(#000 0 0)!important;
+  filter:drop-shadow(0 0 6px #ecc867) drop-shadow(0 0 14px #ecc86799);animation:frameRun 4.5s linear infinite!important}
+@keyframes frameRun{to{--fa:360deg}}
+.fv .sign::after{animation:none!important;padding:0!important;inset:-6px!important;border-radius:0!important;-webkit-mask:none!important;mask:none!important;
+  background:
+    linear-gradient(#fff6dc,#fff6dc) 0 0/26px 2px,linear-gradient(#fff6dc,#fff6dc) 0 0/2px 26px,
+    linear-gradient(#fff6dc,#fff6dc) 100% 0/26px 2px,linear-gradient(#fff6dc,#fff6dc) 100% 0/2px 26px,
+    linear-gradient(#fff6dc,#fff6dc) 0 100%/26px 2px,linear-gradient(#fff6dc,#fff6dc) 0 100%/2px 26px,
+    linear-gradient(#fff6dc,#fff6dc) 100% 100%/26px 2px,linear-gradient(#fff6dc,#fff6dc) 100% 100%/2px 26px!important;
+  background-repeat:no-repeat!important;filter:drop-shadow(0 0 5px #ecc867)}
+.fv .sign-in{border:1px solid #ecc86740!important;background:radial-gradient(ellipse 80% 50% at 50% 0,#ecc86714,transparent 70%),linear-gradient(180deg,#121010,#0a0909)!important}
+.fv-spark .ln{height:2px!important;width:60%!important;box-shadow:0 0 8px #ecc867,0 0 22px #ecc867aa!important}
+.fv-spark .ln.v{width:2px!important;height:50%!important}
+.fv-stage::before{background:repeating-linear-gradient(90deg,#ecc86799 0 1px,transparent 1px 30px),repeating-linear-gradient(0deg,#ecc86799 0 1px,transparent 1px 20px)!important;height:52%!important}
+@keyframes gridmove{to{background-position:0 0,0 20px}}
+@media(prefers-reduced-motion:reduce){.fv .sign::before,.fv-stage::before{animation:none!important}}
+
+/* 上部の旗はなし 2026-11-11 */
+.flags{display:none!important}
+/* FV タイトルをネオン管風に（参考：ネオンサインのBLACK FRIDAY） 2026-11-11 */
+.fv-title .en{font-weight:500!important}
+.fv-title .l1,.js .fv-title .l1{background:none!important;color:transparent!important;-webkit-text-stroke:2px #fff3d6;text-shadow:none!important;
+  filter:drop-shadow(0 0 2px #fff3d6) drop-shadow(0 0 8px #ffd98a) drop-shadow(0 0 22px #ecc867bb);
+  animation:inL .9s .15s cubic-bezier(.2,.8,.2,1) both,neonFlicker 7s 2s infinite!important}
+.fv-title .l2,.js .fv-title .l2{background:none!important;color:transparent!important;-webkit-text-stroke:2px #ffd57a;text-shadow:none!important;
+  filter:drop-shadow(0 0 2px #ffe3a3) drop-shadow(0 0 9px #ecb94a) drop-shadow(0 0 26px #d99a2bcc);
+  animation:inR .9s .35s cubic-bezier(.2,.8,.2,1) both,neonHum 3.2s 1.5s ease-in-out infinite!important}
+@keyframes neonFlicker{0%,18%,20%,22%,62%,64%,100%{opacity:1}19%,21%,63%{opacity:.35}}
+@keyframes neonHum{0%,100%{opacity:1}50%{opacity:.86}}
+@media(max-width:599px){.fv-title .l1,.fv-title .l2{-webkit-text-stroke-width:1.5px}}
+/* ネオン管の枠：常に光る細い線 */
+.fv .sign::before{background:conic-gradient(from var(--fa),transparent 0 62%,#ffffff00 70%,#fff6dc 86%,#ffffff 88%,#ecc867 90%,transparent 96%),linear-gradient(#ecc867cc,#ecc867cc)!important}
+@media(prefers-reduced-motion:reduce){.fv-title .l1,.fv-title .l2{animation:none!important}}
 </style>
 </head>
 <body>
@@ -1298,13 +1345,12 @@ footer .brand .logo{height:40px}
 </script>
 <script>
 (function(){
-  // FV のキラキラ（星と光の粒をランダムに配置）
+  // FV 近未来の光：横に走る光の筋・縦の光・浮かぶ粒
   var w=document.querySelector('.fv-spark');if(!w)return;
-  var html='';
-  for(var k=0;k<48;k++){
-    var dot=k%3===2, s=dot?(4+Math.random()*4):(16+Math.random()*26);
-    html+='<i class="'+(dot?'dot':'')+'" style="left:'+(4+Math.random()*92).toFixed(1)+'%;top:'+(4+Math.random()*92).toFixed(1)+'%;--s:'+s.toFixed(0)+'px;--d:'+(1.8+Math.random()*2.4).toFixed(2)+'s;--dl:'+(Math.random()*3).toFixed(2)+'s"></i>';
-  }
+  var html='',r=Math.random;
+  for(var k=0;k<9;k++)html+='<i class="ln" style="top:'+(6+r()*88).toFixed(1)+'%;--d:'+(2.6+r()*2.2).toFixed(2)+'s;--dl:'+(r()*3).toFixed(2)+'s"></i>';
+  for(var k=0;k<4;k++)html+='<i class="ln v" style="--x:'+(8+r()*84).toFixed(1)+'%;--d:'+(3.2+r()*2).toFixed(2)+'s;--dl:'+(r()*3).toFixed(2)+'s"></i>';
+  for(var k=0;k<26;k++)html+='<i class="pt" style="left:'+(3+r()*94).toFixed(1)+'%;top:'+(30+r()*68).toFixed(1)+'%;--d:'+(4+r()*4).toFixed(2)+'s;--dl:'+(r()*5).toFixed(2)+'s"></i>';
   w.innerHTML=html;
 })();
 </script>
