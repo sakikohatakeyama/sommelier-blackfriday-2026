@@ -1506,6 +1506,19 @@ section h2{font-size:clamp(26px,7.8cqw,46px)!important}
   .side-nav,.side-nav a{border-color:#ffffff40!important}
   .side-date{color:#ffe1e1!important}
 }
+
+/* 価格のカウントダウンが止まった瞬間にポン 2026-11-11 */
+.fs-price .num.pop{animation:pricePop .45s cubic-bezier(.3,1.8,.5,1)}
+@keyframes pricePop{0%{transform:scale(1)}40%{transform:scale(1.12)}100%{transform:scale(1)}}
+.fs-price .num{display:inline-block;transform-origin:left bottom;font-variant-numeric:tabular-nums}
+/* 左サイドの BLACK FRIDAY は影なし */
+.side-ttl .l1,.side-ttl .l2{filter:none!important;text-shadow:none!important}
+
+/* 人気商品の見出し：HOT ITEM／売れ筋アイテム を大きく 2026-11-11 */
+.pops-h{display:flex;flex-direction:column;align-items:center;line-height:1!important}
+.pops-h .ph-en{font-family:"Jost",sans-serif;font-weight:800;font-style:italic;font-size:clamp(56px,17cqw,96px);letter-spacing:.01em;
+  background:linear-gradient(180deg,#fff3c8 0%,#e9c46a 35%,#b7862f 55%,#f3d382 75%,#9a6d22 100%);-webkit-background-clip:text;background-clip:text;color:transparent;padding:0 .08em}
+.pops-h .ph-ja{display:block;margin-top:.3em;font-style:normal;font-size:clamp(28px,8.4cqw,46px);color:#fff!important}
 </style>
 </head>
 <body>
@@ -1708,8 +1721,7 @@ section h2{font-size:clamp(26px,7.8cqw,46px)!important}
 <section class="p20 pops-sec" id="popular">
   <div class="wrap">
     <div class="pops-head">
-      <p class="sec-no sub">POPULAR</p>
-      <h2 class="pops-h">人気の商品も<br><em>この機会に</em></h2>
+      <h2 class="pops-h"><span class="ph-en">HOT ITEM</span><em class="ph-ja">売れ筋アイテム</em></h2>
     </div>
     <div class="pops">
       <a class="pop" href="https://item.rakuten.co.jp/sommelier/t-fal-293/" target="_blank" rel="noopener">
@@ -1868,6 +1880,32 @@ section h2{font-size:clamp(26px,7.8cqw,46px)!important}
   draw();var t;window.addEventListener('resize',function(){clearTimeout(t);t=setTimeout(draw,300)});
   return;
   w.innerHTML=html;
+})();
+</script>
+<script>
+(function(){
+  // 価格：単品合計の金額から割引価格まで、てけてけと数字が減っていく
+  function fmt(n){return String(n).replace(/\B(?=(\d{3})+(?!\d))/g,'<span class="cm">,</span>');}
+  var items=[].map.call(document.querySelectorAll('.fset'),function(f){
+    var num=f.querySelector('.fs-price .num'),reg=f.querySelector('.fs-reg s');if(!num||!reg)return null;
+    var to=parseInt(num.textContent.replace(/[^0-9]/g,''),10),from=parseInt(reg.textContent.replace(/[^0-9]/g,''),10);
+    if(!(from>to))return null;num.innerHTML=fmt(from);return {el:num,from:from,to:to,done:false};
+  }).filter(Boolean);
+  if(!items.length)return;
+  if(window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches){items.forEach(function(it){it.el.innerHTML=fmt(it.to)});return;}
+  function run(it){
+    if(it.done)return;it.done=true;
+    var dur=1600,steps=26,i=0;
+    var t=setInterval(function(){
+      i++;var p=i/steps,e=1-Math.pow(1-p,3);
+      var v=Math.round(it.from-(it.from-it.to)*e);
+      if(i<steps)v=Math.round(v/10)*10+((i*7)%10); // 下の桁がカタカタ動く
+      if(i>=steps){v=it.to;clearInterval(t);it.el.classList.add('pop');}
+      it.el.innerHTML=fmt(v);
+    },dur/steps);
+  }
+  function check(){var vh=window.innerHeight;items.forEach(function(it){if(it.done)return;var r=it.el.getBoundingClientRect();if(r.top<vh*0.8&&r.bottom>0)setTimeout(function(){run(it)},200);});}
+  window.addEventListener('scroll',check,{passive:true});window.addEventListener('resize',check);window.addEventListener('load',check);setTimeout(check,600);
 })();
 </script>
 </body>
