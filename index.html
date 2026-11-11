@@ -1170,6 +1170,15 @@ section h2{font-size:clamp(26px,7.8cqw,46px)!important}
 .fset:nth-child(n+3) .fs-price .yen{font-size:22px!important}
 @media(max-width:599px){.fs-price .num,.fset:nth-child(n+3) .fs-price .num{font-size:clamp(70px,23cqw,96px)!important}.fs-price .yen,.fset:nth-child(n+3) .fs-price .yen{font-size:24px!important}}
 .fs-save .num{font-family:Barlow,Arial,sans-serif!important;font-style:italic;font-weight:900!important}
+
+/* 価格：参考（アウトレット価格表示）風 — 赤の太い斜体に白フチ＋濃い影、「税込」は円の上 2026-11-11 */
+.fs-price{align-items:flex-end!important}
+.fs-price .num,.fs-price .yen{-webkit-text-stroke:7px #fff;paint-order:stroke fill;text-shadow:none!important;filter:drop-shadow(3px 4px 0 #1b1715)}
+.fs-price .yen{display:inline-flex!important;flex-direction:column-reverse;align-items:center;font-family:"Hiragino Sans","Noto Sans JP",sans-serif;font-weight:900!important;line-height:1;margin-left:2px!important;margin-bottom:.12em;transform:skewX(-8deg)}
+.fs-price .yen small{display:block!important;margin:0 0 4px!important;font-size:.5em!important;color:#e60012!important;-webkit-text-stroke:4px #fff;font-weight:900!important}
+.fs-price .yen{font-size:40px!important}
+.fset:nth-child(n+3) .fs-price .yen{font-size:28px!important}
+@media(max-width:599px){.fs-price .yen,.fset:nth-child(n+3) .fs-price .yen{font-size:30px!important}.fs-price .num,.fs-price .yen{-webkit-text-stroke-width:6px}}
 </style>
 </head>
 <body>
