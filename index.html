@@ -14,7 +14,7 @@
 :root{
   --black:#0b0a0a;--black2:#151312;--char:#211e1c;
   --gold:#d8b25a;--gold-l:#f3dc9c;--gold-d:#94712b;
-  --pink:#dcff2b;--pink-l:#ecff8a;--pink-d:#c2e600;
+  --pink:#ecc867;--pink-l:#f8e6ae;--pink-d:#b38b38;
   --white:#fffaf3;--sub:#bdb4a6;
   --cw:1000px;
 }
@@ -46,7 +46,7 @@ header .wrap{display:flex;justify-content:space-between;align-items:center;heigh
 /* ---------- FV：電球のマーキー看板 ---------- */
 .fv{position:relative;padding:56px 0 64px;overflow:hidden;
   background:
-    radial-gradient(ellipse 60% 55% at 78% 30%,#dcff2b26,transparent 70%),
+    radial-gradient(ellipse 60% 55% at 78% 30%,#ecc86726,transparent 70%),
     radial-gradient(ellipse 55% 60% at 15% 85%,#d8b25a1f,transparent 70%),
     var(--black)}
 /* 立ちのぼる金の泡（グラスの中の泡＝酒屋の乾杯） */
@@ -64,7 +64,7 @@ header .wrap{display:flex;justify-content:space-between;align-items:center;heigh
           mask:linear-gradient(#000 0 0) content-box exclude,linear-gradient(#000 0 0);
   padding:13px;animation:bulbs 1.2s steps(2) infinite}
 .sign::after{content:"";position:absolute;inset:0;border-radius:6px;
-  background:radial-gradient(circle,var(--pink) 0 3.5px,#dcff2b77 4.5px,transparent 7px) 13px 13px/26px 26px;
+  background:radial-gradient(circle,var(--pink) 0 3.5px,#ecc86777 4.5px,transparent 7px) 13px 13px/26px 26px;
   -webkit-mask:linear-gradient(#000 0 0) content-box exclude,linear-gradient(#000 0 0);
           mask:linear-gradient(#000 0 0) content-box exclude,linear-gradient(#000 0 0);
   padding:13px;animation:bulbs 1.2s steps(2) infinite reverse}
@@ -77,7 +77,7 @@ header .wrap{display:flex;justify-content:space-between;align-items:center;heigh
 .fv-title{margin-top:10px;line-height:.86}
 .fv-title .en{display:block;font-size:122px;letter-spacing:.02em}
 .fv-title .l1{color:var(--white)}
-.fv-title .l2{color:var(--pink);text-shadow:0 0 18px #dcff2b88,0 0 46px #dcff2b55}
+.fv-title .l2{color:var(--pink);text-shadow:0 0 18px #ecc86788,0 0 46px #ecc86755}
 .fv-title .ja{display:block;margin-top:18px;font-size:22px;letter-spacing:.3em;color:var(--gold-l);font-weight:700}
 .fv-catch{margin-top:26px;font-size:30px;font-weight:900;line-height:1.5}
 .fv-catch em{font-style:normal;color:var(--gold-l)}
@@ -109,7 +109,7 @@ header .wrap{display:flex;justify-content:space-between;align-items:center;heigh
   .sign::before,.sign::after{padding:9px;background-size:18px 18px}
   .sign::after{background-position:9px 9px}
   .sign::before{background-image:radial-gradient(circle,var(--gold-l) 0 2.5px,#d8b25a66 3.5px,transparent 5px)}
-  .sign::after{background-image:radial-gradient(circle,var(--pink) 0 2.5px,#dcff2b77 3.5px,transparent 5px)}
+  .sign::after{background-image:radial-gradient(circle,var(--pink) 0 2.5px,#ecc86777 3.5px,transparent 5px)}
   .sign-in{padding:26px 18px 24px}
   .fv-kicker{font-size:12px;gap:10px;letter-spacing:.1em}
   .fv-title .en{font-size:clamp(50px,15.5cqw,80px)}
@@ -183,7 +183,7 @@ header .wrap{display:flex;justify-content:space-between;align-items:center;heigh
 .side{display:none}
 @media(min-width:1000px){
   body{background:
-    radial-gradient(ellipse 40% 50% at 12% 20%,#dcff2b22,transparent 70%),
+    radial-gradient(ellipse 40% 50% at 12% 20%,#ecc86722,transparent 70%),
     radial-gradient(ellipse 40% 50% at 88% 80%,#d8b25a1c,transparent 70%),#070606;background-attachment:fixed}
   .side{display:flex;position:fixed;top:0;bottom:0;width:calc(50% - 215px);align-items:center;justify-content:center;padding:30px 24px;z-index:2}
   .side-l{left:0}.side-r{right:0}
@@ -194,7 +194,7 @@ header .wrap{display:flex;justify-content:space-between;align-items:center;heigh
 .side-ttl{margin-top:30px;line-height:.9}
 .side-ttl .en{display:block;font-size:64px;letter-spacing:.02em}
 .side-ttl .l1{color:var(--white)}
-.side-ttl .l2{color:var(--pink);text-shadow:0 0 18px #dcff2b88}
+.side-ttl .l2{color:var(--pink);text-shadow:0 0 18px #ecc86788}
 .side-date{margin-top:14px;font-size:15px;font-weight:700;color:var(--sub);line-height:1.6}
 .side-date .num{font-size:24px;color:var(--gold-l)}
 .side-nav{margin-top:28px;border-top:1px solid #ffffff26}
@@ -225,7 +225,7 @@ header .wrap{display:flex;justify-content:space-between;align-items:center;heigh
 .deco{overflow:hidden;padding:18px 0 6px;background:var(--black)}
 .deco-in{display:flex;width:max-content;animation:deco 26s linear infinite}
 .deco span{font-family:Jost,Futura,sans-serif;font-weight:700;font-size:72px;line-height:1;white-space:nowrap;padding-right:40px;color:#d8b25a8c;letter-spacing:.02em}
-.deco span:nth-child(3n+2){color:#dcff2bb3}
+.deco span:nth-child(3n+2){color:#ecc867b3}
 .deco.rev .deco-in{animation-direction:reverse}
 @keyframes deco{to{transform:translateX(-50%)}}
 @media(prefers-reduced-motion:reduce){.deco-in{animation:none}}
@@ -347,8 +347,8 @@ section{padding:110px 0}
 .days li:first-child{color:var(--gold-l)}
 .days li.on{background:var(--pink);color:var(--black);position:relative}
 .days li.on .m{color:var(--black);background:var(--gold-l);padding:4px 8px}
-.entry-btn.pink{color:var(--black);background:linear-gradient(180deg,#eaff6e,#dcff2b 55%,#b8db00);box-shadow:6px 6px 0 var(--gold)}
-.entry-btn.pink:hover{box-shadow:3px 3px 0 var(--gold)}
+.entry-btn.pink{color:var(--black);background:linear-gradient(180deg,#fbecbf,#ecc867 55%,#b0852f);box-shadow:6px 6px 0 var(--gold-d)}
+.entry-btn.pink:hover{box-shadow:3px 3px 0 var(--gold-d)}
 @media all{
   .d05-head{flex-direction:column;align-items:flex-start;gap:14px;margin-top:18px}
   .d05-head h2{font-size:28px}
@@ -362,7 +362,7 @@ section{padding:110px 0}
   .days .w{font-size:11px}
   .days .m{font-size:9.5px;margin-top:6px;letter-spacing:0}
   .days li.on .m{padding:3px 3px}
-  .entry-btn.pink{font-size:18px;box-shadow:5px 5px 0 var(--gold)}
+  .entry-btn.pink{font-size:18px;box-shadow:5px 5px 0 var(--gold-d)}
 }
 
 
@@ -392,7 +392,7 @@ section{padding:110px 0}
 .ph-date .wk{display:inline-flex;align-items:center;justify-content:center;width:26px;height:26px;border-radius:50%;background:var(--black);color:var(--white);font-size:13px;font-weight:900}
 .ph-date .and{font-weight:900;font-size:20px}
 .ph-today{display:none;position:absolute;right:-2px;top:-34px;font-size:15px;font-weight:900;background:var(--gold-l);color:var(--black);padding:5px 14px;line-height:1.4}
-.phase.is-today{box-shadow:0 0 0 4px var(--gold-l),0 0 40px #dcff2b66}
+.phase.is-today{box-shadow:0 0 0 4px var(--gold-l),0 0 40px #ecc86766}
 .phase.is-today .ph-today{display:block}
 .ph-deals{list-style:none;margin:0;padding:6px 22px 14px}
 .ph-deals li{display:flex;flex-direction:column;padding:14px 0;border-bottom:1px solid #ffffff1f}
@@ -468,7 +468,7 @@ section{padding:110px 0}
 
 /* ---------- 03 お歳暮20倍 ---------- */
 .p20{background:var(--black2);position:relative;overflow:hidden}
-.p20::before{content:"";position:absolute;right:-120px;top:-120px;width:520px;height:520px;border-radius:50%;background:radial-gradient(circle,#dcff2b30,transparent 65%);pointer-events:none}
+.p20::before{content:"";position:absolute;right:-120px;top:-120px;width:520px;height:520px;border-radius:50%;background:radial-gradient(circle,#ecc86730,transparent 65%);pointer-events:none}
 .p20 .sec-no{color:var(--pink)}
 .p20-head{position:relative;display:flex;align-items:flex-end;justify-content:space-between;gap:30px;margin-top:28px}
 .p20-head h2{font-size:46px;line-height:1.35;font-weight:900}
@@ -481,7 +481,7 @@ section{padding:110px 0}
 .badge20 .calc .plus{color:var(--pink);font-size:18px}
 .badge20 p{margin:0}
 .badge20 .x{display:block;font-family:Jost,Futura,sans-serif;font-size:22px;font-weight:700;color:var(--white);letter-spacing:.1em;margin-bottom:12px}
-.badge20 .num{font-size:180px;color:var(--pink);text-shadow:0 0 30px #dcff2b66}
+.badge20 .num{font-size:180px;color:var(--pink);text-shadow:0 0 30px #ecc86766}
 .badge20 b{font-size:52px}
 
 .items{position:relative;display:grid;grid-template-columns:1fr 1fr;gap:36px;margin-top:56px}
@@ -604,10 +604,10 @@ section h2,.sch-h,section h2 *{font-family:"Hiragino Sans","Hiragino Kaku Gothic
 <style>
 /* 流れる文字：ときどきキラッと光る */
 .deco span{background:linear-gradient(100deg,#d8b25a8c 0 42%,#fffbe0 48%,#ffffff 50%,#fffbe0 52%,#d8b25a8c 58% 100%);background-size:320% 100%;background-position:120% 0;-webkit-background-clip:text;background-clip:text;color:transparent!important;animation:shine 7s ease-in-out infinite}
-.deco span:nth-child(3n+2){background-image:linear-gradient(100deg,#dcff2b 0 42%,#fbffe0 48%,#ffffff 50%,#fbffe0 52%,#dcff2b 58% 100%)}
+.deco span:nth-child(3n+2){background-image:linear-gradient(100deg,#ecc867 0 42%,#fff6dc 48%,#ffffff 50%,#fff6dc 52%,#ecc867 58% 100%)}
 .deco span:nth-child(2n){animation-delay:2.3s}
 .deco span:nth-child(3n){animation-delay:4.6s}
-@keyframes shine{0%,70%{background-position:120% 0;filter:none}78%{filter:drop-shadow(0 0 10px #fff8) drop-shadow(0 0 22px #dcff2b88)}86%{background-position:-20% 0;filter:none}100%{background-position:-20% 0}}
+@keyframes shine{0%,70%{background-position:120% 0;filter:none}78%{filter:drop-shadow(0 0 10px #fff8) drop-shadow(0 0 22px #ecc86788)}86%{background-position:-20% 0;filter:none}100%{background-position:-20% 0}}
 @media(prefers-reduced-motion:reduce){.deco span{animation:none}}
 
 /* 全体の文字を大きく */
@@ -878,9 +878,9 @@ section{padding:104px 0!important}
     <p class="side-ttl"><span class="en l1">BLACK</span><span class="en l2">FRIDAY</span></p>
     <p class="side-date"><span class="num">11.19</span>（木）20:00 〜<br><span class="num">11.25</span>（水）1:59</p>
     <nav class="side-nav">
-      <a href="#lottery"><span class="n">01</span>プレゼント抽選</a>
-      <a href="#p5"><span class="n">02</span>ポイントアップ</a>
-      <a href="#p20"><span class="n">03</span>目玉商品</a>
+      <a href="#p20"><span class="n">01</span>目玉商品</a>
+      <a href="#lottery"><span class="n">02</span>プレゼント抽選</a>
+      <a href="#p5"><span class="n">03</span>ポイントアップ</a>
     </nav>
     <a class="side-shop" href="https://www.rakuten.co.jp/sommelier/" target="_blank" rel="noopener">ショップトップへ</a>
   </div>
@@ -899,7 +899,7 @@ section{padding:104px 0!important}
         <li>施策2 <b>（内容が入ります）</b></li>
       </ul>
     </div>
-    <a class="side-btn gold" href="#coupon">クーポンを見る</a>
+    <a class="side-btn gold" href="#lottery">プレゼント抽選を見る</a>
     <a class="side-btn pink" href="#p20">目玉セットを見る</a>
   </div>
 </aside>
@@ -944,119 +944,10 @@ section{padding:104px 0!important}
   </div>
 </div>
 
-<!-- 01 スケジュール（TODO） -->
-<section class="d05" id="schedule">
-  <div class="wrap">
-    <p class="sec-no">01 ／ スケジュール</p>
-    <h2 class="sch-h"><span class="nobr">ブラックフライデーは</span><br><em class="nobr">19日スタート！</em></h2>
-    <p class="sch-lead"><span class="nobr">11/19（木）20:00から</span><span class="nobr">11/25（水）1:59まで</span><br>（リード文が入ります）</p>
-    <div class="phases">
-      <article class="phase" hidden>
-        <div class="ph-head"><p class="ph-no">第<span class="num">1</span>弾</p><p class="ph-name">（企画名）</p></div>
-        <p class="ph-term"><span class="g"><span class="num">00.00</span><span class="wk">-</span><span class="tm num">00:00</span><span class="t2">〜</span></span><span class="g"><span class="num">00.00</span><span class="wk">-</span><span class="tm num">00:00</span></span></p>
-        <ul class="ph-deals">
-          <li class="nm"><span class="k">（施策の条件）</span><span class="v"><span class="num tbd-num">000</span>円OFF</span></li>
-          <li class="nm"><span class="k">（施策の条件）</span><span class="v"><span class="num tbd-num">00</span>%OFF</span></li>
-        </ul>
-        <a class="ph-link" href="#coupon">第1弾を見る</a>
-      </article>
-      <article class="phase">
-        <div class="ph-head"><p class="ph-no"><span class="num">6</span>日間</p><p class="ph-name">ブラックフライデー</p></div>
-        <p class="ph-term"><span class="g"><span class="num">11.19</span><span class="wk">木</span><span class="tm num">20:00</span><span class="t2">〜</span></span><span class="g"><span class="num">11.25</span><span class="wk">水</span><span class="tm num">1:59</span></span></p>
-        <ul class="ph-deals">
-          <li class="pt"><span class="k">（施策の条件）</span><span class="v">POINT<span class="num tbd-num">0</span>倍</span></li>
-          <li class="pt"><span class="k">（施策の条件）</span><span class="v">POINT<span class="num tbd-num">00</span>倍</span></li>
-        </ul>
-        <a class="ph-link pk" href="#coupon">くわしく見る</a>
-      </article>
-    </div>
-  </div>
-</section>
-
-<!-- 02 クーポン（TODO） -->
-<section class="cp" id="coupon">
-  <div class="wrap">
-    <p class="sec-no">02 ／ クーポン</p>
-    <h2>（クーポンの<br><em>見出し</em>が入ります）</h2>
-    <p class="cp-term"><span class="num">00.00</span>（-）<span class="num">00:00</span> 〜 <span class="nobr"><span class="num">00.00</span>（-）<span class="num">00:00</span></span></p>
-    <p class="cp-lead">（クーポンの説明文が入ります）</p>
-    <div class="tickets">
-      <div class="ticket big">
-        <div class="tk-main"><p class="tk-cond"><span class="num">00,000</span>円（税込）以上のお買い物で</p><p class="tk-off"><span class="num">000</span><b>円OFF</b></p></div>
-        <div class="tk-side"><span class="tk-limit">先着</span><a class="tk-btn" href="#coupon" data-todo="coupon-1">クーポンを獲得</a></div>
-      </div>
-      <div class="ticket">
-        <div class="tk-main"><p class="tk-cond"><span class="num">0,000</span>円（税込）以上のお買い物で</p><p class="tk-off"><span class="num">00</span><b>円OFF</b></p></div>
-        <div class="tk-side"><span class="tk-limit">先着</span><a class="tk-btn" href="#coupon" data-todo="coupon-2">クーポンを獲得</a></div>
-      </div>
-    </div>
-    <p class="cp-note">※（クーポンの注意書きが入ります）</p>
-  </div>
-</section>
-
-<!-- 03 プレゼント抽選 -->
-<section class="lot" id="lottery">
-  <div class="wrap">
-    <p class="sec-no">03 ／ プレゼント抽選</p>
-    <h2><span class="nobr">2万円以上のお買い物で</span><br><em>抽選でプレゼント</em></h2>
-    <div class="lot-cond">
-      <p class="lc-k">家具のソムリエで</p>
-      <p class="lc-v"><span class="num">20,000</span>円<small>（税込）</small>以上</p>
-      <p class="lc-k">お買い物された方の中から、<span class="nobr">抽選で<b>合計8名様</b>に当たる</span></p>
-    </div>
-    <div class="prizes">
-      <article class="prize big">
-        <a class="pz-img" href="https://item.rakuten.co.jp/sommelier/goods-01659/" target="_blank" rel="noopener"><img src="img/prize-vitantonio.jpg" width="654" height="760" alt="ビタントニオ エッグワッフル＆ホットサンドベーカー" loading="lazy"><span class="pz-no">賞品<b>1</b></span><span class="pz-cnt"><b>3</b>名様</span></a>
-        <div class="pz-body">
-          <p class="pz-brand">Vitantonio ビタントニオ</p>
-          <h3>エッグワッフル＆<br>ホットサンドベーカー</h3>
-          <a class="pz-link" href="https://item.rakuten.co.jp/sommelier/goods-01659/" target="_blank" rel="noopener">商品ページを見る</a>
-        </div>
-      </article>
-      <article class="prize">
-        <a class="pz-img" href="https://item.rakuten.co.jp/sommelier/goods-682/" target="_blank" rel="noopener"><img src="img/prize-keisoudo-green.jpg" width="760" height="760" alt="レムノス 珪藻土の時計 グリーン" loading="lazy"><span class="pz-no">賞品<b>2</b></span><span class="pz-cnt"><b>1</b>名様</span></a>
-        <div class="pz-body">
-          <p class="pz-brand">Lemnos タカタレムノス</p>
-          <h3>珪藻土の時計</h3>
-          <p class="pz-color">カラー：グリーン</p>
-          <a class="pz-link" href="https://item.rakuten.co.jp/sommelier/goods-682/" target="_blank" rel="noopener">商品ページを見る</a>
-        </div>
-      </article>
-      <article class="prize">
-        <a class="pz-img" href="https://item.rakuten.co.jp/sommelier/goods-688/" target="_blank" rel="noopener"><img src="img/prize-divide-white.jpg" width="760" height="760" alt="レムノス divide ホワイト" loading="lazy"><span class="pz-no">賞品<b>3</b></span><span class="pz-cnt"><b>4</b>名様</span></a>
-        <div class="pz-body">
-          <p class="pz-brand">Lemnos タカタレムノス</p>
-          <h3>divide ディバイド</h3>
-          <p class="pz-color">カラー：ホワイト</p>
-          <a class="pz-link" href="https://item.rakuten.co.jp/sommelier/goods-688/" target="_blank" rel="noopener">商品ページを見る</a>
-        </div>
-      </article>
-    </div>
-    <p class="cp-note lot-note">※対象期間・応募方法・当選発表の方法は、決まりしだい掲載します。<!-- TODO --><br>※賞品の色・仕様は変更になる場合があります。</p>
-  </div>
-</section>
-
-<!-- 04 ポイントアップ（TODO） -->
-<section class="p5" id="p5">
-  <div class="wrap">
-    <p class="sec-no">04 ／ ポイントアップ</p>
-    <p class="p5-term"><span class="num">11.19</span>（木）<span class="num">20:00</span> 〜 <span class="nobr"><span class="num">11.25</span>（水）<span class="num">1:59</span></span></p>
-    <div class="p5-grid">
-      <p class="big5" aria-hidden="true"><span class="num">0</span><b>倍</b></p>
-      <div class="p5-txt">
-        <h2>（ポイント施策の<br><em>見出しが入ります</em>）</h2>
-        <p>（説明文が入ります）</p>
-        <a class="entry-btn" href="#p5" data-todo="entry">エントリーはこちら</a>
-        <p class="p5-note">※（注意書きが入ります）</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- 05 目玉商品 -->
+<!-- 01 目玉商品 -->
 <section class="p20" id="p20">
   <div class="wrap">
-    <p class="sec-no">05 ／ 目玉商品</p>
+    <p class="sec-no">01 ／ 目玉商品</p>
     <h2>ブラックフライデー限定<br><em>目玉セット</em></h2>
     <p class="sch-lead">ティファールの人気家電を<span class="nobr">おトクなセットに</span><br><span class="nobr">単品で買うより</span><span class="nobr">最大30%OFF</span></p>
     <div class="fsets">
@@ -1159,16 +1050,103 @@ section{padding:104px 0!important}
   </div>
 </section>
 
-<!-- 06 おさらい -->
+<!-- 02 プレゼント抽選 -->
+<section class="lot" id="lottery">
+  <div class="wrap">
+    <p class="sec-no">02 ／ プレゼント抽選</p>
+    <h2><span class="nobr">2万円以上のお買い物で</span><br><em>抽選でプレゼント</em></h2>
+    <div class="lot-cond">
+      <p class="lc-k">家具のソムリエで</p>
+      <p class="lc-v"><span class="num">20,000</span>円<small>（税込）</small>以上</p>
+      <p class="lc-k">お買い物された方の中から、<span class="nobr">抽選で<b>合計8名様</b>に当たる</span></p>
+    </div>
+    <div class="prizes">
+      <article class="prize big">
+        <a class="pz-img" href="https://item.rakuten.co.jp/sommelier/goods-01659/" target="_blank" rel="noopener"><img src="img/prize-vitantonio.jpg" width="654" height="760" alt="ビタントニオ エッグワッフル＆ホットサンドベーカー" loading="lazy"><span class="pz-no">賞品<b>1</b></span><span class="pz-cnt"><b>3</b>名様</span></a>
+        <div class="pz-body">
+          <p class="pz-brand">Vitantonio ビタントニオ</p>
+          <h3>エッグワッフル＆<br>ホットサンドベーカー</h3>
+          <a class="pz-link" href="https://item.rakuten.co.jp/sommelier/goods-01659/" target="_blank" rel="noopener">商品ページを見る</a>
+        </div>
+      </article>
+      <article class="prize">
+        <a class="pz-img" href="https://item.rakuten.co.jp/sommelier/goods-682/" target="_blank" rel="noopener"><img src="img/prize-keisoudo-green.jpg" width="760" height="760" alt="レムノス 珪藻土の時計 グリーン" loading="lazy"><span class="pz-no">賞品<b>2</b></span><span class="pz-cnt"><b>1</b>名様</span></a>
+        <div class="pz-body">
+          <p class="pz-brand">Lemnos タカタレムノス</p>
+          <h3>珪藻土の時計</h3>
+          <p class="pz-color">カラー：グリーン</p>
+          <a class="pz-link" href="https://item.rakuten.co.jp/sommelier/goods-682/" target="_blank" rel="noopener">商品ページを見る</a>
+        </div>
+      </article>
+      <article class="prize">
+        <a class="pz-img" href="https://item.rakuten.co.jp/sommelier/goods-688/" target="_blank" rel="noopener"><img src="img/prize-divide-white.jpg" width="760" height="760" alt="レムノス divide ホワイト" loading="lazy"><span class="pz-no">賞品<b>3</b></span><span class="pz-cnt"><b>4</b>名様</span></a>
+        <div class="pz-body">
+          <p class="pz-brand">Lemnos タカタレムノス</p>
+          <h3>divide ディバイド</h3>
+          <p class="pz-color">カラー：ホワイト</p>
+          <a class="pz-link" href="https://item.rakuten.co.jp/sommelier/goods-688/" target="_blank" rel="noopener">商品ページを見る</a>
+        </div>
+      </article>
+    </div>
+    <p class="cp-note lot-note">※対象期間・応募方法・当選発表の方法は、決まりしだい掲載します。<!-- TODO --><br>※賞品の色・仕様は変更になる場合があります。</p>
+  </div>
+</section>
+
+<!-- 03 スケジュール（TODO） -->
+<section class="d05" id="schedule">
+  <div class="wrap">
+    <p class="sec-no">03 ／ スケジュール</p>
+    <h2 class="sch-h"><span class="nobr">ブラックフライデーは</span><br><em class="nobr">19日スタート！</em></h2>
+    <p class="sch-lead"><span class="nobr">11/19（木）20:00から</span><span class="nobr">11/25（水）1:59まで</span><br>（リード文が入ります）</p>
+    <div class="phases">
+      <article class="phase" hidden>
+        <div class="ph-head"><p class="ph-no">第<span class="num">1</span>弾</p><p class="ph-name">（企画名）</p></div>
+        <p class="ph-term"><span class="g"><span class="num">00.00</span><span class="wk">-</span><span class="tm num">00:00</span><span class="t2">〜</span></span><span class="g"><span class="num">00.00</span><span class="wk">-</span><span class="tm num">00:00</span></span></p>
+        <ul class="ph-deals">
+          <li class="nm"><span class="k">（施策の条件）</span><span class="v"><span class="num tbd-num">000</span>円OFF</span></li>
+          <li class="nm"><span class="k">（施策の条件）</span><span class="v"><span class="num tbd-num">00</span>%OFF</span></li>
+        </ul>
+        <a class="ph-link" href="#p5">第1弾を見る</a>
+      </article>
+      <article class="phase">
+        <div class="ph-head"><p class="ph-no"><span class="num">6</span>日間</p><p class="ph-name">ブラックフライデー</p></div>
+        <p class="ph-term"><span class="g"><span class="num">11.19</span><span class="wk">木</span><span class="tm num">20:00</span><span class="t2">〜</span></span><span class="g"><span class="num">11.25</span><span class="wk">水</span><span class="tm num">1:59</span></span></p>
+        <ul class="ph-deals">
+          <li class="pt"><span class="k">（施策の条件）</span><span class="v">POINT<span class="num tbd-num">0</span>倍</span></li>
+          <li class="pt"><span class="k">（施策の条件）</span><span class="v">POINT<span class="num tbd-num">00</span>倍</span></li>
+        </ul>
+        <a class="ph-link pk" href="#p5">くわしく見る</a>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- 04 ポイントアップ（TODO） -->
+<section class="p5" id="p5">
+  <div class="wrap">
+    <p class="sec-no">04 ／ ポイントアップ</p>
+    <p class="p5-term"><span class="num">11.19</span>（木）<span class="num">20:00</span> 〜 <span class="nobr"><span class="num">11.25</span>（水）<span class="num">1:59</span></span></p>
+    <div class="p5-grid">
+      <p class="big5" aria-hidden="true"><span class="num">0</span><b>倍</b></p>
+      <div class="p5-txt">
+        <h2>（ポイント施策の<br><em>見出しが入ります</em>）</h2>
+        <p>（説明文が入ります）</p>
+        <a class="entry-btn" href="#p5" data-todo="entry">エントリーはこちら</a>
+        <p class="p5-note">※（注意書きが入ります）</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 05 おさらい -->
 <section class="sum" id="sum">
   <div class="wrap">
-    <p class="sec-no">06 ／ おさらい</p>
+    <p class="sec-no">05 ／ おさらい</p>
     <h2>この6日間<br class="sp-br">ここをチェック</h2>
     <ul class="sum-list">
-      <li hidden><span class="k">第1弾｜（期間）</span><span class="v">（施策内容） <span class="hl">（おトク内容）</span></span><a href="#coupon">クーポンを見る</a></li>
+      <li><span class="k">目玉商品</span><span class="v">ティファール目玉セット <span class="hp">最大30%OFF</span></span><a class="pk" href="#p20">目玉商品を見る</a></li>
       <li><span class="k">プレゼント抽選</span><span class="v">2万円以上のお買い物で <span class="hl">抽選で合計8名様</span></span><a href="#lottery">賞品を見る</a></li>
       <li><span class="k">11/19（木）20:00〜11/25（水）1:59</span><span class="v">（施策内容） <span class="hp">（おトク内容）</span></span><a class="pk" href="#p5">詳しく見る</a></li>
-      <li><span class="k">目玉商品</span><span class="v">ティファール目玉セット <span class="hp">最大30%OFF</span></span><a class="pk" href="#p20">目玉商品を見る</a></li>
     </ul>
     <a class="shop-link" href="https://www.rakuten.co.jp/sommelier/" target="_blank" rel="noopener">ショップトップで商品をさがす</a>
   </div>
