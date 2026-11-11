@@ -1450,6 +1450,11 @@ section h2{font-size:clamp(26px,7.8cqw,46px)!important}
 .fs-combo img,.fs-combo.small img:last-child{flex:0 1 auto!important;width:auto!important;height:clamp(150px,36cqw,250px)!important;max-height:none!important;max-width:44%!important;object-fit:contain!important;align-self:center!important}
 .fs-combo.small img:last-child{height:clamp(130px,30cqw,205px)!important}
 @media(max-width:599px){.fs-combo,.fs-combo.small,.fsets>.fset.fset:nth-child(n+3) .fs-combo.small{padding:66px 4% 28px!important}}
+
+/* セット画像（1枚もの）を使う場合 2026-11-11 */
+.fs-setimg{padding:66px 4% 30px;background:#fff}
+.fs-setimg img{display:block;width:100%;height:auto;aspect-ratio:1000/400!important;object-fit:contain}
+@media(max-width:599px){.fs-setimg{padding:62px 3% 22px}}
 </style>
 </head>
 <body>
@@ -1548,7 +1553,7 @@ section h2{font-size:clamp(26px,7.8cqw,46px)!important}
     <p class="sch-lead">ティファールの人気家電を<span class="nobr">おトクなセットに</span></p>
     <div class="fsets">
       <article class="fset">
-        <div class="fs-img"><div class="fs-combo"><img src="img/fv/rice-black.png" alt="炊飯器" loading="lazy"><span class="pl" aria-hidden="true">+</span><img src="img/fv/pressure.png" alt="片手圧力鍋" loading="lazy"></div><span class="fs-off stk" aria-label="30%OFF"><span class="lay bk" aria-hidden="true"><b class="t" data-t="30">30</b><span class="po"><span class="t pc" data-t="%">%</span><span class="t of" data-t="OFF">OFF</span></span></span><span class="lay fr" aria-hidden="true"><b class="t" data-t="30">30</b><span class="po"><span class="t pc" data-t="%">%</span><span class="t of" data-t="OFF">OFF</span></span></span></span><span class="fs-band" aria-hidden="true">BLACK FRIDAY SALE</span><span class="fs-no">SET<b>1</b></span></div>
+        <div class="fs-img"><div class="fs-setimg"><img src="img/set01.jpg" width="1000" height="400" alt="炊飯器＋片手圧力鍋" loading="lazy"></div><span class="fs-off stk" aria-label="30%OFF"><span class="lay bk" aria-hidden="true"><b class="t" data-t="30">30</b><span class="po"><span class="t pc" data-t="%">%</span><span class="t of" data-t="OFF">OFF</span></span></span><span class="lay fr" aria-hidden="true"><b class="t" data-t="30">30</b><span class="po"><span class="t pc" data-t="%">%</span><span class="t of" data-t="OFF">OFF</span></span></span></span><span class="fs-band" aria-hidden="true">BLACK FRIDAY SALE</span><span class="fs-no">SET<b>1</b></span></div>
         <div class="fs-body">
           <div class="fs-txt">
           <h3>炊飯器＆片手圧力鍋セット</h3>
