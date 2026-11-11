@@ -972,6 +972,49 @@ footer .brand .logo{height:40px}
 /* ネオン管の枠：常に光る細い線 */
 .fv .sign::before{background:conic-gradient(from var(--fa),transparent 0 62%,#ffffff00 70%,#fff6dc 86%,#ffffff 88%,#ecc867 90%,transparent 96%),linear-gradient(#ecc867cc,#ecc867cc)!important}
 @media(prefers-reduced-motion:reduce){.fv-title .l1,.fv-title .l2{animation:none!important}}
+
+/* ===== FV 2026-11-11 第3案：金のメタリック文字＋細い金の枠＋金のラメ（参考：Adobe Stock 380479760） ===== */
+.fv .sign::before{animation:none!important;filter:none!important;padding:2px!important;inset:0!important;border-radius:0!important;
+  background:linear-gradient(135deg,#f6e2a6,#c99a3c 30%,#fff1c4 50%,#b0852f 70%,#ecc867)!important}
+.fv .sign::after{display:none!important}
+.fv .sign-in{border:0!important;background:transparent!important}
+.fv{background:#050404!important}
+.fv-stage::before{display:none!important}
+.fv-pod{display:none!important}
+/* 金の文字 */
+.fv-title .en{font-weight:700!important}
+.fv-title .l1,.fv-title .l2,.js .fv-title .l1,.js .fv-title .l2{-webkit-text-stroke:0!important;text-shadow:none!important;
+  background:linear-gradient(180deg,#fff3c8 0%,#e9c46a 32%,#b7862f 50%,#f3d382 66%,#9a6d22 100%)!important;
+  -webkit-background-clip:text!important;background-clip:text!important;color:transparent!important;
+  filter:drop-shadow(0 1px 0 #fff3c8) drop-shadow(0 3px 0 #5c3f10) drop-shadow(0 8px 18px #000)!important}
+.js .fv-title .l1{animation:inL .9s .15s cubic-bezier(.2,.8,.2,1) both!important}
+.js .fv-title .l2{animation:inR .9s .35s cubic-bezier(.2,.8,.2,1) both!important}
+/* 文字の上を光がすっと通る */
+.fv-title{position:relative}
+.fv-title::after{content:"";position:absolute;inset:-4% -2%;pointer-events:none;mix-blend-mode:overlay;
+  background:linear-gradient(105deg,transparent 40%,#fffde8 50%,transparent 60%) -150% 0/60% 100% no-repeat;animation:goldSweep 5s 1.6s ease-in-out infinite}
+@keyframes goldSweep{0%,60%{background-position:-150% 0}100%{background-position:250% 0}}
+.fv-date .dt{color:#fffaf3!important}.fv-date .dt>.num{color:#f3d382!important}
+/* 金のラメ */
+.fv-spark{inset:-40px!important;overflow:visible!important;z-index:0!important}
+.fv-dust{position:absolute;left:50%;top:50%;width:1px;height:1px;border-radius:50%}
+.fv-dust.tw{animation:dustTw 2.8s ease-in-out infinite alternate}
+.fv-dust.tw2{animation:dustTw 3.6s .8s ease-in-out infinite alternate}
+@keyframes dustTw{0%{opacity:.15}100%{opacity:1}}
+.fv .sign{z-index:1}
+.fv .sign-in{position:relative;z-index:1}
+/* 商品は重ねずに並べる（4列×2段） */
+.fv-items{aspect-ratio:auto!important;display:grid!important;grid-template-columns:repeat(4,1fr);gap:14px 10px;align-items:end}
+.fv-items .it{position:static!important;width:100%!important;height:auto!important;aspect-ratio:1;object-fit:contain;filter:drop-shadow(0 8px 12px #000c)!important}
+.fv-items .ingenio{order:1}.fv-items .rice-b{order:2}.fv-items .rice-i{order:3}.fv-items .press{order:4}
+.fv-items .cof-w{order:5}.fv-items .cof-r{order:6}.fv-items .toast-r{order:7}.fv-items .toast-s{order:8}
+.fv-stage{margin-top:26px!important;padding-top:20px;border-top:1px solid #ecc86755}
+@media(max-width:599px){.fv-items{gap:8px 6px}}
+
+/* 商品は種類ごとに1つ（5点）、3つ＋2つで中央ぞろえ 2026-11-11 */
+.fv-items{display:flex!important;flex-wrap:wrap;justify-content:center;gap:16px 4%!important}
+.fv-items .it{width:30%!important}
+.fv-items .ingenio{order:1}.fv-items .rice-i{order:2}.fv-items .press{order:3}.fv-items .cof-r{order:4}.fv-items .toast-s{order:5}
 </style>
 </head>
 <body>
@@ -1042,11 +1085,8 @@ footer .brand .logo{height:40px}
       <div class="fv-stage">
         <div class="fv-items">
           <img class="it ingenio" src="img/fv/ingenio-set.png" width="681" height="610" alt="ティファール インジニオ・ネオ ステンレス セット">
-          <img class="it cof-w" src="img/fv/coffee-white.png" width="338" height="556" alt="ティファール コーヒーメーカー ホワイト">
           <img class="it cof-r" src="img/fv/coffee-red.png" width="338" height="556" alt="ティファール コーヒーメーカー レッド">
-          <img class="it rice-b" src="img/fv/rice-black.png" width="476" height="475" alt="ティファール 炊飯器 ブラック">
           <img class="it rice-i" src="img/fv/rice-ivory.png" width="469" height="482" alt="ティファール 炊飯器 アイボリー">
-          <img class="it toast-r" src="img/fv/toaster-red.png" width="567" height="534" alt="ティファール トースター レッド">
           <img class="it toast-s" src="img/fv/toaster-silver.png" width="571" height="537" alt="ティファール トースター シルバー">
           <img class="it press" src="img/fv/pressure.png" width="699" height="465" alt="ティファール 圧力鍋">
         </div>
@@ -1345,12 +1385,17 @@ footer .brand .logo{height:40px}
 </script>
 <script>
 (function(){
-  // FV 近未来の光：横に走る光の筋・縦の光・浮かぶ粒
+  // FV 金のラメ：中央に集まる細かい金の粒（box-shadow でまとめて描く）
   var w=document.querySelector('.fv-spark');if(!w)return;
-  var html='',r=Math.random;
-  for(var k=0;k<9;k++)html+='<i class="ln" style="top:'+(6+r()*88).toFixed(1)+'%;--d:'+(2.6+r()*2.2).toFixed(2)+'s;--dl:'+(r()*3).toFixed(2)+'s"></i>';
-  for(var k=0;k<4;k++)html+='<i class="ln v" style="--x:'+(8+r()*84).toFixed(1)+'%;--d:'+(3.2+r()*2).toFixed(2)+'s;--dl:'+(r()*3).toFixed(2)+'s"></i>';
-  for(var k=0;k<26;k++)html+='<i class="pt" style="left:'+(3+r()*94).toFixed(1)+'%;top:'+(30+r()*68).toFixed(1)+'%;--d:'+(4+r()*4).toFixed(2)+'s;--dl:'+(r()*5).toFixed(2)+'s"></i>';
+  var r=Math.random,cols=['#f6e2a6','#ecc867','#fff6dc','#c99a3c','#ffffff'];
+  function g(){return (r()+r()+r()-1.5)/1.5}
+  function layer(n,cls){var b=w.getBoundingClientRect(),W=b.width/2,H=b.height/2,a=[];
+    for(var k=0;k<n;k++){var x=(g()*W*1.05).toFixed(0),y=(g()*H*1.05).toFixed(0),sz=r()<.93?0:(r()<.8?.5:1.2);
+      a.push(x+'px '+y+'px 0 '+sz+'px '+cols[(r()*cols.length)|0]);}
+    return '<i class="fv-dust '+cls+'" style="box-shadow:'+a.join(',')+'"></i>';}
+  function draw(){w.innerHTML=layer(2200,'')+layer(500,'tw')+layer(400,'tw2');}
+  draw();var t;window.addEventListener('resize',function(){clearTimeout(t);t=setTimeout(draw,300)});
+  return;
   w.innerHTML=html;
 })();
 </script>
