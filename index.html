@@ -1376,6 +1376,11 @@ section h2{font-size:clamp(26px,7.8cqw,46px)!important}
 .fs-price .num{font-style:italic!important;letter-spacing:-.01em!important}
 .fs-price .num .cm{font-size:.7em}
 @media(max-width:599px){.fsets>.fset.fset .fs-price .num{font-size:clamp(54px,18.5cqw,72px)!important}.fsets>.fset.fset .fs-price .yen{font-size:28px!important}}
+
+/* 目玉セット見出し：「超目玉！」をブラックフライデー限定の幅まで大きく 2026-11-11 */
+.p20-h{display:flex;flex-direction:column;align-items:center}
+.p20-h .h-l1,.p20-h .h-l2{display:block;width:max-content;white-space:nowrap}
+.p20-h .h-l2{line-height:1.05;margin-top:.02em;letter-spacing:0!important;font-style:normal}
 </style>
 </head>
 <body>
@@ -1470,7 +1475,7 @@ section h2{font-size:clamp(26px,7.8cqw,46px)!important}
 <section class="p20" id="p20">
   <div class="wrap">
     <p class="sec-no">01 ／ 目玉商品</p>
-    <h2>ブラックフライデー限定<br><em>目玉セット</em></h2>
+    <h2 class="p20-h"><span class="h-l1">ブラックフライデー限定</span><em class="h-l2">超目玉！</em></h2>
     <p class="sch-lead">ティファールの人気家電を<span class="nobr">おトクなセットに</span></p>
     <div class="fsets">
       <article class="fset">
@@ -1700,6 +1705,10 @@ section h2{font-size:clamp(26px,7.8cqw,46px)!important}
   // 左サイドのロゴの横幅を BLACK FRIDAY の文字幅にそろえる
   var fit0=fit;fit=function(){fit0();var lg=document.querySelector('.side .brand .logo'),fr=document.querySelector('.side-ttl .l2');
     if(lg&&fr){var w=fr.getBoundingClientRect().width;if(w)lg.style.setProperty('width',w+'px','important');}};
+  // 「超目玉！」の左右を「ブラックフライデー限定」の幅に合わせる
+  var fit1=fit;fit=function(){fit1();var a=document.querySelector('.p20-h .h-l1'),b=document.querySelector('.p20-h .h-l2');
+    if(a&&b){b.style.removeProperty('font-size');var wa=a.getBoundingClientRect().width,wb=b.getBoundingClientRect().width;
+      if(wa&&wb)b.style.setProperty('font-size',(parseFloat(getComputedStyle(b).fontSize)*wa/wb)+'px','important');}};
   (document.fonts&&document.fonts.ready?document.fonts.ready:Promise.resolve()).then(fit);
   window.addEventListener('load',fit);
   window.addEventListener('resize',fit);
