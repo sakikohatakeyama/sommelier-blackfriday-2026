@@ -1381,6 +1381,15 @@ section h2{font-size:clamp(26px,7.8cqw,46px)!important}
 .p20-h{display:flex;flex-direction:column;align-items:center}
 .p20-h .h-l1,.p20-h .h-l2{display:block;width:max-content;white-space:nowrap}
 .p20-h .h-l2{line-height:1.05;margin-top:.02em;letter-spacing:0!important;font-style:normal}
+
+/* 目玉セット画像：参考のバランス（白背景・商品大きめで詰める・＋は黒丸）、OFFアイコンの影なし 2026-11-11 */
+.fs-img{background:#fff!important}
+.fs-combo,.fs-combo.small,.fsets>.fset.fset:nth-child(n+3) .fs-combo.small{height:clamp(240px,50cqw,320px)!important;padding:52px 6% 26px!important;gap:2.5%!important}
+.fs-combo img{max-height:100%!important;filter:none!important}
+.fs-combo.small img:last-child{max-height:80%!important}
+.fs-combo .pl{flex:none;display:flex;align-items:center;justify-content:center;width:46px;height:46px;border-radius:50%;background:#111;color:#fff!important;font-size:34px!important;font-weight:700;line-height:1;padding-bottom:3px;box-sizing:border-box}
+.fs-off.stk{filter:none!important}
+@media(max-width:599px){.fs-combo,.fs-combo.small,.fsets>.fset.fset:nth-child(n+3) .fs-combo.small{height:clamp(200px,60cqw,240px)!important;padding:48px 4% 20px!important}.fs-combo .pl{width:32px;height:32px;font-size:24px!important}}
 </style>
 </head>
 <body>
