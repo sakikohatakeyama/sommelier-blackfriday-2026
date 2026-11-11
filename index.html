@@ -893,6 +893,24 @@ footer .brand .logo{height:40px}
 @keyframes glint{0%,55%{background-position:120% 0,0 0}85%,100%{background-position:-20% 0,0 0}}
 @keyframes goldflow{to{background-position:-200% 0}}
 @media(prefers-reduced-motion:reduce){.fv-spark{display:none}.fv-title .l1,.fv-title .l2,.js .fv-title .l1,.js .fv-title .l2{animation:none}}
+
+/* FV：日付は1行で小さく、下に商品画像の台座（参考：Yunth BF のFV） 2026-11-11 */
+.fv-date{flex-direction:row!important;flex-wrap:nowrap;gap:10px!important;margin-top:22px!important;padding-top:0!important;border-top:0!important}
+.fv-date .dt{gap:5px!important}
+.fv-date .dt>.num{font-size:clamp(20px,5.4cqw,30px)!important}
+.fv-date .wk{width:clamp(18px,4.4cqw,24px)!important;height:clamp(18px,4.4cqw,24px)!important;font-size:clamp(10px,2.4cqw,13px)!important}
+.fv-date .tm{font-size:clamp(16px,4.2cqw,22px)!important}
+.fv-date .to{width:18px!important;height:2px!important}
+.fv-date .to::after{right:0!important;top:-4px!important;bottom:auto!important;width:8px!important;height:8px!important;transform:rotate(45deg)!important}
+.fv-simple{padding-bottom:28px!important}
+.fv-stage{position:relative;margin:26px auto 0;max-width:560px}
+.fv-items{position:relative;z-index:1;aspect-ratio:5/3;display:flex;align-items:center;justify-content:center;border:2px dashed #d8b25a66;color:#d8b25a;font-weight:700;font-size:15px;letter-spacing:.06em}
+.fv-items img{width:100%;height:100%;object-fit:contain}
+.fv-items:has(img){border:0}
+.fv-pod{position:relative;height:clamp(40px,10cqw,64px);margin:-26px 2% 0}
+.fv-pod::before,.fv-pod::after{content:"";position:absolute;left:0;right:0;border-radius:50%}
+.fv-pod::before{top:0;height:62%;background:radial-gradient(ellipse at 50% 40%,#fff6dc,#ecc867 45%,#b38b38 100%);box-shadow:0 0 30px #ecc86788,inset 0 -4px 10px #94712b}
+.fv-pod::after{top:34%;height:66%;z-index:-1;background:linear-gradient(180deg,#b38b38,#6d5120);box-shadow:0 18px 40px #000c}
 </style>
 </head>
 <body>
@@ -960,6 +978,11 @@ footer .brand .logo{height:40px}
         <span class="to" aria-label="から"></span>
         <span class="dt"><span class="num">11.25</span><span class="wk">水</span><span class="tm num">1:59</span></span>
       </p>
+      <!-- TODO: 商品画像（背景透過のPNG）が届いたら img/fv-items.png を入れて差し替え -->
+      <div class="fv-stage">
+        <div class="fv-items" data-todo="fv-items">（商品画像が入ります）</div>
+        <div class="fv-pod" aria-hidden="true"></div>
+      </div>
     </div>
   </div>
 </div>
