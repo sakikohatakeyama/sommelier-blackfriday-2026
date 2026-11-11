@@ -1298,6 +1298,25 @@ section h2{font-size:clamp(26px,7.8cqw,46px)!important}
 .fs-price .num{letter-spacing:.005em!important;font-variant-numeric:proportional-nums;-webkit-text-stroke-width:5px!important;filter:drop-shadow(2px 3px 0 #1b1715)!important}
 .fs-price .num .cm{font-size:.62em;margin:0 .02em 0 -.02em;vertical-align:baseline}
 .fs-price .yen{-webkit-text-stroke-width:5px!important;filter:drop-shadow(2px 3px 0 #1b1715)!important}
+
+/* SET3・4もPCで1列（SET1・2と同じ大きさ） 2026-11-11 */
+@media(min-width:600px){
+.fsets{grid-template-columns:1fr!important}
+.fsets>.fset.fset:nth-child(n+3){grid-column:1/-1}
+.fsets>.fset.fset:nth-child(n+3) h3{font-size:clamp(26px,7.8cqw,40px)!important}
+.fsets>.fset.fset:nth-child(n+3) .fs-body{padding:18px 12px 20px!important}
+.fsets>.fset.fset:nth-child(n+3) .fs-combo.small{height:clamp(250px,62cqw,370px)!important;padding:84px 3% 40px!important}
+.fsets>.fset.fset:nth-child(n+3) .fs-price{flex-wrap:nowrap!important}
+.fsets>.fset.fset:nth-child(n+3) .fs-price .num{font-size:clamp(80px,25cqw,128px)!important}
+.fsets>.fset.fset:nth-child(n+3) .fs-price .yen{font-size:40px!important}
+.fsets>.fset.fset:nth-child(n+3) .fs-img .fs-off.stk{right:14px!important;top:-46px!important}
+.fsets>.fset.fset:nth-child(n+3) .fs-off.stk b.t{font-size:100px!important}
+.fsets>.fset.fset:nth-child(n+3) .fs-off.stk .pc{font-size:44px!important}.fsets>.fset.fset:nth-child(n+3) .fs-off.stk .of{font-size:32px!important}
+.fsets>.fset.fset:nth-child(n+3) .fs-off.stk .t{-webkit-text-stroke:14px #d4ff1f!important}.fsets>.fset.fset:nth-child(n+3) .fs-off.stk .t::before{-webkit-text-stroke:26px #fff!important}
+.fsets>.fset.fset:nth-child(n+3) .fs-off.stk::before,.fsets>.fset.fset:nth-child(n+3) .fs-off.stk::after{font-size:100px!important}
+.fsets>.fset.fset:nth-child(n+3) .buy{font-size:18px!important;min-height:58px!important}
+}
+.fsets>.fset.fset:nth-child(n+3) .fs-off.stk{width:auto!important;height:auto!important}
 </style>
 </head>
 <body>
