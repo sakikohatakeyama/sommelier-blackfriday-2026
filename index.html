@@ -1570,6 +1570,39 @@ section h2{font-size:clamp(26px,7.8cqw,46px)!important}
 /* 福袋の名前・説明文は Noto Sans JP（Googleフォント）に 2026-11-12 */
 .fset .fs-name,.fset .fs-name .br,.fset .fs-name .clr,.fset .fs-in{font-family:"Noto Sans JP",sans-serif!important}
 .fset .fs-name,.fset .fs-name .br{font-weight:900!important}
+/* 福袋から商品が飛び出す 2026-11-12 */
+.fs-setimg.fb{padding-left:2%!important;padding-right:2%!important}
+.fb-stage{position:relative;width:100%;aspect-ratio:1000/640;overflow:visible}
+.fb-rays{position:absolute;left:50%;top:56%;width:120%;aspect-ratio:1;transform:translate(-50%,-50%);border-radius:50%;
+  background:repeating-conic-gradient(from 0deg,#f6e2a2 0 5deg,#fff0 5deg 15deg);
+  -webkit-mask:radial-gradient(closest-side,#000 15%,#0000 72%);mask:radial-gradient(closest-side,#000 15%,#0000 72%);
+  opacity:.85;animation:fbSpin 30s linear infinite;pointer-events:none}
+@keyframes fbSpin{to{transform:translate(-50%,-50%) rotate(360deg)}}
+.fb-back,.fb-front{position:absolute;left:29%;width:42%;bottom:0;height:auto;overflow:visible}
+.fb-front{filter:drop-shadow(0 8px 10px rgba(0,0,0,.18))}
+.fb-it{position:absolute;bottom:38%;width:var(--w);height:auto;transform-origin:50% 100%;transform:rotate(var(--r));filter:drop-shadow(0 6px 8px rgba(0,0,0,.18))}
+.fb-it.l{right:46%}
+.fb-it.r{left:46%}
+.fb-it.s{left:50%;bottom:41%;margin-left:calc(var(--w) / -2);z-index:1;filter:drop-shadow(0 4px 6px rgba(0,0,0,.25))}
+.fb-front{z-index:2}
+.js .fb-stage:not(.pop) .fb-it{opacity:0;transform:translateY(55%) scale(.55) rotate(0deg)}
+.fb-stage.pop .fb-it{animation:fbOut .9s cubic-bezier(.2,1.5,.4,1) both}
+.fb-stage.pop .fb-it.r{animation-delay:.12s}
+.fb-stage.pop .fb-it.s{animation-delay:.32s}
+@keyframes fbOut{0%{opacity:0;transform:translateY(55%) scale(.55) rotate(0deg)}35%{opacity:1}100%{opacity:1;transform:translateY(0) scale(1) rotate(var(--r))}}
+.fb-stage.pop .fb-front{animation:fbShake .5s ease-out both}
+@keyframes fbShake{0%{transform:scale(1,1)}30%{transform:scale(1.04,.95)}60%{transform:scale(.98,1.03)}100%{transform:scale(1,1)}}
+.fb-front{transform-origin:50% 100%}
+@media (prefers-reduced-motion:reduce){.fb-rays,.fb-stage.pop .fb-it,.fb-stage.pop .fb-front{animation:none}.js .fb-stage:not(.pop) .fb-it{opacity:1;transform:rotate(var(--r))}}
+.fs-img .fs-setimg.fb .fb-stage img.fb-it{display:block;width:var(--w)!important;height:auto!important;max-width:none!important;aspect-ratio:auto!important;object-fit:fill!important;margin:0}
+.fs-img .fs-setimg.fb .fb-stage img.fb-it.s{margin-left:calc(var(--w) / -2)!important}
+.fb-stage{aspect-ratio:1000/660!important}
+.fb-back,.fb-front{left:29%!important;width:42%!important}
+.fb-it{bottom:40%!important}
+.fb-it.l{right:48.5%!important}.fb-it.r{left:48.5%!important}
+.fs-img .fs-setimg.fb .fb-stage img.fb-it.s{bottom:38%!important;z-index:1}
+.fb-rays{top:52%!important}
+.fset .fs-gift{margin-bottom:10px}
 </style>
 </head>
 <body>
@@ -1661,6 +1694,26 @@ section h2{font-size:clamp(26px,7.8cqw,46px)!important}
 </div>
 
 <!-- 01 目玉商品 -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
+<linearGradient id="fbRed" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#f02a3a"/><stop offset=".55" stop-color="#c8102e"/><stop offset="1" stop-color="#8e0a17"/></linearGradient>
+<linearGradient id="fbLip" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ff4a55"/><stop offset="1" stop-color="#b30d22"/></linearGradient>
+<linearGradient id="fbGold" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fff3c8"/><stop offset=".35" stop-color="#e9c46a"/><stop offset=".6" stop-color="#b7862f"/><stop offset="1" stop-color="#f3d382"/></linearGradient>
+<symbol id="fbBack" viewBox="0 0 400 330"><ellipse cx="200" cy="62" rx="122" ry="24" fill="#5e0610"/><ellipse cx="200" cy="66" rx="104" ry="15" fill="#3a0308"/></symbol>
+<symbol id="fbFront" viewBox="0 0 400 330">
+<path d="M152,98 C84,120 24,196 34,266 C42,320 358,320 366,266 C376,196 316,120 248,98 Z" fill="url(#fbRed)"/>
+<path d="M120,140 C78,180 60,226 70,262" stroke="#fff" stroke-opacity=".28" stroke-width="10" fill="none" stroke-linecap="round"/>
+<g fill="#f3d382" opacity=".55"><circle cx="96" cy="196" r="3"/><circle cx="312" cy="190" r="3"/><circle cx="86" cy="250" r="2.5"/><circle cx="318" cy="252" r="2.5"/><circle cx="140" cy="290" r="2.5"/><circle cx="262" cy="292" r="2.5"/><circle cx="292" cy="150" r="2"/><circle cx="112" cy="152" r="2"/></g>
+<path d="M156,104 C128,88 100,80 76,60 C118,78 160,84 200,84 C240,84 282,78 324,60 C300,80 272,88 244,104 Z" fill="url(#fbLip)"/>
+<path d="M76,60 C118,78 160,84 200,84 C240,84 282,78 324,60" stroke="#ffb3b8" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+<rect x="142" y="94" width="116" height="18" rx="9" fill="url(#fbGold)"/>
+<path d="M200,103 C178,84 152,88 160,104 C166,116 186,110 200,103 Z M200,103 C222,84 248,88 240,104 C234,116 214,110 200,103 Z" fill="url(#fbGold)" stroke="#9a6d22" stroke-width="1.5"/>
+<circle cx="200" cy="103" r="8" fill="url(#fbGold)" stroke="#9a6d22" stroke-width="1.5"/>
+<path d="M196,110 C190,128 184,140 178,152 M204,110 C210,128 216,140 222,152" stroke="#d9ac4c" stroke-width="4" fill="none" stroke-linecap="round"/>
+<path d="M172,150 l12,0 l3,22 l-18,0 Z M216,150 l12,0 l3,22 l-18,0 Z" fill="url(#fbGold)"/>
+<circle cx="200" cy="218" r="54" fill="#fff" stroke="url(#fbGold)" stroke-width="7"/>
+<circle cx="200" cy="218" r="45" fill="none" stroke="#c8102e" stroke-width="1.5" opacity=".5"/>
+<text x="200" y="242" text-anchor="middle" font-family="Noto Sans JP,sans-serif" font-weight="900" font-size="68" fill="#c8102e">福</text>
+</symbol></defs></svg>
 <section class="p20" id="p20">
   <div class="wrap">
     <p class="sec-no">01 ／ 目玉商品</p>
@@ -1668,7 +1721,7 @@ section h2{font-size:clamp(26px,7.8cqw,46px)!important}
     <p class="sch-lead">ティファールの人気家電を<span class="nobr">おトクな福袋に</span></p>
     <div class="fsets">
       <article class="fset">
-        <div class="fs-img"><div class="fs-setimg"><img src="img/set01.jpg" width="1000" height="400" alt="炊飯器＋片手圧力鍋" loading="lazy"></div><span class="fs-off stk" aria-label="30%OFF"><span class="lay bk" aria-hidden="true"><b class="t" data-t="30">30</b><span class="po"><span class="t pc" data-t="%">%</span><span class="t of" data-t="OFF">OFF</span></span></span><span class="lay fr" aria-hidden="true"><b class="t" data-t="30">30</b><span class="po"><span class="t pc" data-t="%">%</span><span class="t of" data-t="OFF">OFF</span></span></span></span><span class="fs-band" aria-hidden="true">BLACK FRIDAY SALE</span><span class="fs-no">SET<b>1</b></span></div>
+        <div class="fs-img"><div class="fs-setimg fb"><div class="fb-stage" role="img" aria-label="福袋から炊飯器と片手圧力鍋とT-fal ぷくぷくシールが飛び出すイメージ"><span class="fb-rays" aria-hidden="true"></span><svg class="fb-back" viewBox="0 0 400 330" aria-hidden="true"><use href="#fbBack"/></svg><img class="fb-it l" src="img/fv/rice-black.png" width="476" height="475" style="--w:34%;--r:-9deg" alt="" loading="lazy"><img class="fb-it r" src="img/fv/pressure.png" width="699" height="465" style="--w:40%;--r:9deg" alt="" loading="lazy"><img class="fb-it s" src="img/puku.png" width="420" height="635" style="--w:12%;--r:-6deg" alt="" loading="lazy"><svg class="fb-front" viewBox="0 0 400 330" aria-hidden="true"><use href="#fbFront"/></svg></div></div><span class="fs-off stk" aria-label="30%OFF"><span class="lay bk" aria-hidden="true"><b class="t" data-t="30">30</b><span class="po"><span class="t pc" data-t="%">%</span><span class="t of" data-t="OFF">OFF</span></span></span><span class="lay fr" aria-hidden="true"><b class="t" data-t="30">30</b><span class="po"><span class="t pc" data-t="%">%</span><span class="t of" data-t="OFF">OFF</span></span></span></span><span class="fs-band" aria-hidden="true">BLACK FRIDAY SALE</span><span class="fs-no">SET<b>1</b></span></div>
         <div class="fs-body">
           <div class="fs-txt">
           <h3 class="fs-name"><span class="br">T-fal</span> 炊飯器＆片手圧力鍋 福袋</h3>
@@ -1681,7 +1734,7 @@ section h2{font-size:clamp(26px,7.8cqw,46px)!important}
         </div>
       </article>
       <article class="fset">
-        <div class="fs-img"><div class="fs-setimg"><img src="img/set02.jpg" width="1000" height="400" alt="炊飯器＋インジニオ・ネオ ステンレスセット9" loading="lazy"></div><span class="fs-off stk" aria-label="10%OFF"><span class="lay bk" aria-hidden="true"><b class="t" data-t="10">10</b><span class="po"><span class="t pc" data-t="%">%</span><span class="t of" data-t="OFF">OFF</span></span></span><span class="lay fr" aria-hidden="true"><b class="t" data-t="10">10</b><span class="po"><span class="t pc" data-t="%">%</span><span class="t of" data-t="OFF">OFF</span></span></span></span><span class="fs-band" aria-hidden="true">BLACK FRIDAY SALE</span><span class="fs-no">SET<b>2</b></span></div>
+        <div class="fs-img"><div class="fs-setimg fb"><div class="fb-stage" role="img" aria-label="福袋から炊飯器とインジニオ・ネオ ステンレスセット9とT-fal ぷくぷくシールが飛び出すイメージ"><span class="fb-rays" aria-hidden="true"></span><svg class="fb-back" viewBox="0 0 400 330" aria-hidden="true"><use href="#fbBack"/></svg><img class="fb-it l" src="img/fv/rice-black.png" width="476" height="475" style="--w:34%;--r:-9deg" alt="" loading="lazy"><img class="fb-it r" src="img/fv/ingenio-set.png" width="681" height="610" style="--w:37%;--r:9deg" alt="" loading="lazy"><img class="fb-it s" src="img/puku.png" width="420" height="635" style="--w:12%;--r:-6deg" alt="" loading="lazy"><svg class="fb-front" viewBox="0 0 400 330" aria-hidden="true"><use href="#fbFront"/></svg></div></div><span class="fs-off stk" aria-label="10%OFF"><span class="lay bk" aria-hidden="true"><b class="t" data-t="10">10</b><span class="po"><span class="t pc" data-t="%">%</span><span class="t of" data-t="OFF">OFF</span></span></span><span class="lay fr" aria-hidden="true"><b class="t" data-t="10">10</b><span class="po"><span class="t pc" data-t="%">%</span><span class="t of" data-t="OFF">OFF</span></span></span></span><span class="fs-band" aria-hidden="true">BLACK FRIDAY SALE</span><span class="fs-no">SET<b>2</b></span></div>
         <div class="fs-body">
           <div class="fs-txt">
           <h3 class="fs-name"><span class="br">T-fal</span> 炊飯器＆ステンレスセット9 福袋</h3>
@@ -1694,7 +1747,7 @@ section h2{font-size:clamp(26px,7.8cqw,46px)!important}
         </div>
       </article>
       <article class="fset">
-        <div class="fs-img"><div class="fs-setimg"><img src="img/set03.jpg" width="1000" height="400" alt="コーヒーメーカー＋トースター ワインレッド" loading="lazy"></div><span class="fs-off stk" aria-label="25%OFF"><span class="lay bk" aria-hidden="true"><b class="t" data-t="25">25</b><span class="po"><span class="t pc" data-t="%">%</span><span class="t of" data-t="OFF">OFF</span></span></span><span class="lay fr" aria-hidden="true"><b class="t" data-t="25">25</b><span class="po"><span class="t pc" data-t="%">%</span><span class="t of" data-t="OFF">OFF</span></span></span></span><span class="fs-band" aria-hidden="true">BLACK FRIDAY SALE</span><span class="fs-no">SET<b>3</b></span></div>
+        <div class="fs-img"><div class="fs-setimg fb"><div class="fb-stage" role="img" aria-label="福袋からコーヒーメーカーとトースター（ワインレッド）とT-fal ぷくぷくシールが飛び出すイメージ"><span class="fb-rays" aria-hidden="true"></span><svg class="fb-back" viewBox="0 0 400 330" aria-hidden="true"><use href="#fbBack"/></svg><img class="fb-it l" src="img/fv/coffee-red.png" width="338" height="556" style="--w:22%;--r:-8deg" alt="" loading="lazy"><img class="fb-it r" src="img/fv/toaster-red.png" width="567" height="534" style="--w:34%;--r:9deg" alt="" loading="lazy"><img class="fb-it s" src="img/puku.png" width="420" height="635" style="--w:12%;--r:-6deg" alt="" loading="lazy"><svg class="fb-front" viewBox="0 0 400 330" aria-hidden="true"><use href="#fbFront"/></svg></div></div><span class="fs-off stk" aria-label="25%OFF"><span class="lay bk" aria-hidden="true"><b class="t" data-t="25">25</b><span class="po"><span class="t pc" data-t="%">%</span><span class="t of" data-t="OFF">OFF</span></span></span><span class="lay fr" aria-hidden="true"><b class="t" data-t="25">25</b><span class="po"><span class="t pc" data-t="%">%</span><span class="t of" data-t="OFF">OFF</span></span></span></span><span class="fs-band" aria-hidden="true">BLACK FRIDAY SALE</span><span class="fs-no">SET<b>3</b></span></div>
         <div class="fs-body">
           <div class="fs-txt">
           <h3 class="fs-name"><span class="br">T-fal</span> 朝食福袋 <span class="clr">ワインレッド</span></h3>
@@ -1707,7 +1760,7 @@ section h2{font-size:clamp(26px,7.8cqw,46px)!important}
         </div>
       </article>
       <article class="fset">
-        <div class="fs-img"><div class="fs-setimg"><img src="img/set04.jpg" width="1000" height="400" alt="コーヒーメーカー＋トースター スノーホワイト" loading="lazy"></div><span class="fs-off stk" aria-label="25%OFF"><span class="lay bk" aria-hidden="true"><b class="t" data-t="25">25</b><span class="po"><span class="t pc" data-t="%">%</span><span class="t of" data-t="OFF">OFF</span></span></span><span class="lay fr" aria-hidden="true"><b class="t" data-t="25">25</b><span class="po"><span class="t pc" data-t="%">%</span><span class="t of" data-t="OFF">OFF</span></span></span></span><span class="fs-band" aria-hidden="true">BLACK FRIDAY SALE</span><span class="fs-no">SET<b>4</b></span></div>
+        <div class="fs-img"><div class="fs-setimg fb"><div class="fb-stage" role="img" aria-label="福袋からコーヒーメーカーとトースター（スノーホワイト）とT-fal ぷくぷくシールが飛び出すイメージ"><span class="fb-rays" aria-hidden="true"></span><svg class="fb-back" viewBox="0 0 400 330" aria-hidden="true"><use href="#fbBack"/></svg><img class="fb-it l" src="img/fv/coffee-white.png" width="338" height="556" style="--w:22%;--r:-8deg" alt="" loading="lazy"><img class="fb-it r" src="img/fv/toaster-silver.png" width="571" height="537" style="--w:34%;--r:9deg" alt="" loading="lazy"><img class="fb-it s" src="img/puku.png" width="420" height="635" style="--w:12%;--r:-6deg" alt="" loading="lazy"><svg class="fb-front" viewBox="0 0 400 330" aria-hidden="true"><use href="#fbFront"/></svg></div></div><span class="fs-off stk" aria-label="25%OFF"><span class="lay bk" aria-hidden="true"><b class="t" data-t="25">25</b><span class="po"><span class="t pc" data-t="%">%</span><span class="t of" data-t="OFF">OFF</span></span></span><span class="lay fr" aria-hidden="true"><b class="t" data-t="25">25</b><span class="po"><span class="t pc" data-t="%">%</span><span class="t of" data-t="OFF">OFF</span></span></span></span><span class="fs-band" aria-hidden="true">BLACK FRIDAY SALE</span><span class="fs-no">SET<b>4</b></span></div>
         <div class="fs-body">
           <div class="fs-txt">
           <h3 class="fs-name"><span class="br">T-fal</span> 朝食福袋 <span class="clr">スノーホワイト</span></h3>
@@ -2195,6 +2248,14 @@ section h2{font-size:clamp(26px,7.8cqw,46px)!important}
   // OFFアイコンのビリビリ：画面に入ったときに2回だけ
   var bs=[].slice.call(document.querySelectorAll('.fs-off.stk'));if(!bs.length)return;
   function check(){var vh=innerHeight;bs.forEach(function(b){if(b.classList.contains('zap-on'))return;var r=b.getBoundingClientRect();if(r.top<vh*0.85&&r.bottom>0)b.classList.add('zap-on');});}
+  addEventListener('scroll',check,{passive:true});addEventListener('resize',check);addEventListener('load',check);setTimeout(check,600);
+})();
+</script>
+<script>
+(function(){
+  // 福袋：画面に入ったら商品が飛び出す
+  var st=[].slice.call(document.querySelectorAll('.fb-stage'));
+  function check(){var vh=innerHeight;st.forEach(function(e){if(e.classList.contains('pop'))return;var r=e.getBoundingClientRect();if(r.top<vh*0.8&&r.bottom>0)e.classList.add('pop');});}
   addEventListener('scroll',check,{passive:true});addEventListener('resize',check);addEventListener('load',check);setTimeout(check,600);
 })();
 </script>
