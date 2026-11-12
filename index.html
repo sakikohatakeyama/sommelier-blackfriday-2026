@@ -1603,6 +1603,13 @@ section h2{font-size:clamp(26px,7.8cqw,46px)!important}
 .fs-img .fs-setimg.fb .fb-stage img.fb-it.s{bottom:38%!important;z-index:1}
 .fb-rays{top:52%!important}
 .fset .fs-gift{margin-bottom:10px}
+/* %OFFアイコンは非表示（作りはコードに残す。再表示はこのブロックを消す） 2026-11-12 */
+.fset .fs-img .fs-off.stk{display:none!important}
+.fs-setimg{padding-top:36px!important}
+@media(max-width:599px){.fs-setimg{padding-top:26px!important}}
+/* スマホ：プレゼント抽選の見出しが切れないように 2026-11-12 */
+@media(max-width:599px){.lot .lot-h{font-size:min(30px,7.8vw)!important}}
+@media(max-width:599px){.lot .lot-date{flex-wrap:nowrap;gap:4px 5px}.lot .lot-date .num{font-size:min(26px,6.1vw)}.lot .lot-date .tm{font-size:min(20px,4.6vw)}.lot .lot-date .wk{width:22px;height:22px;font-size:12px}.lot .lot-date .to{font-size:18px;margin:0 2px}}
 </style>
 </head>
 <body>
