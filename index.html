@@ -1626,6 +1626,14 @@ section h2{font-size:clamp(26px,7.8cqw,46px)!important}
   animation:fkRun 5s cubic-bezier(.45,.05,.35,1) 1.2s infinite}
 @keyframes fkRun{0%{background-position:130% 0}38%{background-position:-30% 0}100%{background-position:-30% 0}}
 @media (prefers-reduced-motion:reduce){.fk-shine{display:none}}
+/* 福袋：光はガラポンボタン（つつBF）と同じ、白い斜めの光が枠ごとサッと走る 2026-11-13 */
+.fk-shine{display:none!important}
+.fs-img .fs-setimg.fk{position:relative;overflow:hidden}
+.fs-img .fs-setimg.fk::after{content:""!important;display:block!important;position:absolute;top:0;bottom:0;left:-60%;width:40%;z-index:5;pointer-events:none;
+  background:linear-gradient(100deg,transparent,rgba(255,255,255,.7),transparent);transform:skewX(-20deg);
+  animation:fkSweep 3.2s ease-in-out infinite!important}
+@keyframes fkSweep{0%,60%{left:-60%}90%,100%{left:130%}}
+@media (prefers-reduced-motion:reduce){.fs-img .fs-setimg.fk::after{display:none!important}}
 </style>
 </head>
 <body>
