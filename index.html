@@ -2297,7 +2297,7 @@ section h2{font-size:clamp(26px,7.8cqw,46px)!important}
   var cols=['#f3cf63','#fff2b8','#ffffff','#e2b13c','#ffd84d','#111111'];
   function burst(box){
     var W=box.clientWidth,H=box.clientHeight,ox=W*.5,oy=H*.78;
-    for(var i=0;i<56;i++){
+    for(var i=0;i<26;i++){
       var e=document.createElement('i');e.className='fk-pop'+(i%5==0?' r':'');e.setAttribute('aria-hidden','true');
       e.style.setProperty('--w',(7+Math.random()*7).toFixed(1)+'px');e.style.setProperty('--c',cols[i%cols.length]);
       box.appendChild(e);
