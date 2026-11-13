@@ -1630,6 +1630,8 @@ section h2{font-size:clamp(26px,7.8cqw,46px)!important}
 .fs-img .fs-setimg.fk{position:relative;overflow:hidden}
 .fk-pop{position:absolute;left:0;top:0;width:var(--w);height:calc(var(--w)*.5);background:var(--c);border-radius:1px;z-index:6;pointer-events:none;will-change:transform,opacity}
 .fk-pop.r{border-radius:50%;height:var(--w)}
+/* 福袋2〜4は画像なし（画像が届いたら .fs-setimg.fk を入れる） 2026-11-13 */
+.fset .fs-img:not(:has(.fs-setimg)){display:none!important}
 </style>
 </head>
 <body>
@@ -1761,7 +1763,7 @@ section h2{font-size:clamp(26px,7.8cqw,46px)!important}
         </div>
       </article>
       <article class="fset">
-        <div class="fs-img"><div class="fs-setimg fb"><div class="fb-stage" role="img" aria-label="福袋から炊飯器とインジニオ・ネオ ステンレスセット9とT-fal ぷくぷくシールが飛び出すイメージ"><span class="fb-rays" aria-hidden="true"></span><svg class="fb-back" viewBox="0 0 400 330" aria-hidden="true"><use href="#fbBack"/></svg><img class="fb-it l" src="img/fv/rice-black.png" width="476" height="475" style="--w:34%;--r:-9deg" alt="" loading="lazy"><img class="fb-it r" src="img/fv/ingenio-set.png" width="681" height="610" style="--w:37%;--r:9deg" alt="" loading="lazy"><img class="fb-it s" src="img/puku.png" width="420" height="635" style="--w:12%;--r:-6deg" alt="" loading="lazy"><svg class="fb-front" viewBox="0 0 400 330" aria-hidden="true"><use href="#fbFront"/></svg></div></div><span class="fs-off stk" aria-label="10%OFF"><span class="lay bk" aria-hidden="true"><b class="t" data-t="10">10</b><span class="po"><span class="t pc" data-t="%">%</span><span class="t of" data-t="OFF">OFF</span></span></span><span class="lay fr" aria-hidden="true"><b class="t" data-t="10">10</b><span class="po"><span class="t pc" data-t="%">%</span><span class="t of" data-t="OFF">OFF</span></span></span></span><span class="fs-band" aria-hidden="true">BLACK FRIDAY SALE</span><span class="fs-no">SET<b>2</b></span></div>
+        <div class="fs-img"><span class="fs-off stk" aria-label="10%OFF"><span class="lay bk" aria-hidden="true"><b class="t" data-t="10">10</b><span class="po"><span class="t pc" data-t="%">%</span><span class="t of" data-t="OFF">OFF</span></span></span><span class="lay fr" aria-hidden="true"><b class="t" data-t="10">10</b><span class="po"><span class="t pc" data-t="%">%</span><span class="t of" data-t="OFF">OFF</span></span></span></span><span class="fs-band" aria-hidden="true">BLACK FRIDAY SALE</span><span class="fs-no">SET<b>2</b></span></div>
         <div class="fs-body">
           <div class="fs-txt">
           <h3 class="fs-name"><span class="br">T-fal</span> 炊飯器＆ステンレスセット9 福袋</h3>
@@ -1774,7 +1776,7 @@ section h2{font-size:clamp(26px,7.8cqw,46px)!important}
         </div>
       </article>
       <article class="fset">
-        <div class="fs-img"><div class="fs-setimg fb"><div class="fb-stage" role="img" aria-label="福袋からコーヒーメーカーとトースター（ワインレッド）とT-fal ぷくぷくシールが飛び出すイメージ"><span class="fb-rays" aria-hidden="true"></span><svg class="fb-back" viewBox="0 0 400 330" aria-hidden="true"><use href="#fbBack"/></svg><img class="fb-it l" src="img/fv/coffee-red.png" width="338" height="556" style="--w:22%;--r:-8deg" alt="" loading="lazy"><img class="fb-it r" src="img/fv/toaster-red.png" width="567" height="534" style="--w:34%;--r:9deg" alt="" loading="lazy"><img class="fb-it s" src="img/puku.png" width="420" height="635" style="--w:12%;--r:-6deg" alt="" loading="lazy"><svg class="fb-front" viewBox="0 0 400 330" aria-hidden="true"><use href="#fbFront"/></svg></div></div><span class="fs-off stk" aria-label="25%OFF"><span class="lay bk" aria-hidden="true"><b class="t" data-t="25">25</b><span class="po"><span class="t pc" data-t="%">%</span><span class="t of" data-t="OFF">OFF</span></span></span><span class="lay fr" aria-hidden="true"><b class="t" data-t="25">25</b><span class="po"><span class="t pc" data-t="%">%</span><span class="t of" data-t="OFF">OFF</span></span></span></span><span class="fs-band" aria-hidden="true">BLACK FRIDAY SALE</span><span class="fs-no">SET<b>3</b></span></div>
+        <div class="fs-img"><span class="fs-off stk" aria-label="25%OFF"><span class="lay bk" aria-hidden="true"><b class="t" data-t="25">25</b><span class="po"><span class="t pc" data-t="%">%</span><span class="t of" data-t="OFF">OFF</span></span></span><span class="lay fr" aria-hidden="true"><b class="t" data-t="25">25</b><span class="po"><span class="t pc" data-t="%">%</span><span class="t of" data-t="OFF">OFF</span></span></span></span><span class="fs-band" aria-hidden="true">BLACK FRIDAY SALE</span><span class="fs-no">SET<b>3</b></span></div>
         <div class="fs-body">
           <div class="fs-txt">
           <h3 class="fs-name"><span class="br">T-fal</span> 朝食福袋 <span class="clr">ワインレッド</span></h3>
@@ -1787,7 +1789,7 @@ section h2{font-size:clamp(26px,7.8cqw,46px)!important}
         </div>
       </article>
       <article class="fset">
-        <div class="fs-img"><div class="fs-setimg fb"><div class="fb-stage" role="img" aria-label="福袋からコーヒーメーカーとトースター（スノーホワイト）とT-fal ぷくぷくシールが飛び出すイメージ"><span class="fb-rays" aria-hidden="true"></span><svg class="fb-back" viewBox="0 0 400 330" aria-hidden="true"><use href="#fbBack"/></svg><img class="fb-it l" src="img/fv/coffee-white.png" width="338" height="556" style="--w:22%;--r:-8deg" alt="" loading="lazy"><img class="fb-it r" src="img/fv/toaster-silver.png" width="571" height="537" style="--w:34%;--r:9deg" alt="" loading="lazy"><img class="fb-it s" src="img/puku.png" width="420" height="635" style="--w:12%;--r:-6deg" alt="" loading="lazy"><svg class="fb-front" viewBox="0 0 400 330" aria-hidden="true"><use href="#fbFront"/></svg></div></div><span class="fs-off stk" aria-label="25%OFF"><span class="lay bk" aria-hidden="true"><b class="t" data-t="25">25</b><span class="po"><span class="t pc" data-t="%">%</span><span class="t of" data-t="OFF">OFF</span></span></span><span class="lay fr" aria-hidden="true"><b class="t" data-t="25">25</b><span class="po"><span class="t pc" data-t="%">%</span><span class="t of" data-t="OFF">OFF</span></span></span></span><span class="fs-band" aria-hidden="true">BLACK FRIDAY SALE</span><span class="fs-no">SET<b>4</b></span></div>
+        <div class="fs-img"><span class="fs-off stk" aria-label="25%OFF"><span class="lay bk" aria-hidden="true"><b class="t" data-t="25">25</b><span class="po"><span class="t pc" data-t="%">%</span><span class="t of" data-t="OFF">OFF</span></span></span><span class="lay fr" aria-hidden="true"><b class="t" data-t="25">25</b><span class="po"><span class="t pc" data-t="%">%</span><span class="t of" data-t="OFF">OFF</span></span></span></span><span class="fs-band" aria-hidden="true">BLACK FRIDAY SALE</span><span class="fs-no">SET<b>4</b></span></div>
         <div class="fs-body">
           <div class="fs-txt">
           <h3 class="fs-name"><span class="br">T-fal</span> 朝食福袋 <span class="clr">スノーホワイト</span></h3>
