@@ -1615,6 +1615,24 @@ section h2{font-size:clamp(26px,7.8cqw,46px)!important}
 .fs-img .fs-setimg.fk{background:#e70011!important;padding:34px 0 0!important;display:flex;justify-content:center}
 .fs-img .fs-setimg.fk img{display:block;width:min(78%,440px)!important;height:auto!important;aspect-ratio:960/1200!important;object-fit:contain;margin:0 auto}
 .fset .fs-img:has(.fk){border-bottom:0!important;background:#e70011!important}
+/* 福袋の赤い背景に演出：回る光の筋＋キラッと光る金の星＋ゆっくり舞う紙吹雪 2026-11-13 */
+.fs-img .fs-setimg.fk{position:relative;overflow:hidden}
+.fs-img .fs-setimg.fk img{position:relative;z-index:3}
+.fk-deco{position:absolute;inset:0;pointer-events:none;z-index:1;overflow:hidden}
+.fk-rays{position:absolute;left:50%;top:44%;width:170%;aspect-ratio:1;transform:translate(-50%,-50%);border-radius:50%;
+  background:repeating-conic-gradient(from 0deg,rgba(255,255,255,.13) 0 6deg,rgba(255,255,255,0) 6deg 18deg);
+  -webkit-mask:radial-gradient(closest-side,#000 8%,rgba(0,0,0,.6) 45%,transparent 75%);mask:radial-gradient(closest-side,#000 8%,rgba(0,0,0,.6) 45%,transparent 75%);
+  animation:fkSpin 40s linear infinite}
+.fk-glow{position:absolute;left:50%;top:44%;width:70%;aspect-ratio:1;transform:translate(-50%,-50%);border-radius:50%;background:radial-gradient(closest-side,rgba(255,226,140,.45),rgba(255,226,140,0))}
+@keyframes fkSpin{to{transform:translate(-50%,-50%) rotate(360deg)}}
+.fk-star{position:absolute;width:var(--s);aspect-ratio:1;background:linear-gradient(135deg,#fff8d8,#f3cf63 55%,#c99a2e);
+  clip-path:polygon(50% 0,61% 39%,100% 50%,61% 61%,50% 100%,39% 61%,0 50%,39% 39%);
+  filter:drop-shadow(0 0 6px rgba(255,236,160,.9));opacity:0;animation:fkTw 2.8s ease-in-out infinite;animation-delay:var(--d);z-index:4}
+@keyframes fkTw{0%,100%{opacity:0;transform:scale(.3) rotate(0)}45%{opacity:1;transform:scale(1) rotate(45deg)}70%{opacity:.2;transform:scale(.6) rotate(70deg)}}
+.fk-cf{position:absolute;top:-6%;width:var(--w);height:calc(var(--w)*.45);background:var(--c);border-radius:1px;opacity:.9;
+  animation:fkFall var(--t) linear infinite;animation-delay:var(--d)}
+@keyframes fkFall{0%{transform:translate(0,-20px) rotate(0) rotateY(0)}50%{transform:translate(var(--x),55vh) rotate(200deg) rotateY(180deg)}100%{transform:translate(0,110vh) rotate(400deg) rotateY(360deg)}}
+@media (prefers-reduced-motion:reduce){.fk-rays,.fk-star,.fk-cf{animation:none}.fk-star{opacity:.8}.fk-cf{display:none}}
 </style>
 </head>
 <body>
@@ -2269,6 +2287,22 @@ section h2{font-size:clamp(26px,7.8cqw,46px)!important}
   var st=[].slice.call(document.querySelectorAll('.fb-stage'));
   function check(){var vh=innerHeight;st.forEach(function(e){if(e.classList.contains('pop'))return;var r=e.getBoundingClientRect();if(r.top<vh*0.8&&r.bottom>0)e.classList.add('pop');});}
   addEventListener('scroll',check,{passive:true});addEventListener('resize',check);addEventListener('load',check);setTimeout(check,600);
+})();
+</script>
+<script>
+(function(){
+  // 福袋の赤い背景に飾り（光の筋・金の星・紙吹雪）
+  var stars=[[8,12,36,0],[86,9,28,.9],[90,46,40,1.6],[6,52,30,2.2],[14,80,24,.5],[84,74,22,1.3],[48,5,20,2],[70,28,16,.3],[26,32,16,1.1]];
+  var cols=['#f3cf63','#fff2b8','#ffffff','#e2b13c','#ffd84d'];
+  [].forEach.call(document.querySelectorAll('.fs-setimg.fk'),function(box){
+    var d=document.createElement('div');d.className='fk-deco';d.setAttribute('aria-hidden','true');
+    var h='<span class="fk-rays"></span><span class="fk-glow"></span>';
+    for(var i=0;i<26;i++){
+      h+='<i class="fk-cf" style="left:'+(Math.random()*100).toFixed(1)+'%;--w:'+(8+Math.random()*8).toFixed(1)+'px;--c:'+cols[i%cols.length]+';--t:'+(6+Math.random()*6).toFixed(1)+'s;--d:-'+(Math.random()*12).toFixed(1)+'s;--x:'+(Math.random()*60-30).toFixed(0)+'px"></i>';
+    }
+    d.innerHTML=h;box.insertBefore(d,box.firstChild);
+    stars.forEach(function(s){var e=document.createElement('i');e.className='fk-star';e.setAttribute('aria-hidden','true');e.style.cssText='left:'+s[0]+'%;top:'+s[1]+'%;--s:'+s[2]+'px;--d:'+s[3]+'s';box.appendChild(e);});
+  });
 })();
 </script>
 </body>
