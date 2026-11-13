@@ -1626,6 +1626,10 @@ section h2{font-size:clamp(26px,7.8cqw,46px)!important}
   animation:fkRun 5s cubic-bezier(.45,.05,.35,1) 1.2s infinite}
 @keyframes fkRun{0%{background-position:130% 0}38%{background-position:-30% 0}100%{background-position:-30% 0}}
 @media (prefers-reduced-motion:reduce){.fk-shine{display:none}}
+/* 福袋：画面に入ったら紙吹雪が1回だけパーンと出る 2026-11-13 */
+.fs-img .fs-setimg.fk{position:relative;overflow:hidden}
+.fk-pop{position:absolute;left:0;top:0;width:var(--w);height:calc(var(--w)*.5);background:var(--c);border-radius:1px;z-index:6;pointer-events:none;will-change:transform,opacity}
+.fk-pop.r{border-radius:50%;height:var(--w)}
 </style>
 </head>
 <body>
@@ -2283,5 +2287,32 @@ section h2{font-size:clamp(26px,7.8cqw,46px)!important}
 })();
 </script>
 
+<script>
+(function(){
+  // 福袋：画面に入ったら紙吹雪を1回だけパーンと出す
+  if(window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches)return;
+  var boxes=[].slice.call(document.querySelectorAll('.fs-setimg.fk'));
+  var cols=['#f3cf63','#fff2b8','#ffffff','#e2b13c','#ffd84d','#111111'];
+  function burst(box){
+    var W=box.clientWidth,H=box.clientHeight,ox=W*.5,oy=H*.78;
+    for(var i=0;i<56;i++){
+      var e=document.createElement('i');e.className='fk-pop'+(i%5==0?' r':'');e.setAttribute('aria-hidden','true');
+      e.style.setProperty('--w',(7+Math.random()*7).toFixed(1)+'px');e.style.setProperty('--c',cols[i%cols.length]);
+      box.appendChild(e);
+      var ang=(-90+(Math.random()*150-75))*Math.PI/180,sp=H*(.45+Math.random()*.45);
+      var px=ox+Math.cos(ang)*sp,py=oy+Math.sin(ang)*sp,ex=px+(Math.random()*80-40),ey=H+40;
+      var r1=Math.random()*360,r2=r1+(Math.random()*720-360),dur=2200+Math.random()*1400;
+      var a=e.animate([
+        {transform:'translate('+ox+'px,'+oy+'px) rotate(0deg) scale(.4)',opacity:1,easing:'cubic-bezier(.1,.8,.3,1)'},
+        {transform:'translate('+px+'px,'+py+'px) rotate('+r1+'deg) rotateX(180deg) scale(1)',opacity:1,offset:.3,easing:'cubic-bezier(.45,0,.8,.6)'},
+        {transform:'translate('+ex+'px,'+ey+'px) rotate('+r2+'deg) rotateX(720deg) scale(1)',opacity:.9}
+      ],{duration:dur,easing:'linear',fill:'forwards'});
+      a.onfinish=(function(el){return function(){el.remove();};})(e);
+    }
+  }
+  function check(){var vh=innerHeight;boxes=boxes.filter(function(b){var r=b.getBoundingClientRect();if(r.top<vh*0.7&&r.bottom>vh*0.2){burst(b);return false;}return true;});}
+  addEventListener('scroll',check,{passive:true});addEventListener('load',check);setTimeout(check,800);
+})();
+</script>
 </body>
 </html>
