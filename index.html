@@ -1633,6 +1633,18 @@ section h2{font-size:clamp(26px,7.8cqw,46px)!important}
   animation:fkFall var(--t) linear infinite;animation-delay:var(--d)}
 @keyframes fkFall{0%{transform:translate(0,-20px) rotate(0) rotateY(0)}50%{transform:translate(var(--x),55vh) rotate(200deg) rotateY(180deg)}100%{transform:translate(0,110vh) rotate(400deg) rotateY(360deg)}}
 @media (prefers-reduced-motion:reduce){.fk-rays,.fk-star,.fk-cf{animation:none}.fk-star{opacity:.8}.fk-cf{display:none}}
+/* 福袋：回る光の筋はなし→斜めの光がサーッと走る 2026-11-13 */
+.fk-rays{display:none!important}
+.fs-img .fs-setimg.fk::after{content:"";position:absolute;top:-10%;bottom:-10%;left:0;width:45%;z-index:5;pointer-events:none;
+  background:linear-gradient(100deg,rgba(255,255,255,0) 0%,rgba(255,255,255,.08) 30%,rgba(255,250,225,.55) 50%,rgba(255,255,255,.08) 70%,rgba(255,255,255,0) 100%);
+  mix-blend-mode:soft-light;transform:translateX(-120%) skewX(-18deg);animation:fkShine 3.6s ease-in-out 1s infinite}
+.fs-img .fs-setimg.fk::before{content:"";position:absolute;top:-10%;bottom:-10%;left:0;width:18%;z-index:5;pointer-events:none;
+  background:linear-gradient(100deg,rgba(255,255,255,0),rgba(255,255,255,.35) 50%,rgba(255,255,255,0));
+  transform:translateX(-120%) skewX(-18deg);animation:fkShine 3.6s ease-in-out 1.08s infinite}
+@keyframes fkShine{0%{transform:translateX(-120%) skewX(-18deg)}45%,100%{transform:translateX(360%) skewX(-18deg)}}
+.fs-img .fs-setimg.fk::before{animation-name:fkShine2}
+@keyframes fkShine2{0%{transform:translateX(-120%) skewX(-18deg)}45%,100%{transform:translateX(700%) skewX(-18deg)}}
+@media (prefers-reduced-motion:reduce){.fs-img .fs-setimg.fk::before,.fs-img .fs-setimg.fk::after{display:none}}
 </style>
 </head>
 <body>
