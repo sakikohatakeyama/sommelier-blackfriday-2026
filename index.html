@@ -1632,6 +1632,10 @@ section h2{font-size:clamp(26px,7.8cqw,46px)!important}
 .fk-pop.r{border-radius:50%;height:var(--w)}
 /* 福袋2〜4は画像なし（画像が届いたら .fs-setimg.fk を入れる） 2026-11-13 */
 .fset .fs-img:not(:has(.fs-setimg)){display:none!important}
+/* 福袋の説明：左右の余白をそろえる（文字のかたまりを枠いっぱいに、左右同じ余白） 2026-11-13 */
+.fsets>.fset.fset .fs-body{padding:20px 20px 22px!important}
+.fsets>.fset.fset .fs-txt{width:auto!important;max-width:none!important;margin:0!important}
+@media(max-width:599px){.fsets>.fset.fset .fs-body{padding:18px 16px 20px!important}}
 </style>
 </head>
 <body>
