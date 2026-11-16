@@ -1855,6 +1855,19 @@ html body .st-cut{margin:14px auto 4px!important;width:88%}
 .st-lot .st-h,.st-lot .st-cond{text-align:center}
 .st-lot .st-fit{display:block;width:max-content;margin:0 auto;white-space:nowrap;line-height:1.45}
 .st-lot .st-cond .st-fit+.st-fit{margin-top:2px}
+/* 軽くする②：光の演出は「走る瞬間だけ」動かす（JSで .go を付ける）。流れる文字の光と影の点滅はやめる 2026-11-16 */
+html body .deco span{animation:none!important;filter:none!important}
+html body .deco-in{will-change:transform}
+html.js body .fv-title .en.en,html body .p20-h .h-l2.h-l2{animation-name:none!important}
+html.js body .fv-title.on .en.l1,html.js body .fv-title.on .en.l2,html.js body .fv-title.on .en.l3{animation:none!important}
+html.js body .fv-title .en.go,html body .p20-h .h-l2.go{animation:kOnce 1.15s ease-in-out 1 both!important}
+@keyframes kOnce{from{--sx:-160%}to{--sx:260%}}
+html body .fk-shine{animation:none!important}
+html body .fk-shine.go{animation:fkOnce 1.9s cubic-bezier(.45,.05,.35,1) 1 both!important}
+@keyframes fkOnce{from{background-position:130% 0}to{background-position:-30% 0}}
+/* 福袋の見出し（リード文）の下の余白を詰める 2026-11-16 */
+html body .fsets{margin-top:44px!important}
+@media(max-width:599px){html body .fsets{margin-top:34px!important}}
 </style>
 </head>
 <body>
@@ -2585,6 +2598,24 @@ html body .st-cut{margin:14px auto 4px!important;width:88%}
     [].forEach.call(box.querySelectorAll('.st-fit'),function(e){e.style.fontSize='';var f=parseFloat(getComputedStyle(e).fontSize),w=e.getBoundingClientRect().width;if(w>0)e.style.fontSize=(f*W/w).toFixed(2)+'px';});}
   (document.fonts&&document.fonts.ready?document.fonts.ready:Promise.resolve()).then(fit);
   addEventListener('load',fit);var t;addEventListener('resize',function(){clearTimeout(t);t=setTimeout(fit,200);});
+})();
+</script>
+<script>
+(function(){
+  // 光の演出：画面に見えているものだけ、決まった間隔で1回ずつ光を走らせる（ずっと動かし続けない）
+  if(window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches)return;
+  var vis=new Set(),io='IntersectionObserver' in window?new IntersectionObserver(function(es){es.forEach(function(e){e.isIntersecting?vis.add(e.target):vis.delete(e.target);});}):null;
+  function run(el,delay){setTimeout(function(){el.classList.remove('go');void el.offsetWidth;el.classList.add('go');},delay||0);}
+  document.addEventListener('animationend',function(e){if(e.target.classList&&e.target.classList.contains('go'))e.target.classList.remove('go');});
+  var title=document.querySelector('.fv-title'),h2=document.querySelector('.p20-h .h-l2'),shines=[].slice.call(document.querySelectorAll('.fk-shine'));
+  var groups=[title,h2].concat(shines).filter(Boolean);
+  groups.forEach(function(g){io?io.observe(g):vis.add(g);});
+  function tick(){
+    if(title&&vis.has(title)){[].forEach.call(title.querySelectorAll('.en'),function(e,i){run(e,i*150);});}
+    if(h2&&vis.has(h2))run(h2,400);
+  }
+  setTimeout(function(){tick();setInterval(tick,4000);},1800);
+  setTimeout(function(){setInterval(function(){shines.forEach(function(s,i){if(vis.has(s))run(s,i*120);});},5000);},1200);
 })();
 </script>
 </body>
