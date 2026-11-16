@@ -1765,6 +1765,9 @@ html body .deco{background:transparent!important}
 /* KETTLE・Russell Hobbs・tower も同じカード（3列／SP2列） 2026-11-16 */
 #kettle .pops,#rh .pops,#tower .pops{grid-template-columns:repeat(3,1fr)!important;gap:24px 16px!important}
 @media(max-width:599px){#kettle .pops,#rh .pops,#tower .pops{grid-template-columns:1fr 1fr!important;gap:18px 10px!important}}
+/* FV：商品はユーザー作成の1枚画像（fv.png）に 2026-11-16 */
+html body .fv-items.fv-one{display:block!important}
+html body .fv-items.fv-one .fv-main{display:block;width:min(100%,620px);height:auto;margin:0 auto;filter:drop-shadow(0 10px 16px #000c)}
 </style>
 </head>
 <body>
@@ -1838,13 +1841,7 @@ html body .deco{background:transparent!important}
         <span class="dt"><span class="num">11.25</span><span class="wk">水</span><span class="tm num">1:59</span></span>
       </p>
       <div class="fv-stage">
-        <div class="fv-items">
-          <img class="it ingenio" src="img/fv/ingenio-set.png" width="681" height="610" alt="ティファール インジニオ・ネオ ステンレス セット">
-          <img class="it cof-r" src="img/fv/coffee-red.png" width="338" height="556" alt="ティファール コーヒーメーカー レッド">
-          <img class="it rice-i" src="img/fv/rice-black.png" width="476" height="475" alt="ティファール 炊飯器 ブラック">
-          <img class="it toast-s" src="img/fv/toaster-silver.png" width="571" height="537" alt="ティファール トースター シルバー">
-          <img class="it press" src="img/fv/pressure.png" width="699" height="465" alt="ティファール 圧力鍋">
-        </div>
+        <div class="fv-items fv-one"><img class="fv-main" src="img/fv-main.webp" width="913" height="1008" alt="ティファール 炊飯器・インジニオ・ネオ・圧力鍋・コーヒーメーカー・トースター"></div>
         <div class="fv-pod" aria-hidden="true"></div>
       </div>
     </div>
