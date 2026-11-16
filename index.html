@@ -1643,6 +1643,16 @@ section h2{font-size:clamp(26px,7.8cqw,46px)!important}
   background:linear-gradient(110deg,transparent 0 38%,#fffdf2 47%,#ffffff 50%,#fffdf2 53%,transparent 62%) var(--sx) 0/70% 100% no-repeat,
     linear-gradient(180deg,#fff3c8 0%,#e9c46a 32%,#b7862f 50%,#f3d382 66%,#9a6d22 100%) 0 0/100% 100%;
   -webkit-background-clip:text;background-clip:text;animation:kirarin 4s 2.8s ease-in-out infinite}
+/* 抽選の条件「20,000円（税込）以上」：数字の字間を詰め、カンマを小さく、円・税込・以上を寄せてバランスよく 2026-11-16 */
+.lot-cond .lc-v{display:flex;align-items:baseline;justify-content:center;flex-wrap:wrap;font-feature-settings:"palt";letter-spacing:0}
+.lot-cond .lc-v .num{letter-spacing:-.035em!important;line-height:1}
+.lot-cond .lc-v .num .cm{font-size:.6em;margin:0 .04em 0 .02em;vertical-align:0}
+.lot-cond .lc-v .yen{margin-left:.12em;font-size:1.15em;font-weight:900}
+.lot-cond .lc-v small{margin:0 .02em 0 -.1em;letter-spacing:-.02em}
+.lot-cond .lc-v .ij{font-weight:900;font-size:1.05em}
+/* 抽選の条件：2行に分けて「抽選で合計8名様に当たる」を大きく 2026-11-16 */
+.lot-cond .lc-k .lc-big{display:block;white-space:nowrap;font-size:min(1.55em,6.4vw);font-weight:900;line-height:1.35;margin-top:4px;font-feature-settings:"palt"}
+.lot-cond .lc-k .lc-big b{font-size:1.2em}
 </style>
 </head>
 <body>
@@ -1826,8 +1836,8 @@ section h2{font-size:clamp(26px,7.8cqw,46px)!important}
     <p class="lot-date"><span class="num">11.19</span><span class="wk">木</span><span class="tm num">20:00</span><span class="to" aria-label="から">→</span><span class="num">11.25</span><span class="wk">水</span><span class="tm num">1:59</span></p>
     <div class="lot-cond">
       <p class="lc-k">家具のソムリエで</p>
-      <p class="lc-v"><span class="num">20,000</span>円<small>（税込）</small>以上</p>
-      <p class="lc-k">お買い物された方の中から、<span class="nobr">抽選で<b>合計8名様</b>に当たる</span></p>
+      <p class="lc-v"><span class="num">20<span class="cm">,</span>000</span><span class="yen">円</span><small>（税込）</small><span class="ij">以上</span></p>
+      <p class="lc-k">お買い物された方の中から、<span class="lc-big">抽選で<b>合計8名様</b>に当たる</span></p>
     </div>
     <div class="prizes">
       <article class="prize big">
