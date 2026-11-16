@@ -1777,6 +1777,26 @@ html body .pop-card .pop-pr .num{font-size:46px!important;letter-spacing:-.02em}
   html body .pop-card .pop-pr{font-size:15px!important}
   html body .pop-card .pop-pr .num{font-size:30px!important}
 }
+/* ブランドから探す（店舗トップと同じ8ブランド）：PC4列・SP2列 2026-11-16 */
+.br-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px 12px;margin-top:36px}
+.br-card{display:flex;flex-direction:column;text-decoration:none;color:#fff}
+.br-img{display:block;border-radius:12px;overflow:hidden;background:#fff;border:1.5px solid #ecc86755;transition:border-color .25s,box-shadow .25s,transform .25s}
+.br-img img{display:block;width:100%;aspect-ratio:1;object-fit:cover;transition:transform .4s ease}
+.br-cap{margin-top:8px;font-size:13px;font-weight:700;line-height:1.4;color:#f3e7c8}
+.br-card:hover .br-img{border-color:#ecc867;box-shadow:0 8px 20px rgba(0,0,0,.45);transform:translateY(-3px)}
+.br-card:hover .br-img img{transform:scale(1.06)}
+.br-card:hover .br-cap{color:#ecc867}
+@media(max-width:599px){.br-grid{grid-template-columns:1fr 1fr;gap:14px 10px;margin-top:26px}.br-cap{font-size:12px}}
+/* 商品カードの価格：（税込）を価格の横に、数字をもう少し大きく 2026-11-16 */
+html body .pop-card .pop-pr{display:flex;align-items:baseline;flex-wrap:wrap;column-gap:4px}
+html body .pop-card .pop-pr .num{font-size:52px!important}
+html body .pop-card .pop-pr small{display:inline!important;margin:0 0 0 2px!important;font-size:13px!important;white-space:nowrap}
+@media(max-width:599px){
+  html body .pop-card .pop-pr{column-gap:2px}
+  html body .pop-card .pop-pr .num{font-size:32px!important;letter-spacing:-.03em}
+  html body .pop-card .pop-pr small{font-size:10px!important;margin-left:0!important}
+}
+html body .pop-card .pop-pr small{flex:0 0 auto!important;width:auto!important;flex-basis:auto!important}
 </style>
 </head>
 <body>
@@ -1797,6 +1817,7 @@ html body .pop-card .pop-pr .num{font-size:46px!important;letter-spacing:-.02em}
       <a href="#kettle"><span class="n">05</span>ケトル</a>
       <a href="#rh"><span class="n">06</span>ラッセルホブス</a>
       <a href="#tower"><span class="n">07</span>tower人気アイテム</a>
+      <a href="#brand"><span class="n">08</span>ブランドから探す</a>
     </nav>
     <a class="side-shop" href="https://www.rakuten.co.jp/sommelier/" target="_blank" rel="noopener">ショップトップへ</a>
   </div>
@@ -2283,6 +2304,24 @@ html body .pop-card .pop-pr .num{font-size:46px!important;letter-spacing:-.02em}
     </div>
   </div>
 </section>
+<section class="p20 pops-sec brand-sec" id="brand">
+  <div class="wrap">
+    <div class="pops-head">
+      <h2 class="pops-h"><span class="ph-en">BRAND</span><em class="ph-ja">ブランドから探す</em></h2>
+    </div>
+    <div class="br-grid">
+      <a class="br-card" href="https://search.rakuten.co.jp/search/mall/%E5%B1%B1%E5%B4%8E%E5%AE%9F%E6%A5%AD+%E3%82%BF%E3%83%AF%E3%83%BC/?sid=333706" target="_blank" rel="noopener"><span class="br-img"><img src="img/brand/brand1000_tower.jpg" width="500" height="500" alt="tower タワー" loading="lazy"></span><span class="br-cap">tower タワー</span></a>
+      <a class="br-card" href="https://search.rakuten.co.jp/search/mall/%E3%83%AA%E3%83%B3/?sf=1&amp;sid=333706" target="_blank" rel="noopener"><span class="br-img"><img src="img/brand/brand1000_rin.jpg" width="500" height="500" alt="RIN リン" loading="lazy"></span><span class="br-cap">RIN リン</span></a>
+      <a class="br-card" href="https://search.rakuten.co.jp/search/mall/%E3%83%86%E3%82%A3%E3%83%95%E3%82%A1%E3%83%BC%E3%83%AB/?f=0&amp;sid=333706" target="_blank" rel="noopener"><span class="br-img"><img src="img/brand/brand1000_tfal.jpg" width="500" height="500" alt="T-fal ティファール" loading="lazy"></span><span class="br-cap">T-fal ティファール</span></a>
+      <a class="br-card" href="https://search.rakuten.co.jp/search/mall/%E3%83%A9%E3%83%83%E3%82%BB%E3%83%AB%E3%83%9B%E3%83%96%E3%82%B9/?f=0&amp;sid=333706" target="_blank" rel="noopener"><span class="br-img"><img src="img/brand/brand1000_russell.jpg" width="500" height="500" alt="Russell Hobbs ラッセルホブス" loading="lazy"></span><span class="br-cap">Russell Hobbs ラッセルホブス</span></a>
+      <a class="br-card" href="https://search.rakuten.co.jp/search/mall/toffy/?f=0&amp;sid=333706" target="_blank" rel="noopener"><span class="br-img"><img src="img/brand/brand1000_toffy.jpg" width="500" height="500" alt="toffy トフィ" loading="lazy"></span><span class="br-cap">toffy トフィ</span></a>
+      <a class="br-card" href="https://search.rakuten.co.jp/search/mall/TWINBIRD/?f=0&amp;sid=333706" target="_blank" rel="noopener"><span class="br-img"><img src="img/brand/brand1000_twinbird.jpg" width="500" height="500" alt="TWINBIRD ツインバード" loading="lazy"></span><span class="br-cap">TWINBIRD ツインバード</span></a>
+      <a class="br-card" href="https://search.rakuten.co.jp/search/mall/%E3%82%A2%E3%83%A9%E3%82%B8%E3%83%B3/?f=0&amp;sid=333706" target="_blank" rel="noopener"><span class="br-img"><img src="img/brand/brand1000_aladdin.jpg" width="500" height="500" alt="Aladdin アラジン" loading="lazy"></span><span class="br-cap">Aladdin アラジン</span></a>
+      <a class="br-card" href="https://search.rakuten.co.jp/search/mall/cado/?f=0&amp;sid=333706" target="_blank" rel="noopener"><span class="br-img"><img src="img/brand/brand1000_cado.jpg" width="500" height="500" alt="cado カドー" loading="lazy"></span><span class="br-cap">cado カドー</span></a>
+    </div>
+  </div>
+</section>
+
 
 
 
