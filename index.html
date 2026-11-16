@@ -1768,6 +1768,15 @@ html body .deco{background:transparent!important}
 /* FV：商品はユーザー作成の1枚画像（fv.png）に 2026-11-16 */
 html body .fv-items.fv-one{display:block!important}
 html body .fv-items.fv-one .fv-main{display:block;width:min(100%,620px);height:auto;margin:0 auto;filter:drop-shadow(0 10px 16px #000c)}
+/* 商品カード：PCもスマホも2列、価格を大きく 2026-11-16 */
+#popular .pops,#winter .pops,#kettle .pops,#rh .pops,#tower .pops{grid-template-columns:1fr 1fr!important;gap:22px 16px!important}
+html body .pop-card .pop-pr{font-size:20px!important}
+html body .pop-card .pop-pr .num{font-size:46px!important;letter-spacing:-.02em}
+@media(max-width:599px){
+  #popular .pops,#winter .pops,#kettle .pops,#rh .pops,#tower .pops{gap:16px 10px!important}
+  html body .pop-card .pop-pr{font-size:15px!important}
+  html body .pop-card .pop-pr .num{font-size:30px!important}
+}
 </style>
 </head>
 <body>
