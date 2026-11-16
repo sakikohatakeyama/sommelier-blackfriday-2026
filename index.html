@@ -1801,6 +1801,9 @@ html body .pop-card .pop-pr small{flex:0 0 auto!important;width:auto!important;f
 html body .deco{background:linear-gradient(180deg,#050404 0%,#151312 100%)!important}
 html body main+.deco,html body .deco:last-of-type{background:linear-gradient(180deg,#151312 0%,#0b0a0a 100%)!important}
 html body .fv+.deco{background:linear-gradient(180deg,#050404 0%,#151312 100%)!important}
+/* 紙吹雪：丸はなし、細長い紙だけ（ひらひら） 2026-11-16 */
+.fk-pop.r{border-radius:1px!important;height:calc(var(--w)*.45)!important}
+.fk-pop{height:calc(var(--w) * var(--h,.45))!important;border-radius:1px!important;backface-visibility:visible}
 </style>
 </head>
 <body>
@@ -2483,7 +2486,7 @@ html body .fv+.deco{background:linear-gradient(180deg,#050404 0%,#151312 100%)!i
   function burst(box){
     var W=box.clientWidth,H=box.clientHeight,ox=W*.5,oy=H*.78;
     for(var i=0;i<26;i++){
-      var e=document.createElement('i');e.className='fk-pop'+(i%5==0?' r':'');e.setAttribute('aria-hidden','true');
+      var e=document.createElement('i');e.className='fk-pop';e.style.setProperty('--h',(0.35+Math.random()*0.35).toFixed(2));e.setAttribute('aria-hidden','true');
       e.style.setProperty('--w',(7+Math.random()*7).toFixed(1)+'px');e.style.setProperty('--c',cols[i%cols.length]);
       box.appendChild(e);
       var ang=(-90+(Math.random()*150-75))*Math.PI/180,sp=H*(.45+Math.random()*.45);
