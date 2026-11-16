@@ -1692,6 +1692,14 @@ html body .lot-cond .lc-k b,html body .st-lot .st-cond b{color:transparent!impor
 html body .side-nav{margin-top:18px!important}
 html body .side-nav a{font-size:14px!important;padding:7px 4px!important;gap:10px;line-height:1.35}
 html body .side-nav .n{font-size:12px!important}
+/* 抽選の「商品ページを見る」：カーソルを当てると赤くなり、矢印が右へ動く（画像も少しズーム） 2026-11-16 */
+.pz-link{display:inline-flex;align-items:center;transition:color .25s,border-color .25s,letter-spacing .25s}
+.pz-link::after{content:"→";display:inline-block;margin-left:.45em;transition:transform .25s ease}
+.pz-link:hover{color:#c8102e!important;border-bottom-color:#c8102e!important}
+.pz-link:hover::after{transform:translateX(6px)}
+.pz-img{overflow:hidden}
+.pz-img img{transition:transform .5s ease}
+.prize:hover .pz-img img{transform:scale(1.05)}
 </style>
 </head>
 <body>
