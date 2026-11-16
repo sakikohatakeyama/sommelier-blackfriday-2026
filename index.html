@@ -1878,6 +1878,17 @@ html body .fv-stage{margin-top:-10px!important}
 /* スマホ：日付をSALEに近づけ、商品画像との間をあける 2026-11-16 */
 html body .fv-date{margin-top:12px!important;width:max-content;margin-left:auto!important;margin-right:auto!important}
 html body .fv-stage{margin-top:18px!important}
+/* 福袋：商品ページボタンの横にお気に入り（♡）ボタン（URLは福袋の商品ページが決まったら差し替え） 2026-11-16 */
+.fs-btns{display:flex;gap:10px;margin-top:auto;align-items:stretch}
+.fs-btns .buy{flex:1;margin-top:0!important}
+.fs-fav{flex:0 0 58px;width:58px;min-height:58px;display:flex;align-items:center;justify-content:center;border-radius:50%;border:2px solid #d4a94a;color:#b7862f;font-size:26px;text-decoration:none;background:#fff;transition:background .2s,color .2s,border-color .2s}
+.fs-fav span{transition:transform .25s ease;line-height:1}
+.fs-fav:hover{background:#c8102e;border-color:#c8102e;color:#fff}
+.fs-fav:hover span{transform:scale(1.25)}
+@media(max-width:599px){.fs-fav{flex-basis:52px;width:52px;min-height:52px;font-size:22px}}
+/* 見出しの上に「早い者勝ち！」 2026-11-16 */
+.p20-hurry{text-align:center;margin:0 0 12px}
+.p20-hurry span{display:inline-block;background:#d7000f;color:#fff;font-weight:900;font-size:clamp(18px,4.2cqw,24px);line-height:1;padding:10px 26px 11px;border-radius:999px;letter-spacing:.06em;box-shadow:0 0 0 2px #ecc867}
 </style>
 </head>
 <body>
@@ -1988,6 +1999,7 @@ html body .fv-stage{margin-top:18px!important}
 <section class="p20" id="p20">
   <div class="wrap">
     <p class="sec-no">01 ／ 目玉商品</p>
+    <p class="p20-hurry"><span>早い者勝ち！</span></p>
     <h2 class="p20-h"><span class="h-l1">ブラックフライデー限定</span><em class="h-l2">超目玉福袋</em></h2>
     <p class="sch-lead">ティファールの人気家電を<span class="nobr">おトクな福袋に</span></p>
     <div class="fsets">
@@ -2001,7 +2013,7 @@ html body .fv-stage{margin-top:18px!important}
           <p class="fs-gift"><span class="g-tag">特典</span>T-fal ぷくぷくシール付き</p>
           <p class="fs-price"><span class="pr-grp"><span class="num">21<span class="cm">,</span>610</span><span class="yen">円<small>(税込)</small></span></span></p>
           </div>
-          <a class="buy" href="#p20" data-todo="set-1">福袋の商品ページへ</a>
+          <div class="fs-btns"><a class="buy" href="#p20" data-todo="set-1">福袋の商品ページへ</a><a class="fs-fav" href="#p20" data-todo="fav-1" aria-label="お気に入りに登録" title="お気に入りに登録"><span aria-hidden="true">♡</span></a></div>
         </div>
       </article>
       <article class="fset">
@@ -2014,7 +2026,7 @@ html body .fv-stage{margin-top:18px!important}
           <p class="fs-gift"><span class="g-tag">特典</span>T-fal ぷくぷくシール付き</p>
           <p class="fs-price"><span class="pr-grp"><span class="num">32<span class="cm">,</span>130</span><span class="yen">円<small>(税込)</small></span></span></p>
           </div>
-          <a class="buy" href="#p20" data-todo="set-2">福袋の商品ページへ</a>
+          <div class="fs-btns"><a class="buy" href="#p20" data-todo="set-2">福袋の商品ページへ</a><a class="fs-fav" href="#p20" data-todo="fav-2" aria-label="お気に入りに登録" title="お気に入りに登録"><span aria-hidden="true">♡</span></a></div>
         </div>
       </article>
       <article class="fset">
@@ -2027,7 +2039,7 @@ html body .fv-stage{margin-top:18px!important}
           <p class="fs-gift"><span class="g-tag">特典</span>T-fal ぷくぷくシール付き</p>
           <p class="fs-price"><span class="pr-grp"><span class="num">8<span class="cm">,</span>700</span><span class="yen">円<small>(税込)</small></span></span></p>
           </div>
-          <a class="buy" href="#p20" data-todo="set-3">福袋の商品ページへ</a>
+          <div class="fs-btns"><a class="buy" href="#p20" data-todo="set-3">福袋の商品ページへ</a><a class="fs-fav" href="#p20" data-todo="fav-3" aria-label="お気に入りに登録" title="お気に入りに登録"><span aria-hidden="true">♡</span></a></div>
         </div>
       </article>
       <article class="fset">
@@ -2040,7 +2052,7 @@ html body .fv-stage{margin-top:18px!important}
           <p class="fs-gift"><span class="g-tag">特典</span>T-fal ぷくぷくシール付き</p>
           <p class="fs-price"><span class="pr-grp"><span class="num">8<span class="cm">,</span>700</span><span class="yen">円<small>(税込)</small></span></span></p>
           </div>
-          <a class="buy" href="#p20" data-todo="set-4">福袋の商品ページへ</a>
+          <div class="fs-btns"><a class="buy" href="#p20" data-todo="set-4">福袋の商品ページへ</a><a class="fs-fav" href="#p20" data-todo="fav-4" aria-label="お気に入りに登録" title="お気に入りに登録"><span aria-hidden="true">♡</span></a></div>
         </div>
       </article>
     </div>
