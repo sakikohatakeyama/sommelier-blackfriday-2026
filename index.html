@@ -1896,6 +1896,9 @@ html body .fv-stage{margin-top:18px!important}
 .lot-dl dd{margin:0;font-size:16px;font-weight:500;line-height:1.75;color:#fff}
 .lot-dl dd b{font-weight:900;font-size:1.12em}
 @media(max-width:599px){.lot-dl{margin-top:30px}.lot-dl>div{grid-template-columns:5.2em 1fr;gap:8px;padding:16px 2px}.lot-dl dt{font-size:15px}.lot-dl dd{font-size:14px}}
+/* webp→jpg：透過はjpgのマスク画像（白黒）で抜く。光(.fk-shine)も同じマスクを使う 2026-11-16 */
+html body .fk-shine{-webkit-mask:none!important;mask:var(--src) center/100% 100% no-repeat!important;mask-mode:luminance!important}
+html body .fv-items.fv-one .fv-main,html body .st-cut img{filter:none!important}
 </style>
 </head>
 <body>
@@ -1931,7 +1934,7 @@ html body .fv-stage{margin-top:18px!important}
     <div class="side-today st-lot">
       <p class="st-h"><span class="st-fit">プレゼントキャンペーン</span></p>
       <p class="st-cond"><span class="st-fit">2万円以上のお買い物で</span><span class="st-fit">抽選で<b>合計8名様</b>に当たる</span></p>
-      <div class="st-cut"><img src="img/present-cut.webp" width="551" height="272" alt="ビタントニオ エッグワッフル＆ホットサンドベーカー、レムノス 珪藻土の時計、レムノス divide"></div>
+      <div class="st-cut"><img src="img/present-cut.jpg" style="mask:url(img/present-cut-mask.jpg) center/100% 100% no-repeat;mask-mode:luminance" width="551" height="272" alt="ビタントニオ エッグワッフル＆ホットサンドベーカー、レムノス 珪藻土の時計、レムノス divide"></div>
       <a class="side-btn gold st-btn" href="#lottery">プレゼント抽選を見る</a>
     </div>
   </div>
@@ -1966,7 +1969,7 @@ html body .fv-stage{margin-top:18px!important}
         <span class="dt"><span class="num">11.25</span><span class="wk">水</span><span class="tm num">1:59</span></span>
       </p>
       <div class="fv-stage">
-        <div class="fv-items fv-one"><img class="fv-main" src="img/fv-main.webp?v=2" width="1000" height="1015" alt="ティファール 炊飯器・インジニオ・ネオ・圧力鍋・コーヒーメーカー・トースター"></div>
+        <div class="fv-items fv-one"><img class="fv-main" src="img/fv-main.jpg" style="mask:url(img/fv-main-mask.jpg) center/100% 100% no-repeat;mask-mode:luminance" width="1000" height="1015" alt="ティファール 炊飯器・インジニオ・ネオ・圧力鍋・コーヒーメーカー・トースター"></div>
         <div class="fv-pod" aria-hidden="true"></div>
       </div>
     </div>
@@ -2011,7 +2014,7 @@ html body .fv-stage{margin-top:18px!important}
     <p class="sch-lead">ティファールの人気家電を<span class="nobr">おトクな福袋に</span></p>
     <div class="fsets">
       <article class="fset">
-        <div class="fs-img"><div class="fs-setimg fk"><div class="fk-pic" style="--src:url(img/fuku01.webp?v=3)"><img src="img/fuku01.webp?v=3" width="960" height="1200" alt="BLACK FRIDAY 福袋：ティファール 炊飯器＋片手圧力鍋＋ぷくぷくシール" loading="lazy"><span class="fk-shine" aria-hidden="true"></span></div></div><span class="fs-off stk" aria-label="30%OFF"><span class="lay bk" aria-hidden="true"><b class="t" data-t="30">30</b><span class="po"><span class="t pc" data-t="%">%</span><span class="t of" data-t="OFF">OFF</span></span></span><span class="lay fr" aria-hidden="true"><b class="t" data-t="30">30</b><span class="po"><span class="t pc" data-t="%">%</span><span class="t of" data-t="OFF">OFF</span></span></span></span><span class="fs-band" aria-hidden="true">BLACK FRIDAY SALE</span><span class="fs-no">SET<b>1</b></span></div>
+        <div class="fs-img"><div class="fs-setimg fk"><div class="fk-pic" style="--src:url(img/fuku01-mask.jpg)"><img src="img/fuku01.jpg" style="mask:url(img/fuku01-mask.jpg) center/100% 100% no-repeat;mask-mode:luminance" width="960" height="1200" alt="BLACK FRIDAY 福袋：ティファール 炊飯器＋片手圧力鍋＋ぷくぷくシール" loading="lazy"><span class="fk-shine" aria-hidden="true"></span></div></div><span class="fs-off stk" aria-label="30%OFF"><span class="lay bk" aria-hidden="true"><b class="t" data-t="30">30</b><span class="po"><span class="t pc" data-t="%">%</span><span class="t of" data-t="OFF">OFF</span></span></span><span class="lay fr" aria-hidden="true"><b class="t" data-t="30">30</b><span class="po"><span class="t pc" data-t="%">%</span><span class="t of" data-t="OFF">OFF</span></span></span></span><span class="fs-band" aria-hidden="true">BLACK FRIDAY SALE</span><span class="fs-no">SET<b>1</b></span></div>
         <div class="fs-body">
           <div class="fs-txt">
           <h3 class="fs-name"><span class="br">T-fal</span> 炊飯器＆片手圧力鍋 福袋</h3>
@@ -2024,7 +2027,7 @@ html body .fv-stage{margin-top:18px!important}
         </div>
       </article>
       <article class="fset">
-        <div class="fs-img"><div class="fs-setimg fk"><div class="fk-pic" style="--src:url(img/fuku02.webp?v=3)"><img src="img/fuku02.webp?v=3" width="960" height="1200" alt="BLACK FRIDAY 福袋：ティファール 炊飯器＋インジニオ・ネオ ステンレスセット9＋ぷくぷくシール" loading="lazy"><span class="fk-shine" aria-hidden="true"></span></div></div><span class="fs-off stk" aria-label="10%OFF"><span class="lay bk" aria-hidden="true"><b class="t" data-t="10">10</b><span class="po"><span class="t pc" data-t="%">%</span><span class="t of" data-t="OFF">OFF</span></span></span><span class="lay fr" aria-hidden="true"><b class="t" data-t="10">10</b><span class="po"><span class="t pc" data-t="%">%</span><span class="t of" data-t="OFF">OFF</span></span></span></span><span class="fs-band" aria-hidden="true">BLACK FRIDAY SALE</span><span class="fs-no">SET<b>2</b></span></div>
+        <div class="fs-img"><div class="fs-setimg fk"><div class="fk-pic" style="--src:url(img/fuku02-mask.jpg)"><img src="img/fuku02.jpg" style="mask:url(img/fuku02-mask.jpg) center/100% 100% no-repeat;mask-mode:luminance" width="960" height="1200" alt="BLACK FRIDAY 福袋：ティファール 炊飯器＋インジニオ・ネオ ステンレスセット9＋ぷくぷくシール" loading="lazy"><span class="fk-shine" aria-hidden="true"></span></div></div><span class="fs-off stk" aria-label="10%OFF"><span class="lay bk" aria-hidden="true"><b class="t" data-t="10">10</b><span class="po"><span class="t pc" data-t="%">%</span><span class="t of" data-t="OFF">OFF</span></span></span><span class="lay fr" aria-hidden="true"><b class="t" data-t="10">10</b><span class="po"><span class="t pc" data-t="%">%</span><span class="t of" data-t="OFF">OFF</span></span></span></span><span class="fs-band" aria-hidden="true">BLACK FRIDAY SALE</span><span class="fs-no">SET<b>2</b></span></div>
         <div class="fs-body">
           <div class="fs-txt">
           <h3 class="fs-name"><span class="br">T-fal</span> 炊飯器＆ステンレスセット9 福袋</h3>
@@ -2037,7 +2040,7 @@ html body .fv-stage{margin-top:18px!important}
         </div>
       </article>
       <article class="fset">
-        <div class="fs-img"><div class="fs-setimg fk"><div class="fk-pic" style="--src:url(img/fuku03.webp?v=3)"><img src="img/fuku03.webp?v=3" width="960" height="1200" alt="BLACK FRIDAY 福袋：ティファール メゾン コーヒーメーカー＋ポップアップトースター（ワインレッド）＋ぷくぷくシール" loading="lazy"><span class="fk-shine" aria-hidden="true"></span></div></div><span class="fs-off stk" aria-label="25%OFF"><span class="lay bk" aria-hidden="true"><b class="t" data-t="25">25</b><span class="po"><span class="t pc" data-t="%">%</span><span class="t of" data-t="OFF">OFF</span></span></span><span class="lay fr" aria-hidden="true"><b class="t" data-t="25">25</b><span class="po"><span class="t pc" data-t="%">%</span><span class="t of" data-t="OFF">OFF</span></span></span></span><span class="fs-band" aria-hidden="true">BLACK FRIDAY SALE</span><span class="fs-no">SET<b>3</b></span></div>
+        <div class="fs-img"><div class="fs-setimg fk"><div class="fk-pic" style="--src:url(img/fuku03-mask.jpg)"><img src="img/fuku03.jpg" style="mask:url(img/fuku03-mask.jpg) center/100% 100% no-repeat;mask-mode:luminance" width="960" height="1200" alt="BLACK FRIDAY 福袋：ティファール メゾン コーヒーメーカー＋ポップアップトースター（ワインレッド）＋ぷくぷくシール" loading="lazy"><span class="fk-shine" aria-hidden="true"></span></div></div><span class="fs-off stk" aria-label="25%OFF"><span class="lay bk" aria-hidden="true"><b class="t" data-t="25">25</b><span class="po"><span class="t pc" data-t="%">%</span><span class="t of" data-t="OFF">OFF</span></span></span><span class="lay fr" aria-hidden="true"><b class="t" data-t="25">25</b><span class="po"><span class="t pc" data-t="%">%</span><span class="t of" data-t="OFF">OFF</span></span></span></span><span class="fs-band" aria-hidden="true">BLACK FRIDAY SALE</span><span class="fs-no">SET<b>3</b></span></div>
         <div class="fs-body">
           <div class="fs-txt">
           <h3 class="fs-name"><span class="br">T-fal</span> 朝食福袋 <span class="clr">ワインレッド</span></h3>
@@ -2050,7 +2053,7 @@ html body .fv-stage{margin-top:18px!important}
         </div>
       </article>
       <article class="fset">
-        <div class="fs-img"><div class="fs-setimg fk"><div class="fk-pic" style="--src:url(img/fuku04.webp?v=3)"><img src="img/fuku04.webp?v=3" width="960" height="1200" alt="BLACK FRIDAY 福袋：ティファール メゾン コーヒーメーカー＋ポップアップトースター（スノーホワイト）＋ぷくぷくシール" loading="lazy"><span class="fk-shine" aria-hidden="true"></span></div></div><span class="fs-off stk" aria-label="25%OFF"><span class="lay bk" aria-hidden="true"><b class="t" data-t="25">25</b><span class="po"><span class="t pc" data-t="%">%</span><span class="t of" data-t="OFF">OFF</span></span></span><span class="lay fr" aria-hidden="true"><b class="t" data-t="25">25</b><span class="po"><span class="t pc" data-t="%">%</span><span class="t of" data-t="OFF">OFF</span></span></span></span><span class="fs-band" aria-hidden="true">BLACK FRIDAY SALE</span><span class="fs-no">SET<b>4</b></span></div>
+        <div class="fs-img"><div class="fs-setimg fk"><div class="fk-pic" style="--src:url(img/fuku04-mask.jpg)"><img src="img/fuku04.jpg" style="mask:url(img/fuku04-mask.jpg) center/100% 100% no-repeat;mask-mode:luminance" width="960" height="1200" alt="BLACK FRIDAY 福袋：ティファール メゾン コーヒーメーカー＋ポップアップトースター（スノーホワイト）＋ぷくぷくシール" loading="lazy"><span class="fk-shine" aria-hidden="true"></span></div></div><span class="fs-off stk" aria-label="25%OFF"><span class="lay bk" aria-hidden="true"><b class="t" data-t="25">25</b><span class="po"><span class="t pc" data-t="%">%</span><span class="t of" data-t="OFF">OFF</span></span></span><span class="lay fr" aria-hidden="true"><b class="t" data-t="25">25</b><span class="po"><span class="t pc" data-t="%">%</span><span class="t of" data-t="OFF">OFF</span></span></span></span><span class="fs-band" aria-hidden="true">BLACK FRIDAY SALE</span><span class="fs-no">SET<b>4</b></span></div>
         <div class="fs-body">
           <div class="fs-txt">
           <h3 class="fs-name"><span class="br">T-fal</span> 朝食福袋 <span class="clr">スノーホワイト</span></h3>
@@ -2081,7 +2084,7 @@ html body .fv-stage{margin-top:18px!important}
     </div>
     <div class="prizes">
       <article class="prize big">
-        <a class="pz-img" href="https://item.rakuten.co.jp/sommelier/goods-01659/" target="_blank" rel="noopener"><img src="img/prize-vitantonio.jpg" width="654" height="760" alt="ビタントニオ エッグワッフル＆ホットサンドベーカー" loading="lazy"><span class="pz-no">賞品<b>1</b></span><span class="pz-cnt"><b>3</b>名様</span></a>
+        <a class="pz-img" href="https://item.rakuten.co.jp/sommelier/goods-01659/" target="_blank" rel="noopener"><img src="img/prize-vitantonio.jpg?v=2" width="760" height="760" alt="ビタントニオ エッグワッフル＆ホットサンドベーカー" loading="lazy"><span class="pz-no">賞品<b>1</b></span><span class="pz-cnt"><b>3</b>名様</span></a>
         <div class="pz-body">
           <p class="pz-brand">Vitantonio ビタントニオ</p>
           <h3>エッグワッフル＆<br>ホットサンドベーカー</h3>
