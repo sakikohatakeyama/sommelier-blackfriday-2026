@@ -1875,6 +1875,9 @@ html body .p20::before{top:80px!important;right:-200px!important;width:560px!imp
 @media(max-width:599px){html body .p20::before{top:60px!important;right:-140px!important;width:320px!important;height:320px!important}}
 /* FVの商品画像を上に寄せる（日付との間を詰める） 2026-11-16 */
 html body .fv-stage{margin-top:-10px!important}
+/* スマホ：日付をSALEに近づけ、商品画像との間をあける 2026-11-16 */
+html body .fv-date{margin-top:12px!important;width:max-content;margin-left:auto!important;margin-right:auto!important}
+html body .fv-stage{margin-top:18px!important}
 </style>
 </head>
 <body>
@@ -2623,6 +2626,17 @@ html body .fv-stage{margin-top:-10px!important}
   }
   setTimeout(function(){tick();setInterval(tick,4000);},1800);
   setTimeout(function(){setInterval(function(){shines.forEach(function(s,i){if(vis.has(s))run(s,i*120);});},5000);},1200);
+})();
+</script>
+<script>
+(function(){
+  // 日付の横幅を SALE の幅にそろえる（PC・スマホとも）
+  function fit(){var d=document.querySelector('.fv-date'),l3=document.querySelector('.fv-title .l3');if(!d||!l3)return;
+    d.style.zoom='';
+    var w=l3.getBoundingClientRect().width,dw=d.getBoundingClientRect().width;if(!w||!dw)return;
+    d.style.zoom=(w/dw).toFixed(3);}
+  (document.fonts&&document.fonts.ready?document.fonts.ready:Promise.resolve()).then(function(){setTimeout(fit,50)});
+  addEventListener('load',fit);var t;addEventListener('resize',function(){clearTimeout(t);t=setTimeout(fit,200);});
 })();
 </script>
 </body>
