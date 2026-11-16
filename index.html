@@ -1816,6 +1816,15 @@ html body .pop-card .pop-pr .num{letter-spacing:-.06em!important;margin-right:.0
 html body .pops-h .ph-en{font-style:normal!important;transform:none!important}
 /* 商品カードの価格：カンマを小さく 2026-11-16 */
 html body .pop-card .pop-pr .num .cm{font-size:.6em;letter-spacing:0;margin:0 .06em 0 .02em}
+/* FV：キラキラは動かさない、商品画像をもっと大きく 2026-11-16 */
+html body .fv-spark .fv-dust,html body .fv-spark .fv-dust.tw,html body .fv-spark .fv-dust.tw2{animation:none!important;opacity:1!important}
+html body .fv-stage{max-width:none!important}
+html body .fv-items.fv-one .fv-main{width:min(100%,780px)!important}
+html body .fv-items.fv-one{margin:0 -44px!important}
+html body .fv-items.fv-one .fv-main{width:100%!important;max-width:none!important}
+@media(max-width:599px){html body .fv-items.fv-one{margin:0 -14px!important}}
+/* FV下の流れる文字を上に寄せて余白を詰める 2026-11-16 */
+html body .fv+.deco{position:relative;z-index:3;margin-top:-34px!important;padding-top:6px!important}
 </style>
 </head>
 <body>
