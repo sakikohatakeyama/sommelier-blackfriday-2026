@@ -1868,6 +1868,8 @@ html body .fk-shine.go{animation:fkOnce 1.9s cubic-bezier(.45,.05,.35,1) 1 both!
 /* 福袋の見出し（リード文）の下の余白を詰める 2026-11-16 */
 html body .fsets{margin-top:44px!important}
 @media(max-width:599px){html body .fsets{margin-top:34px!important}}
+/* 軽くする③：タイトル右上の星の点滅（影つき）を止める 2026-11-16 */
+html body .fv-title::before{animation:none!important;opacity:0!important}
 </style>
 </head>
 <body>
@@ -2399,7 +2401,7 @@ html body .fsets{margin-top:44px!important}
 
 </main>
 
-<div class="deco rev" aria-hidden="true"><div class="deco-in"><span>THANK YOU</span><span>SEE YOU AGAIN</span><span>THANK YOU</span><span>SEE YOU AGAIN</span></div></div>
+
 <footer>
   <a class="brand" href="https://www.rakuten.co.jp/sommelier/" target="_blank" rel="noopener" aria-label="家具のソムリエ 楽天市場 トップページへ"><img class="logo" src="img/logo-white.svg" width="270" height="50" alt="家具のソムリエ いえの中をそろえるお店"></a>
 </footer>
@@ -2530,7 +2532,7 @@ html body .fsets{margin-top:44px!important}
 (function(){
   // OFFアイコンのビリビリ：画面に入ったときに2回だけ
   var bs=[].slice.call(document.querySelectorAll('.fs-off.stk'));if(!bs.length)return;
-  function check(){var vh=innerHeight;bs.forEach(function(b){if(b.classList.contains('zap-on'))return;var r=b.getBoundingClientRect();if(r.top<vh*0.85&&r.bottom>0)b.classList.add('zap-on');});}
+  function check(){var vh=innerHeight;bs=bs.filter(function(b){return b.offsetParent&&!b.classList.contains('zap-on');});bs.forEach(function(b){var r=b.getBoundingClientRect();if(r.top<vh*0.85&&r.bottom>0)b.classList.add('zap-on');});}
   addEventListener('scroll',check,{passive:true});addEventListener('resize',check);addEventListener('load',check);setTimeout(check,600);
 })();
 </script>
