@@ -1797,6 +1797,10 @@ html body .pop-card .pop-pr small{display:inline!important;margin:0 0 0 2px!impo
   html body .pop-card .pop-pr small{font-size:10px!important;margin-left:0!important}
 }
 html body .pop-card .pop-pr small{flex:0 0 auto!important;width:auto!important;flex-basis:auto!important}
+/* 流れる文字の帯：上下の背景をグラデでつないで帯に見えないように 2026-11-16 */
+html body .deco{background:linear-gradient(180deg,#050404 0%,#151312 100%)!important}
+html body main+.deco,html body .deco:last-of-type{background:linear-gradient(180deg,#151312 0%,#0b0a0a 100%)!important}
+html body .fv+.deco{background:linear-gradient(180deg,#050404 0%,#151312 100%)!important}
 </style>
 </head>
 <body>
