@@ -1889,6 +1889,13 @@ html body .fv-stage{margin-top:18px!important}
 /* 見出しの上に「早い者勝ち！」 2026-11-16 */
 .p20-hurry{text-align:center;margin:0 0 12px}
 .p20-hurry span{display:inline-block;background:#d7000f;color:#fff;font-weight:900;font-size:clamp(18px,4.2cqw,24px);line-height:1;padding:10px 26px 11px;border-radius:999px;letter-spacing:.06em;box-shadow:0 0 0 2px #ecc867}
+/* プレゼント抽選：注意書きのかわりに詳細（期間・対象・賞品・当選発表） 2026-11-16 */
+.lot-dl{margin:40px auto 0;max-width:620px;border-top:1px solid #ffffff55;text-align:left}
+.lot-dl>div{display:grid;grid-template-columns:7.5em 1fr;gap:12px;padding:20px 4px;border-bottom:1px solid #ffffff55}
+.lot-dl dt{font-weight:900;font-size:17px;color:#fff;line-height:1.7}
+.lot-dl dd{margin:0;font-size:16px;font-weight:500;line-height:1.75;color:#fff}
+.lot-dl dd b{font-weight:900;font-size:1.12em}
+@media(max-width:599px){.lot-dl{margin-top:30px}.lot-dl>div{grid-template-columns:5.2em 1fr;gap:8px;padding:16px 2px}.lot-dl dt{font-size:15px}.lot-dl dd{font-size:14px}}
 </style>
 </head>
 <body>
@@ -2100,7 +2107,12 @@ html body .fv-stage{margin-top:18px!important}
         </div>
       </article>
     </div>
-    <p class="cp-note lot-note">※対象期間・応募方法・当選発表の方法は、決まりしだい掲載します。<!-- TODO --><br>※賞品の色・仕様は変更になる場合があります。</p>
+    <dl class="lot-dl">
+      <div><dt>期間</dt><dd>11月19日(木) 20:00〜<br>11月25日(水) 1:59のご注文</dd></div>
+      <div><dt>対象</dt><dd>1回のご注文金額が総額<b>20,000円以上（税込）</b>お買い上げの方</dd></div>
+      <div><dt>賞品</dt><dd>ビタントニオ エッグワッフル＆ホットサンドベーカー <b>3名様</b><br>レムノス 珪藻土の時計 <b>1名様</b><br>レムノス divide <b>4名様</b><br>抽選で<b>合計8名様</b></dd></div>
+      <div><dt>当選発表</dt><dd>当選者様には<b>11月30日頃</b>メールにてご連絡いたします。</dd></div>
+    </dl>
   </div>
 </section>
 
