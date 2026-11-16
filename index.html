@@ -1683,6 +1683,8 @@ html body .fs-img .fs-setimg.fk .fk-pic{width:min(90%,520px)!important}
 .st-pz span b{font-size:clamp(14px,1.1vw,18px)}
 .side-today .st-pz li span b{display:inline!important;color:#a00c16!important}
 .side-today .st-cond b{display:inline!important}
+/* 右サイド：プレゼント抽選を見るボタンを枠の中に 2026-11-16 */
+.side-today.st-lot .st-btn{display:flex;margin:14px 0 0!important;width:100%}
 </style>
 </head>
 <body>
@@ -1708,7 +1710,7 @@ html body .fs-img .fs-setimg.fk .fk-pic{width:min(90%,520px)!important}
       <p class="lbl" data-cd-lbl>ブラックフライデーまで</p>
       <p class="t" data-cd-t><span class="num" data-cd="d">0</span><small>日</small><span class="num" data-cd="h">00</span><small>時間</small><span class="num" data-cd="m">00</span><small>分</small><span class="num" data-cd="s">00</span><small>秒</small></p>
     </div>
-    <a class="side-today st-lot" href="#lottery">
+    <div class="side-today st-lot">
       <p class="st-h">プレゼントキャンペーン</p>
       <p class="st-cond">2万円以上のお買い物で<br><b>抽選で合計8名様</b>に当たる</p>
       <ul class="st-pz">
@@ -1716,8 +1718,8 @@ html body .fs-img .fs-setimg.fk .fk-pic{width:min(90%,520px)!important}
         <li><img src="img/prize-keisoudo-green.jpg" width="760" height="760" alt="レムノス 珪藻土の時計 グリーン" loading="lazy"><span><b>1</b>名様</span></li>
         <li><img src="img/prize-divide-white.jpg" width="760" height="760" alt="レムノス divide ホワイト" loading="lazy"><span><b>4</b>名様</span></li>
       </ul>
-    </a>
-    <a class="side-btn gold" href="#lottery">プレゼント抽選を見る</a>
+      <a class="side-btn gold st-btn" href="#lottery">プレゼント抽選を見る</a>
+    </div>
     <a class="side-btn pink" href="#p20">福袋を見る</a>
   </div>
 </aside>
