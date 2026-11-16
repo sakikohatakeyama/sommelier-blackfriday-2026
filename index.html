@@ -1758,6 +1758,13 @@ html body .fv-items .it{width:32%!important}
   .pop-btns .pb-buy{min-height:38px;font-size:13px}
   .pop-btns .pb-fav{flex-basis:38px;width:38px;min-height:38px;font-size:18px}
 }
+/* FVのキラキラは元の金粉ベースに戻す（ぼけ玉・星はなし） 2026-11-16 */
+html body .fv-spark .fv-dust{display:block!important}
+/* 流れる文字の帯：背景のベタを抜く 2026-11-16 */
+html body .deco{background:transparent!important}
+/* KETTLE・Russell Hobbs・tower も同じカード（3列／SP2列） 2026-11-16 */
+#kettle .pops,#rh .pops,#tower .pops{grid-template-columns:repeat(3,1fr)!important;gap:24px 16px!important}
+@media(max-width:599px){#kettle .pops,#rh .pops,#tower .pops{grid-template-columns:1fr 1fr!important;gap:18px 10px!important}}
 </style>
 </head>
 <body>
@@ -2117,48 +2124,48 @@ html body .fv-items .it{width:32%!important}
       <p class="cat-lead">毎日使うから、お気に入りの一台を</p>
     </div>
     <div class="pops">
-      <a class="pop" href="https://item.rakuten.co.jp/sommelier/t-fal-350/" target="_blank" rel="noopener">
+      <div class="pop-card"><a class="pop" href="https://item.rakuten.co.jp/sommelier/t-fal-350/" target="_blank" rel="noopener">
         <span class="pop-img"><img src="img/items/t-fal-350.jpg" width="600" height="600" alt="ティファール ジャスティン ロック 1.2L" loading="lazy"></span>
         <span class="pop-br">ティファール</span>
         <span class="pop-nm">ジャスティン ロック 1.2L</span>
         <span class="pop-sub">電気ケトル</span>
         <span class="pop-pr"><span class="num">4,199</span>円<small>（税込）</small></span>
-      </a>
-      <a class="pop" href="https://item.rakuten.co.jp/sommelier/t-fal-439/" target="_blank" rel="noopener">
+      </a><div class="pop-btns"><a class="pb-buy" href="https://item.rakuten.co.jp/sommelier/t-fal-350/" target="_blank" rel="noopener">購入する</a><a class="pb-fav" aria-label="お気に入りに登録" title="お気に入りに登録" href="https://my.bookmark.rakuten.co.jp/?func=reg&amp;svid=106&amp;shop_bid=333706&amp;iid=10012150" target="_blank" rel="noopener"><span aria-hidden="true">♡</span></a></div></div>
+      <div class="pop-card"><a class="pop" href="https://item.rakuten.co.jp/sommelier/t-fal-439/" target="_blank" rel="noopener">
         <span class="pop-img"><img src="img/items/t-fal-439.jpg" width="600" height="600" alt="ティファール パフォーマ ロック 1.5L" loading="lazy"></span>
         <span class="pop-br">ティファール</span>
         <span class="pop-nm">パフォーマ ロック 1.5L</span>
         <span class="pop-sub">電気ケトル</span>
         <span class="pop-pr"><span class="num">3,980</span>円<small>（税込）</small></span>
-      </a>
-      <a class="pop" href="https://item.rakuten.co.jp/sommelier/goods-01706/" target="_blank" rel="noopener">
+      </a><div class="pop-btns"><a class="pb-buy" href="https://item.rakuten.co.jp/sommelier/t-fal-439/" target="_blank" rel="noopener">購入する</a><a class="pb-fav" aria-label="お気に入りに登録" title="お気に入りに登録" href="https://my.bookmark.rakuten.co.jp/?func=reg&amp;svid=106&amp;shop_bid=333706&amp;iid=10012956" target="_blank" rel="noopener"><span aria-hidden="true">♡</span></a></div></div>
+      <div class="pop-card"><a class="pop" href="https://item.rakuten.co.jp/sommelier/goods-01706/" target="_blank" rel="noopener">
         <span class="pop-img"><img src="img/items/goods-01706.jpg" width="600" height="600" alt="象印 電気ケトル 0.8L CK-SA08" loading="lazy"></span>
         <span class="pop-br">象印</span>
         <span class="pop-nm">電気ケトル 0.8L CK-SA08</span>
         <span class="pop-sub">転倒お湯もれ防止</span>
         <span class="pop-pr"><span class="num">6,600</span>円<small>（税込）</small></span>
-      </a>
-      <a class="pop" href="https://item.rakuten.co.jp/sommelier/goods-01773/" target="_blank" rel="noopener">
+      </a><div class="pop-btns"><a class="pb-buy" href="https://item.rakuten.co.jp/sommelier/goods-01706/" target="_blank" rel="noopener">購入する</a><a class="pb-fav" aria-label="お気に入りに登録" title="お気に入りに登録" href="https://my.bookmark.rakuten.co.jp/?func=reg&amp;svid=106&amp;shop_bid=333706&amp;iid=10012523" target="_blank" rel="noopener"><span aria-hidden="true">♡</span></a></div></div>
+      <div class="pop-card"><a class="pop" href="https://item.rakuten.co.jp/sommelier/goods-01773/" target="_blank" rel="noopener">
         <span class="pop-img"><img src="img/items/goods-01773.jpg" width="600" height="600" alt="象印 電気ケトル 0.8L CK-JA08" loading="lazy"></span>
         <span class="pop-br">象印</span>
         <span class="pop-nm">電気ケトル 0.8L CK-JA08</span>
         <span class="pop-sub">蒸気レス・本体二重構造</span>
         <span class="pop-pr"><span class="num">5,390</span>円<small>（税込）</small></span>
-      </a>
-      <a class="pop" href="https://item.rakuten.co.jp/sommelier/goods-247/" target="_blank" rel="noopener">
+      </a><div class="pop-btns"><a class="pb-buy" href="https://item.rakuten.co.jp/sommelier/goods-01773/" target="_blank" rel="noopener">購入する</a><a class="pb-fav" aria-label="お気に入りに登録" title="お気に入りに登録" href="https://my.bookmark.rakuten.co.jp/?func=reg&amp;svid=106&amp;shop_bid=333706&amp;iid=10012788" target="_blank" rel="noopener"><span aria-hidden="true">♡</span></a></div></div>
+      <div class="pop-card"><a class="pop" href="https://item.rakuten.co.jp/sommelier/goods-247/" target="_blank" rel="noopener">
         <span class="pop-img"><img src="img/items/goods-247.jpg" width="600" height="600" alt="ラッセルホブス ベーシックケトル プラス 0.8L" loading="lazy"></span>
         <span class="pop-br">ラッセルホブス</span>
         <span class="pop-nm">ベーシックケトル プラス 0.8L</span>
         <span class="pop-sub">電気ケトル</span>
         <span class="pop-pr"><span class="num">8,800</span>円<small>（税込）</small></span>
-      </a>
-      <a class="pop" href="https://item.rakuten.co.jp/sommelier/goods-248/" target="_blank" rel="noopener">
+      </a><div class="pop-btns"><a class="pb-buy" href="https://item.rakuten.co.jp/sommelier/goods-247/" target="_blank" rel="noopener">購入する</a><a class="pb-fav" aria-label="お気に入りに登録" title="お気に入りに登録" href="https://my.bookmark.rakuten.co.jp/?func=reg&amp;svid=106&amp;shop_bid=333706&amp;iid=10010454" target="_blank" rel="noopener"><span aria-hidden="true">♡</span></a></div></div>
+      <div class="pop-card"><a class="pop" href="https://item.rakuten.co.jp/sommelier/goods-248/" target="_blank" rel="noopener">
         <span class="pop-img"><img src="img/items/goods-248.jpg" width="600" height="600" alt="ラッセルホブス Tケトル プラス 0.6L" loading="lazy"></span>
         <span class="pop-br">ラッセルホブス</span>
         <span class="pop-nm">Tケトル プラス 0.6L</span>
         <span class="pop-sub">電気ケトル</span>
         <span class="pop-pr"><span class="num">16,500</span>円<small>（税込）</small></span>
-      </a>
+      </a><div class="pop-btns"><a class="pb-buy" href="https://item.rakuten.co.jp/sommelier/goods-248/" target="_blank" rel="noopener">購入する</a><a class="pb-fav" aria-label="お気に入りに登録" title="お気に入りに登録" href="https://my.bookmark.rakuten.co.jp/?func=reg&amp;svid=106&amp;shop_bid=333706&amp;iid=10010455" target="_blank" rel="noopener"><span aria-hidden="true">♡</span></a></div></div>
     </div>
   </div>
 </section>
@@ -2171,48 +2178,48 @@ html body .fv-items .it{width:32%!important}
       <p class="cat-lead">イギリス生まれのおしゃれなキッチン家電</p>
     </div>
     <div class="pops">
-      <a class="pop" href="https://item.rakuten.co.jp/sommelier/goods-01918/" target="_blank" rel="noopener">
+      <div class="pop-card"><a class="pop" href="https://item.rakuten.co.jp/sommelier/goods-01918/" target="_blank" rel="noopener">
         <span class="pop-img"><img src="img/items/goods-01918.jpg" width="600" height="600" alt="ラッセルホブス キュービックホットプレート" loading="lazy"></span>
         <span class="pop-br">ラッセルホブス</span>
         <span class="pop-nm">キュービックホットプレート</span>
         <span class="pop-sub">たこ焼き・波形・平面プレート</span>
         <span class="pop-pr"><span class="num">13,200</span>円<small>（税込）</small></span>
-      </a>
-      <a class="pop" href="https://item.rakuten.co.jp/sommelier/goods-01917/" target="_blank" rel="noopener">
+      </a><div class="pop-btns"><a class="pb-buy" href="https://item.rakuten.co.jp/sommelier/goods-01918/" target="_blank" rel="noopener">購入する</a><a class="pb-fav" aria-label="お気に入りに登録" title="お気に入りに登録" href="https://my.bookmark.rakuten.co.jp/?func=reg&amp;svid=106&amp;shop_bid=333706&amp;iid=10013291" target="_blank" rel="noopener"><span aria-hidden="true">♡</span></a></div></div>
+      <div class="pop-card"><a class="pop" href="https://item.rakuten.co.jp/sommelier/goods-01917/" target="_blank" rel="noopener">
         <span class="pop-img"><img src="img/items/goods-01917.jpg" width="600" height="600" alt="ラッセルホブス 全自動カフェドリップ" loading="lazy"></span>
         <span class="pop-br">ラッセルホブス</span>
         <span class="pop-nm">全自動カフェドリップ</span>
         <span class="pop-sub">ミル付きコーヒーメーカー</span>
         <span class="pop-pr"><span class="num">29,700</span>円<small>（税込）</small></span>
-      </a>
-      <a class="pop" href="https://item.rakuten.co.jp/sommelier/goods-405/" target="_blank" rel="noopener">
+      </a><div class="pop-btns"><a class="pb-buy" href="https://item.rakuten.co.jp/sommelier/goods-01917/" target="_blank" rel="noopener">購入する</a><a class="pb-fav" aria-label="お気に入りに登録" title="お気に入りに登録" href="https://my.bookmark.rakuten.co.jp/?func=reg&amp;svid=106&amp;shop_bid=333706&amp;iid=10013290" target="_blank" rel="noopener"><span aria-hidden="true">♡</span></a></div></div>
+      <div class="pop-card"><a class="pop" href="https://item.rakuten.co.jp/sommelier/goods-405/" target="_blank" rel="noopener">
         <span class="pop-img"><img src="img/items/goods-405.jpg" width="600" height="600" alt="ラッセルホブス 電動ミル ソルト＆ペッパー" loading="lazy"></span>
         <span class="pop-br">ラッセルホブス</span>
         <span class="pop-nm">電動ミル ソルト＆ペッパー</span>
         <span class="pop-sub">2本セット・ウッドスタンド付き</span>
         <span class="pop-pr"><span class="num">8,800</span>円<small>（税込）</small></span>
-      </a>
-      <a class="pop" href="https://item.rakuten.co.jp/sommelier/goods-01715/" target="_blank" rel="noopener">
+      </a><div class="pop-btns"><a class="pb-buy" href="https://item.rakuten.co.jp/sommelier/goods-405/" target="_blank" rel="noopener">購入する</a><a class="pb-fav" aria-label="お気に入りに登録" title="お気に入りに登録" href="https://my.bookmark.rakuten.co.jp/?func=reg&amp;svid=106&amp;shop_bid=333706&amp;iid=10010657" target="_blank" rel="noopener"><span aria-hidden="true">♡</span></a></div></div>
+      <div class="pop-card"><a class="pop" href="https://item.rakuten.co.jp/sommelier/goods-01715/" target="_blank" rel="noopener">
         <span class="pop-img"><img src="img/items/goods-01715.jpg" width="600" height="600" alt="ラッセルホブス ベーシックホットプレート" loading="lazy"></span>
         <span class="pop-br">ラッセルホブス</span>
         <span class="pop-nm">ベーシックホットプレート</span>
         <span class="pop-sub">プレート一体型・丸洗い</span>
         <span class="pop-pr"><span class="num">6,600</span>円<small>（税込）</small></span>
-      </a>
-      <a class="pop" href="https://item.rakuten.co.jp/sommelier/goods-257/" target="_blank" rel="noopener">
+      </a><div class="pop-btns"><a class="pb-buy" href="https://item.rakuten.co.jp/sommelier/goods-01715/" target="_blank" rel="noopener">購入する</a><a class="pb-fav" aria-label="お気に入りに登録" title="お気に入りに登録" href="https://my.bookmark.rakuten.co.jp/?func=reg&amp;svid=106&amp;shop_bid=333706&amp;iid=10012473" target="_blank" rel="noopener"><span aria-hidden="true">♡</span></a></div></div>
+      <div class="pop-card"><a class="pop" href="https://item.rakuten.co.jp/sommelier/goods-257/" target="_blank" rel="noopener">
         <span class="pop-img"><img src="img/items/goods-257.jpg" width="600" height="600" alt="ラッセルホブス 4ブレード ミニチョッパー" loading="lazy"></span>
         <span class="pop-br">ラッセルホブス</span>
         <span class="pop-nm">4ブレード ミニチョッパー</span>
         <span class="pop-sub">フードプロセッサー</span>
         <span class="pop-pr"><span class="num">8,800</span>円<small>（税込）</small></span>
-      </a>
-      <a class="pop" href="https://item.rakuten.co.jp/sommelier/goods-258/" target="_blank" rel="noopener">
+      </a><div class="pop-btns"><a class="pb-buy" href="https://item.rakuten.co.jp/sommelier/goods-257/" target="_blank" rel="noopener">購入する</a><a class="pb-fav" aria-label="お気に入りに登録" title="お気に入りに登録" href="https://my.bookmark.rakuten.co.jp/?func=reg&amp;svid=106&amp;shop_bid=333706&amp;iid=10010464" target="_blank" rel="noopener"><span aria-hidden="true">♡</span></a></div></div>
+      <div class="pop-card"><a class="pop" href="https://item.rakuten.co.jp/sommelier/goods-258/" target="_blank" rel="noopener">
         <span class="pop-img"><img src="img/items/goods-258.jpg" width="600" height="600" alt="ラッセルホブス ミニスチーマー" loading="lazy"></span>
         <span class="pop-br">ラッセルホブス</span>
         <span class="pop-nm">ミニスチーマー</span>
         <span class="pop-sub">蒸し料理・ゆで卵</span>
         <span class="pop-pr"><span class="num">11,000</span>円<small>（税込）</small></span>
-      </a>
+      </a><div class="pop-btns"><a class="pb-buy" href="https://item.rakuten.co.jp/sommelier/goods-258/" target="_blank" rel="noopener">購入する</a><a class="pb-fav" aria-label="お気に入りに登録" title="お気に入りに登録" href="https://my.bookmark.rakuten.co.jp/?func=reg&amp;svid=106&amp;shop_bid=333706&amp;iid=10010465" target="_blank" rel="noopener"><span aria-hidden="true">♡</span></a></div></div>
     </div>
   </div>
 </section>
@@ -2225,48 +2232,48 @@ html body .fv-items .it{width:32%!important}
       <p class="cat-lead">山崎実業の人気シリーズ</p>
     </div>
     <div class="pops">
-      <a class="pop" href="https://item.rakuten.co.jp/sommelier/ymj-01021/" target="_blank" rel="noopener">
+      <div class="pop-card"><a class="pop" href="https://item.rakuten.co.jp/sommelier/ymj-01021/" target="_blank" rel="noopener">
         <span class="pop-img"><img src="img/items/ymj-01021.jpg" width="600" height="600" alt="山崎実業 tower 折り畳み室内物干し" loading="lazy"></span>
         <span class="pop-br">山崎実業 tower</span>
         <span class="pop-nm">折り畳み室内物干し</span>
         <span class="pop-sub">部屋干しに</span>
         <span class="pop-pr"><span class="num">12,100</span>円<small>（税込）</small></span>
-      </a>
-      <a class="pop" href="https://item.rakuten.co.jp/sommelier/ymj-01044/" target="_blank" rel="noopener">
+      </a><div class="pop-btns"><a class="pb-buy" href="https://item.rakuten.co.jp/sommelier/ymj-01021/" target="_blank" rel="noopener">購入する</a><a class="pb-fav" aria-label="お気に入りに登録" title="お気に入りに登録" href="https://my.bookmark.rakuten.co.jp/?func=reg&amp;svid=106&amp;shop_bid=333706&amp;iid=10011389" target="_blank" rel="noopener"><span aria-hidden="true">♡</span></a></div></div>
+      <div class="pop-card"><a class="pop" href="https://item.rakuten.co.jp/sommelier/ymj-01044/" target="_blank" rel="noopener">
         <span class="pop-img"><img src="img/items/ymj-01044.jpg" width="600" height="600" alt="山崎実業 tower 隠せる調味料ラック 2段" loading="lazy"></span>
         <span class="pop-br">山崎実業 tower</span>
         <span class="pop-nm">隠せる調味料ラック 2段</span>
         <span class="pop-sub">キッチン収納</span>
         <span class="pop-pr"><span class="num">15,950</span>円<small>（税込）</small></span>
-      </a>
-      <a class="pop" href="https://item.rakuten.co.jp/sommelier/ymj-01130/" target="_blank" rel="noopener">
+      </a><div class="pop-btns"><a class="pb-buy" href="https://item.rakuten.co.jp/sommelier/ymj-01044/" target="_blank" rel="noopener">購入する</a><a class="pb-fav" aria-label="お気に入りに登録" title="お気に入りに登録" href="https://my.bookmark.rakuten.co.jp/?func=reg&amp;svid=106&amp;shop_bid=333706&amp;iid=10011325" target="_blank" rel="noopener"><span aria-hidden="true">♡</span></a></div></div>
+      <div class="pop-card"><a class="pop" href="https://item.rakuten.co.jp/sommelier/ymj-01130/" target="_blank" rel="noopener">
         <span class="pop-img"><img src="img/items/ymj-01130.jpg" width="600" height="600" alt="山崎実業 tower キッチン家電下引き出し＆スライドテーブル" loading="lazy"></span>
         <span class="pop-br">山崎実業 tower</span>
         <span class="pop-nm">キッチン家電下引き出し＆スライドテーブル</span>
         <span class="pop-sub">レンジ下収納</span>
         <span class="pop-pr"><span class="num">12,650</span>円<small>（税込）</small></span>
-      </a>
-      <a class="pop" href="https://item.rakuten.co.jp/sommelier/ymj-00333/" target="_blank" rel="noopener">
+      </a><div class="pop-btns"><a class="pb-buy" href="https://item.rakuten.co.jp/sommelier/ymj-01130/" target="_blank" rel="noopener">購入する</a><a class="pb-fav" aria-label="お気に入りに登録" title="お気に入りに登録" href="https://my.bookmark.rakuten.co.jp/?func=reg&amp;svid=106&amp;shop_bid=333706&amp;iid=10011453" target="_blank" rel="noopener"><span aria-hidden="true">♡</span></a></div></div>
+      <div class="pop-card"><a class="pop" href="https://item.rakuten.co.jp/sommelier/ymj-00333/" target="_blank" rel="noopener">
         <span class="pop-img"><img src="img/items/ymj-00333.jpg" width="600" height="600" alt="山崎実業 tower ワイドジャグボトルスタンド" loading="lazy"></span>
         <span class="pop-br">山崎実業 tower</span>
         <span class="pop-nm">ワイドジャグボトルスタンド</span>
         <span class="pop-sub">水切りラック</span>
         <span class="pop-pr"><span class="num">3,850</span>円<small>（税込）</small></span>
-      </a>
-      <a class="pop" href="https://item.rakuten.co.jp/sommelier/ymj-00971/" target="_blank" rel="noopener">
+      </a><div class="pop-btns"><a class="pb-buy" href="https://item.rakuten.co.jp/sommelier/ymj-00333/" target="_blank" rel="noopener">購入する</a><a class="pb-fav" aria-label="お気に入りに登録" title="お気に入りに登録" href="https://my.bookmark.rakuten.co.jp/?func=reg&amp;svid=106&amp;shop_bid=333706&amp;iid=10009759" target="_blank" rel="noopener"><span aria-hidden="true">♡</span></a></div></div>
+      <div class="pop-card"><a class="pop" href="https://item.rakuten.co.jp/sommelier/ymj-00971/" target="_blank" rel="noopener">
         <span class="pop-img"><img src="img/items/ymj-00971.jpg" width="600" height="600" alt="山崎実業 tower マグネット風呂イス SH25" loading="lazy"></span>
         <span class="pop-br">山崎実業 tower</span>
         <span class="pop-nm">マグネット風呂イス SH25</span>
         <span class="pop-sub">座面25cm</span>
         <span class="pop-pr"><span class="num">4,620</span>円<small>（税込）</small></span>
-      </a>
-      <a class="pop" href="https://item.rakuten.co.jp/sommelier/ymj-00336/" target="_blank" rel="noopener">
+      </a><div class="pop-btns"><a class="pb-buy" href="https://item.rakuten.co.jp/sommelier/ymj-00971/" target="_blank" rel="noopener">購入する</a><a class="pb-fav" aria-label="お気に入りに登録" title="お気に入りに登録" href="https://my.bookmark.rakuten.co.jp/?func=reg&amp;svid=106&amp;shop_bid=333706&amp;iid=10011147" target="_blank" rel="noopener"><span aria-hidden="true">♡</span></a></div></div>
+      <div class="pop-card"><a class="pop" href="https://item.rakuten.co.jp/sommelier/ymj-00336/" target="_blank" rel="noopener">
         <span class="pop-img"><img src="img/items/ymj-00336.jpg" width="600" height="600" alt="山崎実業 tower 洗濯機横マグネット折り畳み棚" loading="lazy"></span>
         <span class="pop-br">山崎実業 tower</span>
         <span class="pop-nm">洗濯機横マグネット折り畳み棚</span>
         <span class="pop-sub">ランドリー収納</span>
         <span class="pop-pr"><span class="num">3,850</span>円<small>（税込）</small></span>
-      </a>
+      </a><div class="pop-btns"><a class="pb-buy" href="https://item.rakuten.co.jp/sommelier/ymj-00336/" target="_blank" rel="noopener">購入する</a><a class="pb-fav" aria-label="お気に入りに登録" title="お気に入りに登録" href="https://my.bookmark.rakuten.co.jp/?func=reg&amp;svid=106&amp;shop_bid=333706&amp;iid=10009762" target="_blank" rel="noopener"><span aria-hidden="true">♡</span></a></div></div>
     </div>
   </div>
 </section>
@@ -2368,13 +2375,16 @@ html body .fv-items .it{width:32%!important}
 </script>
 <script>
 (function(){
-  // FV 金粉：ふわっとぼけた金の光の粒＋キラッと光る星（細かい点はやめた） 2026-11-16
+  // FV 金のラメ：元の細かい金粉をベースに、量を減らして広く散らし、粒にふんわり光を足す 2026-11-16
   var w=document.querySelector('.fv-spark');if(!w)return;
-  var r=Math.random,h='';
-  for(var i=0;i<46;i++){var s=(4+r()*16).toFixed(1);
-    h+='<i class="gd" style="left:'+(r()*100).toFixed(1)+'%;top:'+(r()*100).toFixed(1)+'%;--s:'+s+'px;--o:'+(.25+r()*.5).toFixed(2)+';--d:'+(5+r()*7).toFixed(1)+'s;--dl:-'+(r()*10).toFixed(1)+'s"></i>';}
-  for(var j=0;j<22;j++){h+='<i class="gs" style="left:'+(r()*100).toFixed(1)+'%;top:'+(r()*100).toFixed(1)+'%;--s:'+(10+r()*16).toFixed(0)+'px;--d:'+(2.4+r()*2.6).toFixed(1)+'s;--dl:-'+(r()*5).toFixed(1)+'s"></i>';}
-  w.innerHTML=h;
+  var r=Math.random,cols=['#f6e2a6','#ecc867','#fff6dc','#e8c56a','#ffffff'];
+  function g(){return (r()+r()-1)}
+  function layer(n,cls,big){var b=w.getBoundingClientRect(),W=b.width/2,H=b.height/2,a=[];
+    for(var k=0;k<n;k++){var x=(g()*W).toFixed(0),y=(g()*H).toFixed(0),c=cols[(r()*cols.length)|0];
+      a.push(big?(x+'px '+y+'px 3px '+(0.8+r()*1.2).toFixed(1)+'px '+c):(x+'px '+y+'px '+(r()<.5?'1px':'0')+' '+(r()<.85?'0.4px':'0.9px')+' '+c));}
+    return '<i class="fv-dust '+cls+'" style="box-shadow:'+a.join(',')+'"></i>';}
+  function draw(){w.innerHTML=layer(700,'',0)+layer(220,'tw',0)+layer(160,'tw2',0)+layer(26,'tw',1)+layer(20,'tw2',1);}
+  draw();var t;window.addEventListener('resize',function(){clearTimeout(t);t=setTimeout(draw,300)});
 })();
 </script>
 <script>
