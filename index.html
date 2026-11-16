@@ -1851,6 +1851,10 @@ html body{background-attachment:scroll!important}
 .side-today .st-cnt li b{display:inline!important;color:#a00c16!important;font-family:"Jost",sans-serif;font-weight:800;font-size:clamp(14px,1.1vw,18px);margin-right:1px}
 /* 右サイド：○名様ラベルなし、賞品画像を気持ち小さく 2026-11-16 */
 html body .st-cut{margin:14px auto 4px!important;width:88%}
+/* 右サイド：プレゼント見出しと条件文を中央ぞろえ・3行の左右をそろえる（JS） 2026-11-16 */
+.st-lot .st-h,.st-lot .st-cond{text-align:center}
+.st-lot .st-fit{display:block;width:max-content;margin:0 auto;white-space:nowrap;line-height:1.45}
+.st-lot .st-cond .st-fit+.st-fit{margin-top:2px}
 </style>
 </head>
 <body>
@@ -1884,8 +1888,8 @@ html body .st-cut{margin:14px auto 4px!important;width:88%}
     </div>
     <a class="side-btn st-fuku" href="#p20"><small>ブラックフライデー限定</small>超目玉福袋をチェック！</a>
     <div class="side-today st-lot">
-      <p class="st-h">プレゼントキャンペーン</p>
-      <p class="st-cond">2万円以上のお買い物で<br><b>抽選で合計8名様</b>に当たる</p>
+      <p class="st-h"><span class="st-fit">プレゼントキャンペーン</span></p>
+      <p class="st-cond"><span class="st-fit">2万円以上のお買い物で</span><span class="st-fit">抽選で<b>合計8名様</b>に当たる</span></p>
       <div class="st-cut"><img src="img/present-cut.webp" width="551" height="272" alt="ビタントニオ エッグワッフル＆ホットサンドベーカー、レムノス 珪藻土の時計、レムノス divide"></div>
       <a class="side-btn gold st-btn" href="#lottery">プレゼント抽選を見る</a>
     </div>
@@ -2571,6 +2575,16 @@ html body .st-cut{margin:14px auto 4px!important;width:88%}
   [].forEach.call(document.querySelectorAll('main > *, .fv, .deco, footer'),function(el){io.observe(el);});
   // 左の BLACK FRIDAY：特集のトップへ
   var a=document.querySelector('a.side-ttl');if(a)a.addEventListener('click',function(ev){ev.preventDefault();window.scrollTo({top:0,behavior:'smooth'});history.replaceState(null,'',location.pathname);});
+})();
+</script>
+<script>
+(function(){
+  // 右サイド：プレゼント枠の3行を枠の中の幅にそろえる
+  function fit(){var box=document.querySelector('.st-lot');if(!box||!box.offsetParent)return;
+    var cs=getComputedStyle(box),W=box.clientWidth-parseFloat(cs.paddingLeft)-parseFloat(cs.paddingRight);
+    [].forEach.call(box.querySelectorAll('.st-fit'),function(e){e.style.fontSize='';var f=parseFloat(getComputedStyle(e).fontSize),w=e.getBoundingClientRect().width;if(w>0)e.style.fontSize=(f*W/w).toFixed(2)+'px';});}
+  (document.fonts&&document.fonts.ready?document.fonts.ready:Promise.resolve()).then(fit);
+  addEventListener('load',fit);var t;addEventListener('resize',function(){clearTimeout(t);t=setTimeout(fit,200);});
 })();
 </script>
 </body>
