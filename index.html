@@ -1842,6 +1842,13 @@ html body{background-attachment:scroll!important}
     background:radial-gradient(ellipse 45% 55% at 12% 18%,#e0262f55,transparent 70%),radial-gradient(ellipse 45% 55% at 88% 82%,#e0262f40,transparent 70%),linear-gradient(180deg,#b3101c 0%,#8f0c16 55%,#6e0911 100%)}
   html body{background:#8f0c16!important}
 }
+/* 右サイド：賞品は切り抜き画像1枚＋下に○名様 2026-11-16 */
+.st-cut{margin:14px -4px 0}
+.st-cut img{display:block;width:100%;height:auto;filter:drop-shadow(0 6px 10px rgba(0,0,0,.45))}
+.st-cnt{list-style:none;margin:6px 0 0!important;padding:0!important;display:grid;grid-template-columns:repeat(3,1fr);gap:6px;border:0!important}
+.side-today .st-cnt li{margin:0!important;padding:4px 0 3px!important;border:0!important;text-align:center;border-radius:3px;
+  background:linear-gradient(180deg,#fff3c8 0%,#ecc867 38%,#d4a94a 72%,#b7862f 100%);color:#a00c16;font-weight:900;font-size:clamp(10px,.75vw,12px);line-height:1;white-space:nowrap}
+.side-today .st-cnt li b{display:inline!important;color:#a00c16!important;font-family:"Jost",sans-serif;font-weight:800;font-size:clamp(14px,1.1vw,18px);margin-right:1px}
 </style>
 </head>
 <body>
@@ -1877,11 +1884,8 @@ html body{background-attachment:scroll!important}
     <div class="side-today st-lot">
       <p class="st-h">プレゼントキャンペーン</p>
       <p class="st-cond">2万円以上のお買い物で<br><b>抽選で合計8名様</b>に当たる</p>
-      <ul class="st-pz">
-        <li><img src="img/prize-vitantonio.jpg" width="654" height="760" alt="ビタントニオ エッグワッフル＆ホットサンドベーカー" loading="lazy"><span><b>3</b>名様</span></li>
-        <li><img src="img/prize-keisoudo-green.jpg" width="760" height="760" alt="レムノス 珪藻土の時計 グリーン" loading="lazy"><span><b>1</b>名様</span></li>
-        <li><img src="img/prize-divide-white.jpg" width="760" height="760" alt="レムノス divide ホワイト" loading="lazy"><span><b>4</b>名様</span></li>
-      </ul>
+      <div class="st-cut"><img src="img/present-cut.webp" width="551" height="272" alt="ビタントニオ エッグワッフル＆ホットサンドベーカー、レムノス 珪藻土の時計、レムノス divide"></div>
+      <ul class="st-cnt"><li><b>3</b>名様</li><li><b>1</b>名様</li><li><b>4</b>名様</li></ul>
       <a class="side-btn gold st-btn" href="#lottery">プレゼント抽選を見る</a>
     </div>
   </div>
