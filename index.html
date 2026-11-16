@@ -1700,6 +1700,45 @@ html body .side-nav .n{font-size:12px!important}
 .pz-img{overflow:hidden}
 .pz-img img{transition:transform .5s ease}
 .prize:hover .pz-img img{transform:scale(1.05)}
+/* HOT ITEM・WINTER ITEM：画像〜価格を角丸の枠で囲み、下に購入・お気に入りボタン 2026-11-16 */
+#popular .pops,#winter .pops{grid-template-columns:repeat(3,1fr)!important;gap:24px 16px!important}
+.pop-card{display:flex;flex-direction:column;min-width:0}
+.pop-card .pop{flex:1;border:1.5px solid #ecc86766;border-radius:14px;padding:12px 12px 14px;background:#ffffff08;transition:border-color .2s}
+.pop-card .pop:hover{border-color:#ecc867}
+.pop-card .pop-img{border-radius:8px;overflow:hidden}
+.pop-btns{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:10px}
+.pop-btns a{display:flex;align-items:center;justify-content:center;gap:4px;min-height:42px;border-radius:999px;text-decoration:none;font-weight:900;font-size:14px;white-space:nowrap;transition:filter .2s,background .2s,color .2s}
+.pb-buy{background:#c8102e;color:#fff!important}
+.pb-buy:hover{filter:brightness(1.12)}
+.pb-fav{border:1.5px solid #ecc867;color:#ecc867!important}
+.pb-fav span{font-size:1.15em;line-height:1}
+.pb-fav:hover{background:#ecc867;color:#1b1715!important}
+@media(max-width:599px){
+  #popular .pops,#winter .pops{grid-template-columns:1fr 1fr!important;gap:18px 10px!important}
+  .pop-card .pop{padding:8px 8px 10px;border-radius:12px}
+  .pop-btns{grid-template-columns:1fr;gap:6px}
+  .pop-btns a{min-height:38px;font-size:13px}
+}
+/* 右サイド：福袋ボタンをプレゼントキャンペーンの上に、黒ボタンで2行 2026-11-16 */
+.side-btn.st-fuku{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;margin-top:18px;padding:14px 10px;background:#111!important;color:#fff!important;border:1.5px solid #ecc867;text-decoration:none;font-weight:900;font-size:clamp(14px,1.15vw,18px);line-height:1.3;text-align:center;transition:background .2s}
+.side-btn.st-fuku small{font-size:.72em;color:#ecc867;letter-spacing:.06em}
+.side-btn.st-fuku:hover{background:#2a2420!important}
+/* FV金粉：ぼけた光の粒＋キラッと光る星 2026-11-16 */
+.fv-spark .fv-dust{display:none}
+.fv-spark .gd{position:absolute;width:var(--s);height:var(--s);border-radius:50%;transform:translate(-50%,-50%);
+  background:radial-gradient(circle,#fff6dc 0%,#f3d382 35%,rgba(236,200,103,.35) 60%,rgba(236,200,103,0) 72%);
+  opacity:var(--o);filter:blur(.5px);animation:gdFloat var(--d) ease-in-out var(--dl) infinite}
+@keyframes gdFloat{0%,100%{transform:translate(-50%,-50%) translateY(0);opacity:var(--o)}50%{transform:translate(-50%,-50%) translateY(-14px);opacity:calc(var(--o) * .45)}}
+.fv-spark .gs{position:absolute;width:var(--s);height:var(--s);transform:translate(-50%,-50%) scale(0);
+  background:radial-gradient(circle,#fff 0 12%,rgba(255,246,220,0) 13%),linear-gradient(90deg,transparent 46%,#fff6dc 50%,transparent 54%),linear-gradient(0deg,transparent 46%,#fff6dc 50%,transparent 54%);
+  filter:drop-shadow(0 0 4px #ecc867);animation:gsTw var(--d) ease-in-out var(--dl) infinite}
+@keyframes gsTw{0%,100%{transform:translate(-50%,-50%) scale(0) rotate(0);opacity:0}45%{transform:translate(-50%,-50%) scale(1) rotate(45deg);opacity:1}70%{transform:translate(-50%,-50%) scale(.2) rotate(70deg);opacity:0}}
+@media(prefers-reduced-motion:reduce){.fv-spark .gd,.fv-spark .gs{animation:none}.fv-spark .gs{display:none}}
+/* FVの切り抜き商品を大きく 2026-11-16 */
+html body .fv-stage{max-width:720px!important}
+html body .fv-items{gap:10px 2%!important}
+html body .fv-items .it{width:32%!important}
+.pop-btns{grid-template-columns:1fr!important;gap:6px!important}
 </style>
 </head>
 <body>
@@ -1730,6 +1769,7 @@ html body .side-nav .n{font-size:12px!important}
       <p class="lbl" data-cd-lbl>ブラックフライデーまで</p>
       <p class="t" data-cd-t><span class="num" data-cd="d">0</span><small>日</small><span class="num" data-cd="h">00</span><small>時間</small><span class="num" data-cd="m">00</span><small>分</small><span class="num" data-cd="s">00</span><small>秒</small></p>
     </div>
+    <a class="side-btn st-fuku" href="#p20"><small>ブラックフライデー限定</small>超目玉福袋をチェック！</a>
     <div class="side-today st-lot">
       <p class="st-h">プレゼントキャンペーン</p>
       <p class="st-cond">2万円以上のお買い物で<br><b>抽選で合計8名様</b>に当たる</p>
@@ -1740,14 +1780,12 @@ html body .side-nav .n{font-size:12px!important}
       </ul>
       <a class="side-btn gold st-btn" href="#lottery">プレゼント抽選を見る</a>
     </div>
-    <a class="side-btn pink" href="#p20">福袋を見る</a>
   </div>
 </aside>
 <div class="col">
 
 <header><div class="wrap">
   <a class="brand" href="https://www.rakuten.co.jp/sommelier/" target="_blank" rel="noopener" aria-label="家具のソムリエ 楽天市場 トップページへ"><img class="logo" src="img/logo-white.svg" width="270" height="50" alt="家具のソムリエ いえの中をそろえるお店"></a>
-  <span class="hd-tag">BLACK FRIDAY 2026</span>
 </div></header>
 <div class="flags" aria-hidden="true"></div>
 
@@ -1931,48 +1969,48 @@ html body .side-nav .n{font-size:12px!important}
       <h2 class="pops-h"><span class="ph-en">HOT ITEM</span><em class="ph-ja">売れ筋アイテム</em></h2>
     </div>
     <div class="pops">
-      <a class="pop" href="https://item.rakuten.co.jp/sommelier/t-fal-293/" target="_blank" rel="noopener">
+      <div class="pop-card"><a class="pop" href="https://item.rakuten.co.jp/sommelier/t-fal-293/" target="_blank" rel="noopener">
         <span class="pop-img"><img src="img/pop-t-fal-293.jpg" width="600" height="600" alt="ティファール ジャスティンロックコントロール 1.2L" loading="lazy"></span>
         <span class="pop-br">ティファール</span>
         <span class="pop-nm">ジャスティンロックコントロール 1.2L</span>
         <span class="pop-sub">電気ケトル・温度設定つき</span>
         <span class="pop-pr"><span class="num">8,055</span>円<small>（税込）</small></span>
-      </a>
-      <a class="pop" href="https://item.rakuten.co.jp/sommelier/goods-01829/" target="_blank" rel="noopener">
+      </a><div class="pop-btns"><a class="pb-buy" href="https://item.rakuten.co.jp/sommelier/t-fal-293/" target="_blank" rel="noopener">購入する</a><a class="pb-fav" href="https://my.bookmark.rakuten.co.jp/?func=reg&amp;svid=106&amp;shop_bid=333706&amp;iid=10011545" target="_blank" rel="noopener"><span aria-hidden="true">♡</span>お気に入り</a></div></div>
+      <div class="pop-card"><a class="pop" href="https://item.rakuten.co.jp/sommelier/goods-01829/" target="_blank" rel="noopener">
         <span class="pop-img"><img src="img/pop-goods-01829.jpg" width="600" height="600" alt="ラッセルホブス エアフライオーブン 3L" loading="lazy"></span>
         <span class="pop-br">ラッセルホブス</span>
         <span class="pop-nm">エアフライオーブン 3L</span>
         <span class="pop-sub">エアフライヤー・レシピブック付き</span>
         <span class="pop-pr"><span class="num">16,500</span>円<small>（税込）</small></span>
-      </a>
-      <a class="pop" href="https://item.rakuten.co.jp/sommelier/goods-01649/" target="_blank" rel="noopener">
+      </a><div class="pop-btns"><a class="pb-buy" href="https://item.rakuten.co.jp/sommelier/goods-01829/" target="_blank" rel="noopener">購入する</a><a class="pb-fav" href="https://my.bookmark.rakuten.co.jp/?func=reg&amp;svid=106&amp;shop_bid=333706&amp;iid=10012873" target="_blank" rel="noopener"><span aria-hidden="true">♡</span>お気に入り</a></div></div>
+      <div class="pop-card"><a class="pop" href="https://item.rakuten.co.jp/sommelier/goods-01649/" target="_blank" rel="noopener">
         <span class="pop-img"><img src="img/pop-goods-01649.jpg" width="600" height="600" alt="ラッセルホブス 電動ミル ソルト＆ペッパー ミニ" loading="lazy"></span>
         <span class="pop-br">ラッセルホブス</span>
         <span class="pop-nm">電動ミル ソルト＆ペッパー ミニ</span>
         <span class="pop-sub">充電式・2本セット</span>
         <span class="pop-pr"><span class="num">8,800</span>円<small>（税込）</small></span>
-      </a>
-      <a class="pop" href="https://item.rakuten.co.jp/sommelier/t-fal-345/" target="_blank" rel="noopener">
+      </a><div class="pop-btns"><a class="pb-buy" href="https://item.rakuten.co.jp/sommelier/goods-01649/" target="_blank" rel="noopener">購入する</a><a class="pb-fav" href="https://my.bookmark.rakuten.co.jp/?func=reg&amp;svid=106&amp;shop_bid=333706&amp;iid=10012382" target="_blank" rel="noopener"><span aria-hidden="true">♡</span>お気に入り</a></div></div>
+      <div class="pop-card"><a class="pop" href="https://item.rakuten.co.jp/sommelier/t-fal-345/" target="_blank" rel="noopener">
         <span class="pop-img"><img src="img/pop-t-fal-345.jpg" width="600" height="600" alt="ティファール インジニオ・ネオ IHチャコールグレー セット8" loading="lazy"></span>
         <span class="pop-br">ティファール</span>
         <span class="pop-nm">インジニオ・ネオ IHチャコールグレー セット8</span>
         <span class="pop-sub">取っ手が取れるフライパンセット</span>
         <span class="pop-pr"><span class="num">15,990</span>円<small>（税込）</small></span>
-      </a>
-      <a class="pop" href="https://item.rakuten.co.jp/sommelier/t-fal-335/" target="_blank" rel="noopener">
+      </a><div class="pop-btns"><a class="pb-buy" href="https://item.rakuten.co.jp/sommelier/t-fal-345/" target="_blank" rel="noopener">購入する</a><a class="pb-fav" href="https://my.bookmark.rakuten.co.jp/?func=reg&amp;svid=106&amp;shop_bid=333706&amp;iid=10012091" target="_blank" rel="noopener"><span aria-hidden="true">♡</span>お気に入り</a></div></div>
+      <div class="pop-card"><a class="pop" href="https://item.rakuten.co.jp/sommelier/t-fal-335/" target="_blank" rel="noopener">
         <span class="pop-img"><img src="img/pop-t-fal-335.jpg" width="600" height="600" alt="ティファール ピュアポップ" loading="lazy"></span>
         <span class="pop-br">ティファール</span>
         <span class="pop-nm">ピュアポップ</span>
         <span class="pop-sub">衣類スチーマー</span>
         <span class="pop-pr"><span class="num">6,199</span>円<small>（税込）</small></span>
-      </a>
-      <a class="pop" href="https://item.rakuten.co.jp/sommelier/ymj-00845/" target="_blank" rel="noopener">
+      </a><div class="pop-btns"><a class="pb-buy" href="https://item.rakuten.co.jp/sommelier/t-fal-335/" target="_blank" rel="noopener">購入する</a><a class="pb-fav" href="https://my.bookmark.rakuten.co.jp/?func=reg&amp;svid=106&amp;shop_bid=333706&amp;iid=10011866" target="_blank" rel="noopener"><span aria-hidden="true">♡</span>お気に入り</a></div></div>
+      <div class="pop-card"><a class="pop" href="https://item.rakuten.co.jp/sommelier/ymj-00845/" target="_blank" rel="noopener">
         <span class="pop-img"><img src="img/pop-ymj-00845.jpg" width="600" height="600" alt="山崎実業 tower 替えブラシ収納付き流せるトイレブラシスタンド" loading="lazy"></span>
         <span class="pop-br">山崎実業 tower</span>
         <span class="pop-nm">替えブラシ収納付き流せるトイレブラシスタンド</span>
         <span class="pop-sub">タワーシリーズ</span>
         <span class="pop-pr"><span class="num">1,760</span>円<small>（税込）</small></span>
-      </a>
+      </a><div class="pop-btns"><a class="pb-buy" href="https://item.rakuten.co.jp/sommelier/ymj-00845/" target="_blank" rel="noopener">購入する</a><a class="pb-fav" href="https://my.bookmark.rakuten.co.jp/?func=reg&amp;svid=106&amp;shop_bid=333706&amp;iid=10010693" target="_blank" rel="noopener"><span aria-hidden="true">♡</span>お気に入り</a></div></div>
     </div>
   </div>
 </section>
@@ -1985,69 +2023,69 @@ html body .side-nav .n{font-size:12px!important}
       <p class="cat-lead">加湿器・暖房家電で、冬のおうち時間をあたたかく</p>
     </div>
     <div class="pops">
-      <a class="pop" href="https://item.rakuten.co.jp/sommelier/goods-01071/" target="_blank" rel="noopener">
+      <div class="pop-card"><a class="pop" href="https://item.rakuten.co.jp/sommelier/goods-01071/" target="_blank" rel="noopener">
         <span class="pop-img"><img src="img/items/goods-01071.jpg" width="600" height="600" alt="アラジン グラファイトヒーター 2灯管" loading="lazy"></span>
         <span class="pop-br">アラジン</span>
         <span class="pop-nm">グラファイトヒーター 2灯管</span>
         <span class="pop-sub">遠赤外線・電気ストーブ</span>
         <span class="pop-pr"><span class="num">36,300</span>円<small>（税込）</small></span>
-      </a>
-      <a class="pop" href="https://item.rakuten.co.jp/sommelier/goods-01937/" target="_blank" rel="noopener">
+      </a><div class="pop-btns"><a class="pb-buy" href="https://item.rakuten.co.jp/sommelier/goods-01071/" target="_blank" rel="noopener">購入する</a><a class="pb-fav" href="https://my.bookmark.rakuten.co.jp/?func=reg&amp;svid=106&amp;shop_bid=333706&amp;iid=10011549" target="_blank" rel="noopener"><span aria-hidden="true">♡</span>お気に入り</a></div></div>
+      <div class="pop-card"><a class="pop" href="https://item.rakuten.co.jp/sommelier/goods-01937/" target="_blank" rel="noopener">
         <span class="pop-img"><img src="img/items/goods-01937.jpg" width="600" height="600" alt="アラジン ドライサーキュレーター AFH-HC12A" loading="lazy"></span>
         <span class="pop-br">アラジン</span>
         <span class="pop-nm">ドライサーキュレーター AFH-HC12A</span>
         <span class="pop-sub">温風機・衣類乾燥にも</span>
         <span class="pop-pr"><span class="num">27,500</span>円<small>（税込）</small></span>
-      </a>
-      <a class="pop" href="https://item.rakuten.co.jp/sommelier/goods-01936/" target="_blank" rel="noopener">
+      </a><div class="pop-btns"><a class="pb-buy" href="https://item.rakuten.co.jp/sommelier/goods-01937/" target="_blank" rel="noopener">購入する</a><a class="pb-fav" href="https://my.bookmark.rakuten.co.jp/?func=reg&amp;svid=106&amp;shop_bid=333706&amp;iid=10013417" target="_blank" rel="noopener"><span aria-hidden="true">♡</span>お気に入り</a></div></div>
+      <div class="pop-card"><a class="pop" href="https://item.rakuten.co.jp/sommelier/goods-01936/" target="_blank" rel="noopener">
         <span class="pop-img"><img src="img/items/goods-01936.jpg" width="600" height="600" alt="アラジン スチーム式加湿器 AHF-60A" loading="lazy"></span>
         <span class="pop-br">アラジン</span>
         <span class="pop-nm">スチーム式加湿器 AHF-60A</span>
         <span class="pop-sub">フィルター不要・沸騰式</span>
         <span class="pop-pr"><span class="num">24,800</span>円<small>（税込）</small></span>
-      </a>
-      <a class="pop" href="https://item.rakuten.co.jp/sommelier/goods-01797/" target="_blank" rel="noopener">
+      </a><div class="pop-btns"><a class="pb-buy" href="https://item.rakuten.co.jp/sommelier/goods-01936/" target="_blank" rel="noopener">購入する</a><a class="pb-fav" href="https://my.bookmark.rakuten.co.jp/?func=reg&amp;svid=106&amp;shop_bid=333706&amp;iid=10013378" target="_blank" rel="noopener"><span aria-hidden="true">♡</span>お気に入り</a></div></div>
+      <div class="pop-card"><a class="pop" href="https://item.rakuten.co.jp/sommelier/goods-01797/" target="_blank" rel="noopener">
         <span class="pop-img"><img src="img/items/goods-01797.jpg" width="600" height="600" alt="象印 スチーム式加湿器 EE-DG50" loading="lazy"></span>
         <span class="pop-br">象印</span>
         <span class="pop-nm">スチーム式加湿器 EE-DG50</span>
         <span class="pop-sub">木造8畳・洋室13畳</span>
         <span class="pop-pr"><span class="num">25,770</span>円<small>（税込）</small></span>
-      </a>
-      <a class="pop" href="https://item.rakuten.co.jp/sommelier/goods-01931/" target="_blank" rel="noopener">
+      </a><div class="pop-btns"><a class="pb-buy" href="https://item.rakuten.co.jp/sommelier/goods-01797/" target="_blank" rel="noopener">購入する</a><a class="pb-fav" href="https://my.bookmark.rakuten.co.jp/?func=reg&amp;svid=106&amp;shop_bid=333706&amp;iid=10012833" target="_blank" rel="noopener"><span aria-hidden="true">♡</span>お気に入り</a></div></div>
+      <div class="pop-card"><a class="pop" href="https://item.rakuten.co.jp/sommelier/goods-01931/" target="_blank" rel="noopener">
         <span class="pop-img"><img src="img/items/goods-01931.jpg" width="600" height="600" alt="象印 スチーム式加湿器 EE-DG35" loading="lazy"></span>
         <span class="pop-br">象印</span>
         <span class="pop-nm">スチーム式加湿器 EE-DG35</span>
         <span class="pop-sub">木造6畳・洋室10畳</span>
         <span class="pop-pr"><span class="num">22,880</span>円<small>（税込）</small></span>
-      </a>
-      <a class="pop" href="https://item.rakuten.co.jp/sommelier/goods-01932/" target="_blank" rel="noopener">
+      </a><div class="pop-btns"><a class="pb-buy" href="https://item.rakuten.co.jp/sommelier/goods-01931/" target="_blank" rel="noopener">購入する</a><a class="pb-fav" href="https://my.bookmark.rakuten.co.jp/?func=reg&amp;svid=106&amp;shop_bid=333706&amp;iid=10013421" target="_blank" rel="noopener"><span aria-hidden="true">♡</span>お気に入り</a></div></div>
+      <div class="pop-card"><a class="pop" href="https://item.rakuten.co.jp/sommelier/goods-01932/" target="_blank" rel="noopener">
         <span class="pop-img"><img src="img/items/goods-01932.jpg" width="600" height="600" alt="象印 スチーム式加湿器 EE-RV35" loading="lazy"></span>
         <span class="pop-br">象印</span>
         <span class="pop-nm">スチーム式加湿器 EE-RV35</span>
         <span class="pop-sub">木造6畳・洋室10畳</span>
         <span class="pop-pr"><span class="num">18,200</span>円<small>（税込）</small></span>
-      </a>
-      <a class="pop" href="https://item.rakuten.co.jp/sommelier/goods-01934/" target="_blank" rel="noopener">
+      </a><div class="pop-btns"><a class="pb-buy" href="https://item.rakuten.co.jp/sommelier/goods-01932/" target="_blank" rel="noopener">購入する</a><a class="pb-fav" href="https://my.bookmark.rakuten.co.jp/?func=reg&amp;svid=106&amp;shop_bid=333706&amp;iid=10013419" target="_blank" rel="noopener"><span aria-hidden="true">♡</span>お気に入り</a></div></div>
+      <div class="pop-card"><a class="pop" href="https://item.rakuten.co.jp/sommelier/goods-01934/" target="_blank" rel="noopener">
         <span class="pop-img"><img src="img/items/goods-01934.jpg" width="600" height="600" alt="象印 スチーム式加湿器 EE-MC20" loading="lazy"></span>
         <span class="pop-br">象印</span>
         <span class="pop-nm">スチーム式加湿器 EE-MC20</span>
         <span class="pop-sub">木造3畳・洋室6畳</span>
         <span class="pop-pr"><span class="num">17,050</span>円<small>（税込）</small></span>
-      </a>
-      <a class="pop" href="https://item.rakuten.co.jp/sommelier/t-fal-370/" target="_blank" rel="noopener">
+      </a><div class="pop-btns"><a class="pb-buy" href="https://item.rakuten.co.jp/sommelier/goods-01934/" target="_blank" rel="noopener">購入する</a><a class="pb-fav" href="https://my.bookmark.rakuten.co.jp/?func=reg&amp;svid=106&amp;shop_bid=333706&amp;iid=10013420" target="_blank" rel="noopener"><span aria-hidden="true">♡</span>お気に入り</a></div></div>
+      <div class="pop-card"><a class="pop" href="https://item.rakuten.co.jp/sommelier/t-fal-370/" target="_blank" rel="noopener">
         <span class="pop-img"><img src="img/items/t-fal-370.jpg" width="600" height="600" alt="ティファール スチーム アンド ミスト L 8L" loading="lazy"></span>
         <span class="pop-br">ティファール</span>
         <span class="pop-nm">スチーム アンド ミスト L 8L</span>
         <span class="pop-sub">加熱超音波式加湿器</span>
         <span class="pop-pr"><span class="num">22,800</span>円<small>（税込）</small></span>
-      </a>
-      <a class="pop" href="https://item.rakuten.co.jp/sommelier/goods-01760/" target="_blank" rel="noopener">
+      </a><div class="pop-btns"><a class="pb-buy" href="https://item.rakuten.co.jp/sommelier/t-fal-370/" target="_blank" rel="noopener">購入する</a><a class="pb-fav" href="https://my.bookmark.rakuten.co.jp/?func=reg&amp;svid=106&amp;shop_bid=333706&amp;iid=10012173" target="_blank" rel="noopener"><span aria-hidden="true">♡</span>お気に入り</a></div></div>
+      <div class="pop-card"><a class="pop" href="https://item.rakuten.co.jp/sommelier/goods-01760/" target="_blank" rel="noopener">
         <span class="pop-img"><img src="img/items/goods-01760.jpg" width="600" height="600" alt="トフィー ふわふわリング加湿器" loading="lazy"></span>
         <span class="pop-br">トフィー</span>
         <span class="pop-nm">ふわふわリング加湿器</span>
         <span class="pop-sub">卓上・コンパクト</span>
         <span class="pop-pr"><span class="num">3,300</span>円<small>（税込）</small></span>
-      </a>
+      </a><div class="pop-btns"><a class="pb-buy" href="https://item.rakuten.co.jp/sommelier/goods-01760/" target="_blank" rel="noopener">購入する</a><a class="pb-fav" href="https://my.bookmark.rakuten.co.jp/?func=reg&amp;svid=106&amp;shop_bid=333706&amp;iid=10012754" target="_blank" rel="noopener"><span aria-hidden="true">♡</span>お気に入り</a></div></div>
     </div>
   </div>
 </section>
@@ -2311,18 +2349,13 @@ html body .side-nav .n{font-size:12px!important}
 </script>
 <script>
 (function(){
-  // FV 金のラメ：中央に集まる細かい金の粒（box-shadow でまとめて描く）
+  // FV 金粉：ふわっとぼけた金の光の粒＋キラッと光る星（細かい点はやめた） 2026-11-16
   var w=document.querySelector('.fv-spark');if(!w)return;
-  var r=Math.random,cols=['#f6e2a6','#ecc867','#fff6dc','#c99a3c','#ffffff'];
-  function g(){return (r()+r()+r()-1.5)/1.5}
-  function layer(n,cls){var b=w.getBoundingClientRect(),W=b.width/2,H=b.height/2,a=[];
-    for(var k=0;k<n;k++){var x=(g()*W*1.05).toFixed(0),y=(g()*H*1.05).toFixed(0),sz=r()<.93?0:(r()<.8?.5:1.2);
-      a.push(x+'px '+y+'px 0 '+sz+'px '+cols[(r()*cols.length)|0]);}
-    return '<i class="fv-dust '+cls+'" style="box-shadow:'+a.join(',')+'"></i>';}
-  function draw(){w.innerHTML=layer(2200,'')+layer(500,'tw')+layer(400,'tw2');}
-  draw();var t;window.addEventListener('resize',function(){clearTimeout(t);t=setTimeout(draw,300)});
-  return;
-  w.innerHTML=html;
+  var r=Math.random,h='';
+  for(var i=0;i<46;i++){var s=(4+r()*16).toFixed(1);
+    h+='<i class="gd" style="left:'+(r()*100).toFixed(1)+'%;top:'+(r()*100).toFixed(1)+'%;--s:'+s+'px;--o:'+(.25+r()*.5).toFixed(2)+';--d:'+(5+r()*7).toFixed(1)+'s;--dl:-'+(r()*10).toFixed(1)+'s"></i>';}
+  for(var j=0;j<22;j++){h+='<i class="gs" style="left:'+(r()*100).toFixed(1)+'%;top:'+(r()*100).toFixed(1)+'%;--s:'+(10+r()*16).toFixed(0)+'px;--d:'+(2.4+r()*2.6).toFixed(1)+'s;--dl:-'+(r()*5).toFixed(1)+'s"></i>';}
+  w.innerHTML=h;
 })();
 </script>
 <script>
