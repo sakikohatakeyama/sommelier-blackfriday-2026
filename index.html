@@ -1636,6 +1636,13 @@ section h2{font-size:clamp(26px,7.8cqw,46px)!important}
 .fsets>.fset.fset .fs-body{padding:20px 20px 22px!important}
 .fsets>.fset.fset .fs-txt{width:auto!important;max-width:none!important;margin:0!important}
 @media(max-width:599px){.fsets>.fset.fset .fs-body{padding:18px 16px 20px!important}}
+/* 抽選見出し：「2万円以上のお買い物で」を小さくして「抽選でプレゼント」と左右をそろえる（JS）、抽選でプレゼントは金文字 2026-11-16 */
+.lot .lot-h .nobr,.lot .lot-h em{display:block;width:max-content;margin-left:auto;margin-right:auto;white-space:nowrap}
+.lot .lot-h br{display:none}
+.lot .lot-h em.em{color:transparent!important;-webkit-text-fill-color:transparent;
+  background:linear-gradient(110deg,transparent 0 38%,#fffdf2 47%,#ffffff 50%,#fffdf2 53%,transparent 62%) var(--sx) 0/70% 100% no-repeat,
+    linear-gradient(180deg,#fff3c8 0%,#e9c46a 32%,#b7862f 50%,#f3d382 66%,#9a6d22 100%) 0 0/100% 100%;
+  -webkit-background-clip:text;background-clip:text;animation:kirarin 4s 2.8s ease-in-out infinite}
 </style>
 </head>
 <body>
@@ -1815,7 +1822,7 @@ section h2{font-size:clamp(26px,7.8cqw,46px)!important}
 <section class="lot" id="lottery">
   <div class="wrap">
     <p class="sec-no">02 ／ プレゼント抽選</p>
-    <h2 class="lot-h"><span class="nobr">2万円以上のお買い物で</span><br><em>抽選でプレゼント</em></h2>
+    <h2 class="lot-h"><span class="nobr">2万円以上のお買い物で</span><br><em class="em">抽選でプレゼント</em></h2>
     <p class="lot-date"><span class="num">11.19</span><span class="wk">木</span><span class="tm num">20:00</span><span class="to" aria-label="から">→</span><span class="num">11.25</span><span class="wk">水</span><span class="tm num">1:59</span></p>
     <div class="lot-cond">
       <p class="lc-k">家具のソムリエで</p>
@@ -2318,6 +2325,16 @@ section h2{font-size:clamp(26px,7.8cqw,46px)!important}
   }
   function check(){var vh=innerHeight;boxes=boxes.filter(function(b){var r=b.getBoundingClientRect();if(r.top<vh*0.7&&r.bottom>vh*0.2){burst(b);return false;}return true;});}
   addEventListener('scroll',check,{passive:true});addEventListener('load',check);setTimeout(check,800);
+})();
+</script>
+<script>
+(function(){
+  // 抽選見出し：1行目を2行目（抽選でプレゼント）と同じ幅に
+  function fitLot(){var h=document.querySelector('.lot .lot-h');if(!h)return;var a=h.querySelector('.nobr'),b=h.querySelector('em');if(!a||!b)return;
+    a.style.fontSize='';var fa=parseFloat(getComputedStyle(a).fontSize),wa=a.getBoundingClientRect().width,wb=b.getBoundingClientRect().width;
+    if(wa>0&&wb>0)a.style.fontSize=(fa*wb/wa).toFixed(2)+'px';}
+  (document.fonts&&document.fonts.ready?document.fonts.ready:Promise.resolve()).then(fitLot);
+  addEventListener('load',fitLot);var t;addEventListener('resize',function(){clearTimeout(t);t=setTimeout(fitLot,200);});
 })();
 </script>
 </body>
