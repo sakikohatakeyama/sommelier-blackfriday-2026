@@ -1666,6 +1666,23 @@ html body .fv .sign{padding-bottom:0!important}
 html body .fv .sign-in.fv-simple{padding-bottom:6px!important}
 /* 福袋の画像を大きく（440px→520px、SPは78%→90%） 2026-11-16 */
 html body .fs-img .fs-setimg.fk .fk-pic{width:min(90%,520px)!important}
+/* 右サイド：「今日はこれがお得！」の枠をプレゼントキャンペーン＋賞品に 2026-11-16 */
+.side-today.st-lot{display:block;text-decoration:none;color:#fff}
+.st-lot .st-h{font-size:22px!important}
+.st-lot .st-cond{margin:10px 0 0;font-size:15px;font-weight:700;line-height:1.6;color:#fff}
+.st-lot .st-cond b{color:#f3d382;font-size:1.25em}
+.st-pz{list-style:none;margin:14px 0 0!important;padding:0!important;display:grid;grid-template-columns:repeat(3,1fr);gap:8px;border:0!important}
+.st-pz li{margin:0!important;padding:0!important;border:0!important;background:#fff;display:flex;flex-direction:column}
+.st-pz img{display:block;width:100%;aspect-ratio:1;object-fit:cover}
+.st-pz span{display:block;text-align:center;background:linear-gradient(180deg,#fff3c8 0%,#ecc867 38%,#d4a94a 72%,#b7862f 100%);color:#a00c16;font-weight:900;font-size:12px;line-height:1;padding:5px 0 4px}
+.st-pz span b{font-family:"Jost",sans-serif;font-weight:800;font-size:18px;margin-right:1px}
+.side-today.st-lot:hover .st-pz img{opacity:.85}
+.side-today.st-lot .st-h{white-space:nowrap;font-size:clamp(15px,1.3vw,22px)!important;letter-spacing:0}
+.st-lot .st-cond{font-size:clamp(12px,.95vw,15px)}
+.st-pz span{white-space:nowrap;font-size:clamp(10px,.75vw,12px)}
+.st-pz span b{font-size:clamp(14px,1.1vw,18px)}
+.side-today .st-pz li span b{display:inline!important;color:#a00c16!important}
+.side-today .st-cond b{display:inline!important}
 </style>
 </head>
 <body>
@@ -1691,14 +1708,15 @@ html body .fs-img .fs-setimg.fk .fk-pic{width:min(90%,520px)!important}
       <p class="lbl" data-cd-lbl>ブラックフライデーまで</p>
       <p class="t" data-cd-t><span class="num" data-cd="d">0</span><small>日</small><span class="num" data-cd="h">00</span><small>時間</small><span class="num" data-cd="m">00</span><small>分</small><span class="num" data-cd="s">00</span><small>秒</small></p>
     </div>
-    <div class="side-today">
-      <p class="st-h">今日はこれがお得！</p>
-      <p class="st-day">（日付）</p>
-      <ul><!-- TODO: 施策が届いたら差し替え -->
-        <li>施策1 <b>（内容が入ります）</b></li>
-        <li>施策2 <b>（内容が入ります）</b></li>
+    <a class="side-today st-lot" href="#lottery">
+      <p class="st-h">プレゼントキャンペーン</p>
+      <p class="st-cond">2万円以上のお買い物で<br><b>抽選で合計8名様</b>に当たる</p>
+      <ul class="st-pz">
+        <li><img src="img/prize-vitantonio.jpg" width="654" height="760" alt="ビタントニオ エッグワッフル＆ホットサンドベーカー" loading="lazy"><span><b>3</b>名様</span></li>
+        <li><img src="img/prize-keisoudo-green.jpg" width="760" height="760" alt="レムノス 珪藻土の時計 グリーン" loading="lazy"><span><b>1</b>名様</span></li>
+        <li><img src="img/prize-divide-white.jpg" width="760" height="760" alt="レムノス divide ホワイト" loading="lazy"><span><b>4</b>名様</span></li>
       </ul>
-    </div>
+    </a>
     <a class="side-btn gold" href="#lottery">プレゼント抽選を見る</a>
     <a class="side-btn pink" href="#p20">福袋を見る</a>
   </div>
