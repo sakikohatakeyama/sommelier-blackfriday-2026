@@ -1904,6 +1904,26 @@ html body .fk-pic.mask-ok .fk-shine{visibility:visible}
 /* おすすめ人気急上昇アイテム：見出しが長いので1行に収まるサイズに 2026-11-17 */
 html body #popular .pops-h .ph-en{font-size:clamp(34px,10.4cqw,64px)!important;white-space:nowrap}
 html body #popular .pops-h .ph-ja{font-size:clamp(20px,6.6cqw,40px)!important;white-space:nowrap;letter-spacing:.02em}
+/* FVのポイント10倍アイコン（買いまわり・店内ポイント） 2026-11-17 */
+html body .fv-items.fv-one{position:relative!important}
+.fv-pt{position:absolute;z-index:3;width:21%;aspect-ratio:1;border-radius:50%;container-type:inline-size;
+ background:radial-gradient(circle at 35% 28%,#ff3b3b 0,#e70011 45%,#a8000c 100%);
+ box-shadow:0 0 0 .35cqw #fff3 inset,0 6px 14px #0009;
+ display:flex;align-items:center;justify-content:center;text-align:center}
+.fv-pt::before{content:"";position:absolute;inset:3.5%;border-radius:50%;padding:2.2cqw;
+ background:linear-gradient(135deg,#fff3c4,#e8c15a 30%,#a87a1e 55%,#f6dc8a 75%,#b8862a);
+ -webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);-webkit-mask-composite:xor;mask-composite:exclude}
+.fv-pt .pt-in{position:relative;display:flex;flex-direction:column;align-items:center;font-family:"Noto Sans JP",sans-serif;font-weight:900;color:#fff;line-height:1}
+.fv-pt .pt-s{font-size:12.5cqw;letter-spacing:.02em;white-space:nowrap}
+.fv-pt .pt-b{display:flex;align-items:flex-end;margin-top:3cqw;
+ background:linear-gradient(180deg,#fff6cf 0,#f3d27a 40%,#c9962e 70%,#f7e2a0 100%);-webkit-background-clip:text;background-clip:text;color:transparent}
+.fv-pt .pt-m{font-size:13cqw;writing-mode:vertical-rl;letter-spacing:-.05em;margin:0 1cqw 3cqw 0;line-height:1}
+.fv-pt .pt-b b{font-family:"Jost",sans-serif;font-weight:800;font-size:42cqw;letter-spacing:-.04em;line-height:.8}
+.fv-pt .pt-x{font-size:19cqw;margin:0 0 1cqw 1cqw}
+.fv-pt1{right:2.5%;top:0}
+.fv-pt2{left:1.5%;top:57%}
+@media(max-width:599px){.fv-pt{width:26%}.fv-pt1{right:1%;top:-3%}.fv-pt2{left:0;top:56%}}
+.fv-pt::before{padding:3cqw!important}
 </style>
 </head>
 <body>
@@ -1974,7 +1994,7 @@ html body #popular .pops-h .ph-ja{font-size:clamp(20px,6.6cqw,40px)!important;wh
         <span class="dt"><span class="num">11.25</span><span class="wk">水</span><span class="tm num">1:59</span></span>
       </p>
       <div class="fv-stage">
-        <div class="fv-items fv-one"><img class="fv-main" src="img/fv-main.png" width="1000" height="1015" alt="ティファール 炊飯器・インジニオ・ネオ・圧力鍋・コーヒーメーカー・トースター"></div>
+        <div class="fv-items fv-one"><img class="fv-main" src="img/fv-main.png" width="1000" height="1015" alt="ティファール 炊飯器・インジニオ・ネオ・圧力鍋・コーヒーメーカー・トースター"><span class="fv-pt fv-pt1"><span class="pt-in"><span class="pt-s">買いまわりで</span><span class="pt-b"><span class="pt-m">最大</span><b>10</b><span class="pt-x">倍</span></span></span></span><span class="fv-pt fv-pt2"><span class="pt-in"><span class="pt-s">店内ポイント</span><span class="pt-b"><span class="pt-m">最大</span><b>10</b><span class="pt-x">倍</span></span></span></span></div>
         <div class="fv-pod" aria-hidden="true"></div>
       </div>
     </div>
