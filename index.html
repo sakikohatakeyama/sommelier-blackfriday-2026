@@ -1924,6 +1924,12 @@ html body .fv-items.fv-one{position:relative!important}
 .fv-pt2{left:1.5%;top:57%}
 @media(max-width:599px){.fv-pt{width:26%}.fv-pt1{right:1%;top:-3%}.fv-pt2{left:0;top:56%}}
 .fv-pt::before{padding:3cqw!important}
+/* ポイント10倍アイコンはロゴ（BLACK FRIDAY SALE）の左右に、少し小さく 2026-11-17 */
+.fv-logo{position:relative}
+html body .fv-logo .fv-pt{width:19%}
+html body .fv-logo .fv-pt1{right:-5%;left:auto;top:-7%}
+html body .fv-logo .fv-pt2{left:-5%;right:auto;top:auto;bottom:4%}
+@media(max-width:599px){html body .fv-logo .fv-pt{width:22%}html body .fv-logo .fv-pt1{right:-7%;top:-9%}html body .fv-logo .fv-pt2{left:-7%;bottom:2%}}
 </style>
 </head>
 <body>
@@ -1982,19 +1988,22 @@ html body .fv-items.fv-one{position:relative!important}
   <div class="sign">
     <div class="fv-spark" aria-hidden="true"></div>
     <div class="sign-in fv-simple">
+      <div class="fv-logo">
       <h1 class="fv-title">
         <span class="en l1">BLACK</span>
         <span class="en l2">FRIDAY</span>
         <span class="en l3">SALE</span>
         <span class="vh">ブラックフライデーセール</span>
       </h1>
+        <span class="fv-pt fv-pt1"><span class="pt-in"><span class="pt-s">買いまわりで</span><span class="pt-b"><span class="pt-m">最大</span><b>10</b><span class="pt-x">倍</span></span></span></span><span class="fv-pt fv-pt2"><span class="pt-in"><span class="pt-s">店内ポイント</span><span class="pt-b"><span class="pt-m">最大</span><b>10</b><span class="pt-x">倍</span></span></span></span>
+      </div>
       <p class="fv-date">
         <span class="dt"><span class="num">11.19</span><span class="wk">木</span><span class="tm num">20:00</span></span>
         <span class="to" aria-label="から"></span>
         <span class="dt"><span class="num">11.25</span><span class="wk">水</span><span class="tm num">1:59</span></span>
       </p>
       <div class="fv-stage">
-        <div class="fv-items fv-one"><img class="fv-main" src="img/fv-main.png" width="1000" height="1015" alt="ティファール 炊飯器・インジニオ・ネオ・圧力鍋・コーヒーメーカー・トースター"><span class="fv-pt fv-pt1"><span class="pt-in"><span class="pt-s">買いまわりで</span><span class="pt-b"><span class="pt-m">最大</span><b>10</b><span class="pt-x">倍</span></span></span></span><span class="fv-pt fv-pt2"><span class="pt-in"><span class="pt-s">店内ポイント</span><span class="pt-b"><span class="pt-m">最大</span><b>10</b><span class="pt-x">倍</span></span></span></span></div>
+        <div class="fv-items fv-one"><img class="fv-main" src="img/fv-main.png" width="1000" height="1015" alt="ティファール 炊飯器・インジニオ・ネオ・圧力鍋・コーヒーメーカー・トースター"></div>
         <div class="fv-pod" aria-hidden="true"></div>
       </div>
     </div>
