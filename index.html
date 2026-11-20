@@ -1975,6 +1975,30 @@ html body .fv-logo .fv-pt1{width:19%;transform:rotate(10deg)}
  .hot-btns .pb-buy{min-height:36px!important;font-size:12.5px!important}
  .hot-btns .pb-fav{flex-basis:36px!important;width:36px!important;min-height:36px!important;font-size:17px!important}
 }
+/* スマホ（左右メニューが出ない幅）：ヘッダー固定＋ハンバーガーメニュー 2026-11-20 */
+.hb,.sp-menu{display:none}
+@media(max-width:1239px){
+ html{scroll-padding-top:64px}
+ header{position:fixed;top:0;left:0;right:0;z-index:100;width:100%;max-width:650px;margin:0 auto;background:rgba(10,10,10,.94);-webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px)}
+ .col{padding-top:57px}
+ header .wrap{position:relative}
+ .hb{display:flex;flex-direction:column;justify-content:center;align-items:center;gap:6px;width:44px;height:44px;margin-right:-6px;padding:0;border:0;background:none;cursor:pointer;-webkit-tap-highlight-color:transparent}
+ .hb span{display:block;width:26px;height:2px;border-radius:2px;background:#ecc867;transition:transform .3s,opacity .2s}
+ .hb[aria-expanded="true"] span:nth-child(1){transform:translateY(8px) rotate(45deg)}
+ .hb[aria-expanded="true"] span:nth-child(2){opacity:0}
+ .hb[aria-expanded="true"] span:nth-child(3){transform:translateY(-8px) rotate(-45deg)}
+ .sp-menu{display:block;position:fixed;top:57px;left:0;right:0;bottom:0;z-index:99;width:100%;max-width:650px;margin:0 auto;padding:10px 24px 40px;overflow-y:auto;overscroll-behavior:contain;
+  background:linear-gradient(180deg,#0b0b0b 0,#141210 100%);opacity:0;transform:translateY(-8px);transition:opacity .25s,transform .25s;pointer-events:none}
+ .sp-menu[hidden]{display:none}
+ .sp-menu.open{opacity:1;transform:none;pointer-events:auto}
+ .sp-menu a{display:flex;align-items:center;gap:14px;padding:16px 4px;border-bottom:1px solid #ffffff1f;color:#fff;text-decoration:none;font-weight:700;font-size:16px}
+ .sp-menu a .n{font-family:Jost,Futura,sans-serif;font-size:14px;color:#ecc867;min-width:22px}
+ .sp-menu a::after{content:"";margin-left:auto;width:8px;height:8px;border-top:2px solid #ecc867;border-right:2px solid #ecc867;transform:rotate(45deg)}
+ .sp-menu a:active{background:#ffffff0d}
+ .sp-menu .sp-shop{justify-content:center;margin-top:26px;border:1.5px solid #ecc867;border-radius:999px;color:#ecc867;font-size:15px;padding:13px}
+ .sp-menu .sp-shop::after{display:none}
+ body.menu-open{overflow:hidden}
+}
 </style>
 </head>
 <body>
@@ -2019,7 +2043,9 @@ html body .fv-logo .fv-pt1{width:19%;transform:rotate(10deg)}
 
 <header><div class="wrap">
   <a class="brand" href="https://www.rakuten.co.jp/sommelier/" target="_blank" rel="noopener" aria-label="家具のソムリエ 楽天市場 トップページへ"><img class="logo" src="img/logo-white.svg" width="270" height="50" alt="家具のソムリエ いえの中をそろえるお店"></a>
+<button class="hb" type="button" aria-label="メニューを開く" aria-expanded="false" aria-controls="sp-menu"><span></span><span></span><span></span></button>
 </div></header>
+<nav class="sp-menu" id="sp-menu" aria-label="メニュー" hidden></nav>
 <div class="flags" aria-hidden="true"></div>
 
 <main>
@@ -2780,6 +2806,24 @@ html body .fv-logo .fv-pt1{width:19%;transform:rotate(10deg)}
     ok(u).then(function(){var v='url('+u+') center/100% 100% no-repeat';im.style.mask=v;im.style.maskMode='luminance';}).catch(function(){});});
   [].forEach.call(document.querySelectorAll('.fk-pic[data-mask-src]'),function(pic){var u=pic.getAttribute('data-mask-src');
     ok(u).then(function(){pic.style.setProperty('--src','url('+u+')');pic.classList.add('mask-ok');}).catch(function(){});});
+})();
+</script>
+<script>
+(function(){
+  // スマホ：ハンバーガーメニュー（中身は左メニューと同じリンク）
+  var b=document.querySelector('.hb'),m=document.getElementById('sp-menu'),src=document.querySelector('.side-nav');if(!b||!m||!src)return;
+  [].forEach.call(src.querySelectorAll('a'),function(a){m.appendChild(a.cloneNode(true));});
+  var shop=document.createElement('a');shop.className='sp-shop';shop.href='https://www.rakuten.co.jp/sommelier/';shop.target='_blank';shop.rel='noopener';shop.textContent='ショップトップへ';m.appendChild(shop);
+  function set(open){
+    b.setAttribute('aria-expanded',open?'true':'false');b.setAttribute('aria-label',open?'メニューを閉じる':'メニューを開く');
+    document.body.classList.toggle('menu-open',open);
+    if(open){m.hidden=false;requestAnimationFrame(function(){m.classList.add('open');});}
+    else{m.classList.remove('open');setTimeout(function(){if(!m.classList.contains('open'))m.hidden=true;},260);}
+  }
+  b.addEventListener('click',function(){set(b.getAttribute('aria-expanded')!=='true');});
+  m.addEventListener('click',function(e){var a=e.target.closest('a');if(a&&a.getAttribute('href').charAt(0)==='#')set(false);});
+  document.addEventListener('keydown',function(e){if(e.key==='Escape')set(false);});
+  addEventListener('resize',function(){if(innerWidth>=1240)set(false);});
 })();
 </script>
 </body>
