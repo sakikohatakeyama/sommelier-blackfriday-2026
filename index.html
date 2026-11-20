@@ -2665,7 +2665,7 @@ html body .fv-logo .fv-pt1{width:19%;transform:rotate(10deg)}
       it.el.innerHTML=html(it.target);it.el.classList.add('slot-hit');
     })(st);
   }
-  function check(){var vh=window.innerHeight;items.forEach(function(it){if(it.done)return;var r=it.el.getBoundingClientRect();if(r.top<vh*0.85&&r.bottom>0)spin(it);});}
+  function check(){var vh=window.innerHeight,k=window.innerWidth<600?1.0:0.9;items.forEach(function(it){if(it.done)return;var r=it.el.getBoundingClientRect();if(r.top<vh*k&&r.bottom>0)spin(it);});}
   window.addEventListener('scroll',check,{passive:true});window.addEventListener('resize',check);window.addEventListener('load',check);setTimeout(check,600);
 })();
 </script>
